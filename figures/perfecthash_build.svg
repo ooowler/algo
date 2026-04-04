@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="440" font-family="system-ui,Segoe UI,sans-serif" font-size="13">
+<rect width="100%" height="100%" fill="#fafafa"/>
+<text x="72" y="34" font-size="17" font-weight="600">Perfect hash: Build (ms/op)</text>
+<text x="72" y="418" fill="#666" font-size="11">Данные: go test ./hashtable ./perfecthash ./lsh -run=^$ -bench=. -benchmem -benchtime=2s</text>
+<rect x="112.7" y="363.5" width="69.1" height="4.5" fill="#2563eb" rx="3"/>
+<rect x="275.3" y="311.5" width="69.1" height="56.5" fill="#2563eb" rx="3"/>
+<rect x="438.0" y="52.0" width="69.1" height="316.0" fill="#2563eb" rx="3"/>
+<text x="153" y="396" text-anchor="middle" fill="#222" font-size="13">1K</text>
+<text x="316" y="396" text-anchor="middle" fill="#222" font-size="13">10K</text>
+<text x="479" y="396" text-anchor="middle" fill="#222" font-size="13">50K</text>
+<text transform="translate(22,210.0) rotate(-90)" text-anchor="middle" fill="#333">ms/op</text>
+<rect x="570" y="60" width="14" height="14" fill="#2563eb" rx="2"/>
+<text x="592" y="72" fill="#222">Build</text>
+</svg>

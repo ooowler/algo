@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="440" font-family="system-ui,Segoe UI,sans-serif" font-size="13">
+<rect width="100%" height="100%" fill="#fafafa"/>
+<text x="72" y="34" font-size="17" font-weight="600">Файловая хэш-таблица: Set / Get / Delete (µs/op)</text>
+<text x="72" y="418" fill="#666" font-size="11">Данные: go test ./hashtable ./perfecthash ./lsh -run=^$ -bench=. -benchmem -benchtime=2s</text>
+<rect x="92.3" y="170.9" width="34.6" height="197.1" fill="#2563eb" rx="3"/>
+<rect x="255.0" y="147.1" width="34.6" height="220.9" fill="#2563eb" rx="3"/>
+<rect x="417.7" y="121.9" width="34.6" height="246.1" fill="#2563eb" rx="3"/>
+<rect x="133.0" y="338.5" width="34.6" height="29.5" fill="#059669" rx="3"/>
+<rect x="295.7" y="326.7" width="34.6" height="41.3" fill="#059669" rx="3"/>
+<rect x="458.3" y="323.0" width="34.6" height="45.0" fill="#059669" rx="3"/>
+<rect x="173.7" y="52.0" width="34.6" height="316.0" fill="#d97706" rx="3"/>
+<rect x="336.3" y="124.0" width="34.6" height="244.0" fill="#d97706" rx="3"/>
+<rect x="499.0" y="133.6" width="34.6" height="234.4" fill="#d97706" rx="3"/>
+<text x="153" y="396" text-anchor="middle" fill="#222" font-size="13">S</text>
+<text x="316" y="396" text-anchor="middle" fill="#222" font-size="13">M</text>
+<text x="479" y="396" text-anchor="middle" fill="#222" font-size="13">L</text>
+<text transform="translate(22,210.0) rotate(-90)" text-anchor="middle" fill="#333">µs/op</text>
+<rect x="570" y="60" width="14" height="14" fill="#2563eb" rx="2"/>
+<text x="592" y="72" fill="#222">Set</text>
+<rect x="570" y="82" width="14" height="14" fill="#059669" rx="2"/>
+<text x="592" y="94" fill="#222">Get</text>
+<rect x="570" y="104" width="14" height="14" fill="#d97706" rx="2"/>
+<text x="592" y="116" fill="#222">Delete</text>
+</svg>

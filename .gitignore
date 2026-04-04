@@ -1,0 +1,4 @@
+profiles/*.prof
+profiles/*.out
+results/
+.venv/
