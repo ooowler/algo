@@ -1,4 +1,4 @@
-.PHONY: test bench bench-scale profile trace figures figures-bar clean all
+.PHONY: test bench bench-scale profile trace figures figures-pprof figures-flame-html bench-disk-cloud figures-bar charts-mpl clean all
 
 test:
 	go test ./... -timeout 300s -count=1
@@ -31,6 +31,15 @@ figures:
 
 charts-mpl:
 	@if [ -x .venv/bin/python ]; then .venv/bin/python scripts/build_charts_matplotlib.py; else python3 scripts/build_charts_matplotlib.py; fi
+
+figures-pprof:
+	@if [ -x .venv/bin/python ]; then .venv/bin/python scripts/pprof_top_chart.py; else python3 scripts/pprof_top_chart.py; fi
+
+bench-disk-cloud:
+	@if [ -x .venv/bin/python ]; then .venv/bin/python scripts/bench_disk_cloud.py; else python3 scripts/bench_disk_cloud.py; fi
+
+figures-flame-html:
+	chmod +x scripts/export_pprof_flame_html.sh && ./scripts/export_pprof_flame_html.sh
 
 figures-bar:
 	python3 scripts/plot_benchmarks.py
