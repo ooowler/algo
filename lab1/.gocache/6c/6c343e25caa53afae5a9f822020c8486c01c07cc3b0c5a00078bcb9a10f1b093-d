@@ -1,0 +1,6 @@
+./dataset.go
+./lsh.go
+./bench_growth_test.go
+./bench_scale_test.go
+./lsh_test.go
+./metrics_test.go

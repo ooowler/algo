@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="498" viewBox="0 0 1600 498" role="img" aria-label="lsh flamegraph">
+<style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;}.title{font-size:24px;font-weight:700;fill:#222;}.subtitle{font-size:13px;fill:#5d5d5d;}.box-label{font-size:12px;fill:#222;pointer-events:none;}.box{stroke:#ffffff;stroke-width:1;}</style>
+<rect x="0" y="0" width="1600" height="498" fill="#fffaf5"/>
+<text class="title" x="24" y="34">lsh flamegraph</text>
+<text class="subtitle" x="24" y="56">pprof static flamegraph • total samples 460.0ms • widest path is the hottest path</text>
+<g><title>program&#10;460.0ms (100.0%)</title>
+<rect class="box" x="24.00" y="446.00" width="1552.00" height="20" rx="3" ry="3" fill="hsl(38,82%,62%)"/>
+<text class="box-label" x="28.00" y="460.00">program</text>
+</g>
+<g><title>runtime.systemstack&#10;110.0ms (23.9%)</title>
+<rect class="box" x="24.00" y="424.00" width="371.13" height="20" rx="3" ry="3" fill="hsl(50,81%,73%)"/>
+<text class="box-label" x="28.00" y="438.00">runtime.systemstack</text>
+</g>
+<g><title>runtime.(*mheap).alloc.func1&#10;110.0ms (23.9%)</title>
+<rect class="box" x="24.00" y="402.00" width="371.13" height="20" rx="3" ry="3" fill="hsl(36,87%,71%)"/>
+<text class="box-label" x="28.00" y="416.00">runtime.(*mheap).alloc.func1</text>
+</g>
+<g><title>runtime.(*mheap).allocSpan&#10;110.0ms (23.9%)</title>
+<rect class="box" x="24.00" y="380.00" width="371.13" height="20" rx="3" ry="3" fill="hsl(32,74%,60%)"/>
+<text class="box-label" x="28.00" y="394.00">runtime.(*mheap).allocSpan</text>
+</g>
+<g><title>runtime.sysUsed&#10;110.0ms (23.9%)</title>
+<rect class="box" x="24.00" y="358.00" width="371.13" height="20" rx="3" ry="3" fill="hsl(12,78%,60%)"/>
+<text class="box-label" x="28.00" y="372.00">runtime.sysUsed</text>
+</g>
+<g><title>runtime.sysUsedOS&#10;110.0ms (23.9%)</title>
+<rect class="box" x="24.00" y="336.00" width="371.13" height="20" rx="3" ry="3" fill="hsl(23,85%,69%)"/>
+<text class="box-label" x="28.00" y="350.00">runtime.sysUsedOS</text>
+</g>
+<g><title>runtime.madvise&#10;110.0ms (23.9%)</title>
+<rect class="box" x="24.00" y="314.00" width="371.13" height="20" rx="3" ry="3" fill="hsl(21,89%,72%)"/>
+<text class="box-label" x="28.00" y="328.00">runtime.madvise</text>
+</g>
+<g><title>runtime.main&#10;340.0ms (73.9%)</title>
+<rect class="box" x="395.13" y="424.00" width="1147.13" height="20" rx="3" ry="3" fill="hsl(46,82%,70%)"/>
+<text class="box-label" x="399.13" y="438.00">runtime.main</text>
+</g>
+<g><title>main.main&#10;340.0ms (73.9%)</title>
+<rect class="box" x="395.13" y="402.00" width="1147.13" height="20" rx="3" ry="3" fill="hsl(34,72%,61%)"/>
+<text class="box-label" x="399.13" y="416.00">main.main</text>
+</g>
+<g><title>main.writeCPU&#10;340.0ms (73.9%)</title>
+<rect class="box" x="395.13" y="380.00" width="1147.13" height="20" rx="3" ry="3" fill="hsl(49,77%,67%)"/>
+<text class="box-label" x="399.13" y="394.00">main.writeCPU</text>
+</g>
+<g><title>main.prepareLSH.func1&#10;340.0ms (73.9%)</title>
+<rect class="box" x="395.13" y="358.00" width="1147.13" height="20" rx="3" ry="3" fill="hsl(20,88%,59%)"/>
+<text class="box-label" x="399.13" y="372.00">main.prepareLSH.func1</text>
+</g>
+<g><title>algo/lsh.(*LSH).FindDuplicates&#10;230.0ms (50.0%)</title>
+<rect class="box" x="395.13" y="336.00" width="776.00" height="20" rx="3" ry="3" fill="hsl(39,76%,65%)"/>
+<text class="box-label" x="399.13" y="350.00">lsh.(*LSH).FindDuplicates</text>
+</g>
+<g><title>algo/lsh.(*LSH).FindDuplicatesWithStats&#10;230.0ms (50.0%)</title>
+<rect class="box" x="395.13" y="314.00" width="776.00" height="20" rx="3" ry="3" fill="hsl(45,77%,68%)"/>
+<text class="box-label" x="399.13" y="328.00">lsh.(*LSH).FindDuplicatesWithStats</text>
+</g>
+<g><title>runtime.mapIterNext&#10;60.0ms (13.0%)</title>
+<rect class="box" x="395.13" y="292.00" width="202.43" height="20" rx="3" ry="3" fill="hsl(23,85%,62%)"/>
+<text class="box-label" x="399.13" y="306.00">runtime.mapIterNext</text>
+</g>
+<g><title>internal/runtime/maps.(*Iter).Next&#10;60.0ms (13.0%)</title>
+<rect class="box" x="395.13" y="270.00" width="202.43" height="20" rx="3" ry="3" fill="hsl(39,79%,72%)"/>
+<text class="box-label" x="399.13" y="284.00">maps.(*Iter).Next</text>
+</g>
+<g><title>internal/runtime/maps.(*ctrlGroup).get&#10;20.0ms (4.3%)</title>
+<rect class="box" x="395.13" y="248.00" width="67.48" height="20" rx="3" ry="3" fill="hsl(17,88%,69%)"/>
+<text class="box-label" x="399.13" y="262.00">get</text>
+</g>
+<g><title>algo/lsh.pairOffset&#10;10.0ms (2.2%)</title>
+<rect class="box" x="597.57" y="292.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(50,85%,68%)"/>
+</g>
+<g><title>algo/lsh.acquireDenseSeen&#10;10.0ms (2.2%)</title>
+<rect class="box" x="631.30" y="292.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(14,89%,73%)"/>
+</g>
+<g><title>runtime.memclrNoHeapPointers&#10;10.0ms (2.2%)</title>
+<rect class="box" x="631.30" y="270.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(34,74%,69%)"/>
+</g>
+<g><title>algo/lsh.BuildIndex&#10;110.0ms (23.9%)</title>
+<rect class="box" x="1171.13" y="336.00" width="371.13" height="20" rx="3" ry="3" fill="hsl(12,73%,67%)"/>
+<text class="box-label" x="1175.13" y="350.00">lsh.BuildIndex</text>
+</g>
+<g><title>algo/lsh.New&#10;20.0ms (4.3%)</title>
+<rect class="box" x="1171.13" y="314.00" width="67.48" height="20" rx="3" ry="3" fill="hsl(33,72%,61%)"/>
+<text class="box-label" x="1175.13" y="328.00">lsh.New</text>
+</g>
+<g><title>runtime.makemap&#10;20.0ms (4.3%)</title>
+<rect class="box" x="1171.13" y="292.00" width="67.48" height="20" rx="3" ry="3" fill="hsl(53,85%,72%)"/>
+<text class="box-label" x="1175.13" y="306.00">makemap</text>
+</g>
+<g><title>internal/runtime/maps.NewMap&#10;20.0ms (4.3%)</title>
+<rect class="box" x="1171.13" y="270.00" width="67.48" height="20" rx="3" ry="3" fill="hsl(14,75%,72%)"/>
+<text class="box-label" x="1175.13" y="284.00">NewMap</text>
+</g>
+<g><title>internal/runtime/maps.newTable&#10;20.0ms (4.3%)</title>
+<rect class="box" x="1171.13" y="248.00" width="67.48" height="20" rx="3" ry="3" fill="hsl(41,81%,63%)"/>
+<text class="box-label" x="1175.13" y="262.00">newTable</text>
+</g>
+<g><title>internal/runtime/maps.(*table).reset&#10;20.0ms (4.3%)</title>
+<rect class="box" x="1171.13" y="226.00" width="67.48" height="20" rx="3" ry="3" fill="hsl(58,80%,63%)"/>
+<text class="box-label" x="1175.13" y="240.00">reset</text>
+</g>
+<g><title>internal/runtime/maps.newGroups&#10;10.0ms (2.2%)</title>
+<rect class="box" x="1171.13" y="204.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(31,74%,67%)"/>
+</g>
+<g><title>internal/runtime/maps.newarray&#10;10.0ms (2.2%)</title>
+<rect class="box" x="1171.13" y="182.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(27,77%,65%)"/>
+</g>
+<g><title>runtime.newarray&#10;10.0ms (2.2%)</title>
+<rect class="box" x="1171.13" y="160.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(24,81%,70%)"/>
+</g>
+<g><title>runtime.mallocgc&#10;10.0ms (2.2%)</title>
+<rect class="box" x="1171.13" y="138.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(36,73%,69%)"/>
+</g>
+<g><title>runtime.mallocgcLarge&#10;10.0ms (2.2%)</title>
+<rect class="box" x="1171.13" y="116.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(26,88%,65%)"/>
+</g>
+<g><title>runtime.memclrNoHeapPointersChunked&#10;10.0ms (2.2%)</title>
+<rect class="box" x="1171.13" y="94.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(31,82%,58%)"/>
+</g>
+<g><title>runtime.memclrNoHeapPointers&#10;10.0ms (2.2%)</title>
+<rect class="box" x="1171.13" y="72.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(34,74%,69%)"/>
+</g>
+<g><title>internal/runtime/maps.(*ctrlGroup).setEmpty&#10;10.0ms (2.2%)</title>
+<rect class="box" x="1204.87" y="204.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(42,80%,58%)"/>
+</g>
+<g><title>algo/lsh.(*LSH).Add&#10;30.0ms (6.5%)</title>
+<rect class="box" x="1238.61" y="314.00" width="101.22" height="20" rx="3" ry="3" fill="hsl(40,80%,69%)"/>
+<text class="box-label" x="1242.61" y="328.00">(*LSH).Add</text>
+</g>
+<g><title>runtime.mapassign&#10;10.0ms (2.2%)</title>
+<rect class="box" x="1238.61" y="292.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(48,78%,63%)"/>
+</g>
+<g><title>runtime.mcall&#10;10.0ms (2.2%)</title>
+<rect class="box" x="1542.26" y="424.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(20,84%,59%)"/>
+</g>
+<g><title>runtime.park_m&#10;10.0ms (2.2%)</title>
+<rect class="box" x="1542.26" y="402.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(52,78%,71%)"/>
+</g>
+<g><title>runtime.schedule&#10;10.0ms (2.2%)</title>
+<rect class="box" x="1542.26" y="380.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(20,88%,61%)"/>
+</g>
+<g><title>runtime.findRunnable&#10;10.0ms (2.2%)</title>
+<rect class="box" x="1542.26" y="358.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(24,81%,71%)"/>
+</g>
+<g><title>runtime.stopm&#10;10.0ms (2.2%)</title>
+<rect class="box" x="1542.26" y="336.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(40,75%,58%)"/>
+</g>
+<g><title>runtime.mPark&#10;10.0ms (2.2%)</title>
+<rect class="box" x="1542.26" y="314.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(23,78%,61%)"/>
+</g>
+<g><title>runtime.notesleep&#10;10.0ms (2.2%)</title>
+<rect class="box" x="1542.26" y="292.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(44,77%,67%)"/>
+</g>
+<g><title>runtime.semasleep&#10;10.0ms (2.2%)</title>
+<rect class="box" x="1542.26" y="270.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(23,80%,59%)"/>
+</g>
+<g><title>runtime.pthread_cond_wait&#10;10.0ms (2.2%)</title>
+<rect class="box" x="1542.26" y="248.00" width="33.74" height="20" rx="3" ry="3" fill="hsl(10,75%,73%)"/>
+</g>
+<text class="subtitle" x="24" y="488">Generated from go tool pprof flamegraph data</text>
+</svg>

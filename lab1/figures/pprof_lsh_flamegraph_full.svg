@@ -1,0 +1,259 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="366" viewBox="0 0 1600 366" role="img" aria-label="lsh flamegraph">
+<style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;}.title{font-size:24px;font-weight:700;fill:#222;}.subtitle{font-size:13px;fill:#5d5d5d;}.box-label{font-size:12px;fill:#222;pointer-events:none;}.box{stroke:#ffffff;stroke-width:1;}</style>
+<rect x="0" y="0" width="1600" height="366" fill="#fffaf5"/>
+<text class="title" x="24" y="34">lsh flamegraph</text>
+<text class="subtitle" x="24" y="56">pprof static flamegraph • total samples 200.0ms • widest path is the hottest path</text>
+<g><title>runtime.mcall&#10;30.0ms (15.0%)</title>
+<rect class="box" x="24.00" y="314.00" width="232.80" height="20" rx="3" ry="3" fill="hsl(221,18%,74%)"/>
+<text class="box-label" x="28.00" y="328.00">runtime.mcall</text>
+</g>
+<g><title>runtime.park_m&#10;30.0ms (15.0%)</title>
+<rect class="box" x="24.00" y="292.00" width="232.80" height="20" rx="3" ry="3" fill="hsl(214,18%,74%)"/>
+<text class="box-label" x="28.00" y="306.00">runtime.park_m</text>
+</g>
+<g><title>runtime.schedule&#10;30.0ms (15.0%)</title>
+<rect class="box" x="24.00" y="270.00" width="232.80" height="20" rx="3" ry="3" fill="hsl(225,18%,74%)"/>
+<text class="box-label" x="28.00" y="284.00">runtime.schedule</text>
+</g>
+<g><title>runtime.findRunnable&#10;30.0ms (15.0%)</title>
+<rect class="box" x="24.00" y="248.00" width="232.80" height="20" rx="3" ry="3" fill="hsl(218,18%,74%)"/>
+<text class="box-label" x="28.00" y="262.00">runtime.findRunnable</text>
+</g>
+<g><title>runtime.stopm&#10;30.0ms (15.0%)</title>
+<rect class="box" x="24.00" y="226.00" width="232.80" height="20" rx="3" ry="3" fill="hsl(211,18%,74%)"/>
+<text class="box-label" x="28.00" y="240.00">runtime.stopm</text>
+</g>
+<g><title>runtime.mPark&#10;30.0ms (15.0%)</title>
+<rect class="box" x="24.00" y="204.00" width="232.80" height="20" rx="3" ry="3" fill="hsl(222,18%,74%)"/>
+<text class="box-label" x="28.00" y="218.00">runtime.mPark</text>
+</g>
+<g><title>runtime.notesleep&#10;30.0ms (15.0%)</title>
+<rect class="box" x="24.00" y="182.00" width="232.80" height="20" rx="3" ry="3" fill="hsl(215,18%,74%)"/>
+<text class="box-label" x="28.00" y="196.00">runtime.notesleep</text>
+</g>
+<g><title>runtime.semasleep&#10;30.0ms (15.0%)</title>
+<rect class="box" x="24.00" y="160.00" width="232.80" height="20" rx="3" ry="3" fill="hsl(226,18%,74%)"/>
+<text class="box-label" x="28.00" y="174.00">runtime.semasleep</text>
+</g>
+<g><title>runtime.pthread_cond_wait&#10;30.0ms (15.0%)</title>
+<rect class="box" x="24.00" y="138.00" width="232.80" height="20" rx="3" ry="3" fill="hsl(219,18%,74%)"/>
+<text class="box-label" x="28.00" y="152.00">runtime.pthread_cond_wait</text>
+</g>
+<g><title>runtime.systemstack&#10;30.0ms (15.0%)</title>
+<rect class="box" x="256.80" y="314.00" width="232.80" height="20" rx="3" ry="3" fill="hsl(212,18%,74%)"/>
+<text class="box-label" x="260.80" y="328.00">runtime.systemstack</text>
+</g>
+<g><title>runtime.gcBgMarkWorker.func2&#10;10.0ms (5.0%)</title>
+<rect class="box" x="256.80" y="292.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(223,18%,74%)"/>
+<text class="box-label" x="260.80" y="306.00">func2</text>
+</g>
+<g><title>runtime.gcDrainMarkWorkerIdle&#10;10.0ms (5.0%)</title>
+<rect class="box" x="256.80" y="270.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(216,18%,74%)"/>
+<text class="box-label" x="260.80" y="284.00">gcDrainMa…</text>
+</g>
+<g><title>runtime.gcDrain&#10;10.0ms (5.0%)</title>
+<rect class="box" x="256.80" y="248.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(227,18%,74%)"/>
+<text class="box-label" x="260.80" y="262.00">gcDrain</text>
+</g>
+<g><title>runtime.(*gcWork).balance&#10;10.0ms (5.0%)</title>
+<rect class="box" x="256.80" y="226.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(220,18%,74%)"/>
+<text class="box-label" x="260.80" y="240.00">balance</text>
+</g>
+<g><title>runtime.(*gcControllerState).enlistWorker&#10;10.0ms (5.0%)</title>
+<rect class="box" x="256.80" y="204.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(213,18%,74%)"/>
+<text class="box-label" x="260.80" y="218.00">enlistWor…</text>
+</g>
+<g><title>runtime.preemptone&#10;10.0ms (5.0%)</title>
+<rect class="box" x="256.80" y="182.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(224,18%,74%)"/>
+<text class="box-label" x="260.80" y="196.00">preemptone</text>
+</g>
+<g><title>runtime.preemptM&#10;10.0ms (5.0%)</title>
+<rect class="box" x="256.80" y="160.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(217,18%,74%)"/>
+<text class="box-label" x="260.80" y="174.00">preemptM</text>
+</g>
+<g><title>runtime.signalM&#10;10.0ms (5.0%)</title>
+<rect class="box" x="256.80" y="138.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(210,18%,74%)"/>
+<text class="box-label" x="260.80" y="152.00">signalM</text>
+</g>
+<g><title>runtime.pthread_kill&#10;10.0ms (5.0%)</title>
+<rect class="box" x="256.80" y="116.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(221,18%,74%)"/>
+<text class="box-label" x="260.80" y="130.00">pthread_k…</text>
+</g>
+<g><title>runtime.(*mheap).alloc.func1&#10;20.0ms (10.0%)</title>
+<rect class="box" x="334.40" y="292.00" width="155.20" height="20" rx="3" ry="3" fill="hsl(217,18%,74%)"/>
+<text class="box-label" x="338.40" y="306.00">(*mheap).alloc.func1</text>
+</g>
+<g><title>runtime.(*mheap).allocSpan&#10;20.0ms (10.0%)</title>
+<rect class="box" x="334.40" y="270.00" width="155.20" height="20" rx="3" ry="3" fill="hsl(210,18%,74%)"/>
+<text class="box-label" x="338.40" y="284.00">(*mheap).allocSpan</text>
+</g>
+<g><title>runtime.sysUsed&#10;20.0ms (10.0%)</title>
+<rect class="box" x="334.40" y="248.00" width="155.20" height="20" rx="3" ry="3" fill="hsl(221,18%,74%)"/>
+<text class="box-label" x="338.40" y="262.00">runtime.sysUsed</text>
+</g>
+<g><title>runtime.sysUsedOS&#10;20.0ms (10.0%)</title>
+<rect class="box" x="334.40" y="226.00" width="155.20" height="20" rx="3" ry="3" fill="hsl(214,18%,74%)"/>
+<text class="box-label" x="338.40" y="240.00">runtime.sysUsedOS</text>
+</g>
+<g><title>runtime.madvise&#10;20.0ms (10.0%)</title>
+<rect class="box" x="334.40" y="204.00" width="155.20" height="20" rx="3" ry="3" fill="hsl(225,18%,74%)"/>
+<text class="box-label" x="338.40" y="218.00">runtime.madvise</text>
+</g>
+<g><title>runtime.main&#10;100.0ms (50.0%)</title>
+<rect class="box" x="489.60" y="314.00" width="776.00" height="20" rx="3" ry="3" fill="hsl(214,18%,74%)"/>
+<text class="box-label" x="493.60" y="328.00">runtime.main</text>
+</g>
+<g><title>main.main&#10;100.0ms (50.0%)</title>
+<rect class="box" x="489.60" y="292.00" width="776.00" height="20" rx="3" ry="3" fill="hsl(267,52%,76%)"/>
+<text class="box-label" x="493.60" y="306.00">main.main</text>
+</g>
+<g><title>main.writeCPU&#10;100.0ms (50.0%)</title>
+<rect class="box" x="489.60" y="270.00" width="776.00" height="20" rx="3" ry="3" fill="hsl(314,52%,76%)"/>
+<text class="box-label" x="493.60" y="284.00">main.writeCPU</text>
+</g>
+<g><title>main.runLSH&#10;100.0ms (50.0%)</title>
+<rect class="box" x="489.60" y="248.00" width="776.00" height="20" rx="3" ry="3" fill="hsl(1,52%,76%)"/>
+<text class="box-label" x="493.60" y="262.00">main.runLSH</text>
+</g>
+<g><title>algo/lsh.BuildIndex&#10;20.0ms (10.0%)</title>
+<rect class="box" x="489.60" y="226.00" width="155.20" height="20" rx="3" ry="3" fill="hsl(48,52%,76%)"/>
+<text class="box-label" x="493.60" y="240.00">lsh.BuildIndex</text>
+</g>
+<g><title>algo/lsh.(*LSH).Add&#10;10.0ms (5.0%)</title>
+<rect class="box" x="489.60" y="204.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(252,52%,76%)"/>
+<text class="box-label" x="493.60" y="218.00">(*LSH).Add</text>
+</g>
+<g><title>runtime.mapassign&#10;10.0ms (5.0%)</title>
+<rect class="box" x="489.60" y="182.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(221,18%,74%)"/>
+<text class="box-label" x="493.60" y="196.00">mapassign</text>
+</g>
+<g><title>algo/lsh.(*LSH).FindDuplicates&#10;70.0ms (35.0%)</title>
+<rect class="box" x="644.80" y="226.00" width="543.20" height="20" rx="3" ry="3" fill="hsl(95,52%,76%)"/>
+<text class="box-label" x="648.80" y="240.00">lsh.(*LSH).FindDuplicates</text>
+</g>
+<g><title>algo/lsh.(*LSH).FindDuplicatesWithStats&#10;70.0ms (35.0%)</title>
+<rect class="box" x="644.80" y="204.00" width="543.20" height="20" rx="3" ry="3" fill="hsl(142,52%,76%)"/>
+<text class="box-label" x="648.80" y="218.00">lsh.(*LSH).FindDuplicatesWithStats</text>
+</g>
+<g><title>runtime.mapassign_fast64&#10;30.0ms (15.0%)</title>
+<rect class="box" x="644.80" y="182.00" width="232.80" height="20" rx="3" ry="3" fill="hsl(219,18%,74%)"/>
+<text class="box-label" x="648.80" y="196.00">runtime.mapassign_fast64</text>
+</g>
+<g><title>internal/runtime/maps.(*table).rehash&#10;20.0ms (10.0%)</title>
+<rect class="box" x="644.80" y="160.00" width="155.20" height="20" rx="3" ry="3" fill="hsl(236,52%,76%)"/>
+<text class="box-label" x="648.80" y="174.00">maps.(*table).rehash</text>
+</g>
+<g><title>internal/runtime/maps.(*table).split&#10;20.0ms (10.0%)</title>
+<rect class="box" x="644.80" y="138.00" width="155.20" height="20" rx="3" ry="3" fill="hsl(283,52%,76%)"/>
+<text class="box-label" x="648.80" y="152.00">maps.(*table).split</text>
+</g>
+<g><title>internal/runtime/maps.newTable&#10;20.0ms (10.0%)</title>
+<rect class="box" x="644.80" y="116.00" width="155.20" height="20" rx="3" ry="3" fill="hsl(330,52%,76%)"/>
+<text class="box-label" x="648.80" y="130.00">maps.newTable</text>
+</g>
+<g><title>internal/runtime/maps.(*table).reset&#10;20.0ms (10.0%)</title>
+<rect class="box" x="644.80" y="94.00" width="155.20" height="20" rx="3" ry="3" fill="hsl(17,52%,76%)"/>
+<text class="box-label" x="648.80" y="108.00">maps.(*table).reset</text>
+</g>
+<g><title>internal/runtime/maps.(*ctrlGroup).setEmpty&#10;20.0ms (10.0%)</title>
+<rect class="box" x="644.80" y="72.00" width="155.20" height="20" rx="3" ry="3" fill="hsl(64,52%,76%)"/>
+<text class="box-label" x="648.80" y="86.00">(*ctrlGroup).setEmpty</text>
+</g>
+<g><title>runtime.mapaccess2_fast64&#10;20.0ms (10.0%)</title>
+<rect class="box" x="877.60" y="182.00" width="155.20" height="20" rx="3" ry="3" fill="hsl(213,18%,74%)"/>
+<text class="box-label" x="881.60" y="196.00">mapaccess2_fast64</text>
+</g>
+<g><title>internal/runtime/maps.ctrlGroup.matchEmpty&#10;10.0ms (5.0%)</title>
+<rect class="box" x="877.60" y="160.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(158,52%,76%)"/>
+<text class="box-label" x="881.60" y="174.00">matchEmpty</text>
+</g>
+<g><title>internal/runtime/maps.ctrlGroupMatchEmpty&#10;10.0ms (5.0%)</title>
+<rect class="box" x="877.60" y="138.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(205,52%,76%)"/>
+<text class="box-label" x="881.60" y="152.00">ctrlGroup…</text>
+</g>
+<g><title>runtime.mapIterNext&#10;10.0ms (5.0%)</title>
+<rect class="box" x="1032.80" y="182.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(224,18%,74%)"/>
+<text class="box-label" x="1036.80" y="196.00">mapIterNe…</text>
+</g>
+<g><title>algo/lsh.GenerateDataset&#10;10.0ms (5.0%)</title>
+<rect class="box" x="1188.00" y="226.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(346,52%,76%)"/>
+<text class="box-label" x="1192.00" y="240.00">GenerateD…</text>
+</g>
+<g><title>runtime.makeslice&#10;10.0ms (5.0%)</title>
+<rect class="box" x="1188.00" y="204.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(225,18%,74%)"/>
+<text class="box-label" x="1192.00" y="218.00">makeslice</text>
+</g>
+<g><title>runtime.mallocgc&#10;10.0ms (5.0%)</title>
+<rect class="box" x="1188.00" y="182.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(218,18%,74%)"/>
+<text class="box-label" x="1192.00" y="196.00">mallocgc</text>
+</g>
+<g><title>runtime.mallocgcLarge&#10;10.0ms (5.0%)</title>
+<rect class="box" x="1188.00" y="160.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(211,18%,74%)"/>
+<text class="box-label" x="1192.00" y="174.00">mallocgcL…</text>
+</g>
+<g><title>runtime.profilealloc&#10;10.0ms (5.0%)</title>
+<rect class="box" x="1188.00" y="138.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(222,18%,74%)"/>
+<text class="box-label" x="1192.00" y="152.00">profileal…</text>
+</g>
+<g><title>runtime.mProf_Malloc&#10;10.0ms (5.0%)</title>
+<rect class="box" x="1188.00" y="116.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(215,18%,74%)"/>
+<text class="box-label" x="1192.00" y="130.00">mProf_Mal…</text>
+</g>
+<g><title>runtime.stkbucket&#10;10.0ms (5.0%)</title>
+<rect class="box" x="1188.00" y="94.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(226,18%,74%)"/>
+<text class="box-label" x="1192.00" y="108.00">stkbucket</text>
+</g>
+<g><title>internal/runtime/atomic.(*UnsafePointer).Load&#10;10.0ms (5.0%)</title>
+<rect class="box" x="1188.00" y="72.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(315,52%,76%)"/>
+<text class="box-label" x="1192.00" y="86.00">Load</text>
+</g>
+<g><title>runtime.gcBgMarkWorker&#10;40.0ms (20.0%)</title>
+<rect class="box" x="1265.60" y="314.00" width="310.40" height="20" rx="3" ry="3" fill="hsl(212,18%,74%)"/>
+<text class="box-label" x="1269.60" y="328.00">runtime.gcBgMarkWorker</text>
+</g>
+<g><title>runtime.systemstack&#10;40.0ms (20.0%)</title>
+<rect class="box" x="1265.60" y="292.00" width="310.40" height="20" rx="3" ry="3" fill="hsl(212,18%,74%)"/>
+<text class="box-label" x="1269.60" y="306.00">runtime.systemstack</text>
+</g>
+<g><title>runtime.gcBgMarkWorker.func2&#10;40.0ms (20.0%)</title>
+<rect class="box" x="1265.60" y="270.00" width="310.40" height="20" rx="3" ry="3" fill="hsl(223,18%,74%)"/>
+<text class="box-label" x="1269.60" y="284.00">runtime.gcBgMarkWorker.func2</text>
+</g>
+<g><title>runtime.gcDrainMarkWorkerIdle&#10;20.0ms (10.0%)</title>
+<rect class="box" x="1265.60" y="248.00" width="155.20" height="20" rx="3" ry="3" fill="hsl(216,18%,74%)"/>
+<text class="box-label" x="1269.60" y="262.00">gcDrainMarkWorkerIdle</text>
+</g>
+<g><title>runtime.gcDrain&#10;20.0ms (10.0%)</title>
+<rect class="box" x="1265.60" y="226.00" width="155.20" height="20" rx="3" ry="3" fill="hsl(227,18%,74%)"/>
+<text class="box-label" x="1269.60" y="240.00">runtime.gcDrain</text>
+</g>
+<g><title>runtime.scanobject&#10;20.0ms (10.0%)</title>
+<rect class="box" x="1265.60" y="204.00" width="155.20" height="20" rx="3" ry="3" fill="hsl(223,18%,74%)"/>
+<text class="box-label" x="1269.60" y="218.00">runtime.scanobject</text>
+</g>
+<g><title>runtime.greyobject&#10;20.0ms (10.0%)</title>
+<rect class="box" x="1265.60" y="182.00" width="155.20" height="20" rx="3" ry="3" fill="hsl(216,18%,74%)"/>
+<text class="box-label" x="1269.60" y="196.00">runtime.greyobject</text>
+</g>
+<g><title>runtime.markBits.setMarked&#10;10.0ms (5.0%)</title>
+<rect class="box" x="1265.60" y="160.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(227,18%,74%)"/>
+<text class="box-label" x="1269.60" y="174.00">setMarked</text>
+</g>
+<g><title>runtime.gcDrainMarkWorkerDedicated&#10;20.0ms (10.0%)</title>
+<rect class="box" x="1420.80" y="248.00" width="155.20" height="20" rx="3" ry="3" fill="hsl(220,18%,74%)"/>
+<text class="box-label" x="1424.80" y="262.00">gcDrainMarkWorkerDed…</text>
+</g>
+<g><title>runtime.gcDrain&#10;20.0ms (10.0%)</title>
+<rect class="box" x="1420.80" y="226.00" width="155.20" height="20" rx="3" ry="3" fill="hsl(227,18%,74%)"/>
+<text class="box-label" x="1424.80" y="240.00">runtime.gcDrain</text>
+</g>
+<g><title>runtime.scanobject&#10;20.0ms (10.0%)</title>
+<rect class="box" x="1420.80" y="204.00" width="155.20" height="20" rx="3" ry="3" fill="hsl(223,18%,74%)"/>
+<text class="box-label" x="1424.80" y="218.00">runtime.scanobject</text>
+</g>
+<g><title>runtime.typePointers.next&#10;10.0ms (5.0%)</title>
+<rect class="box" x="1420.80" y="182.00" width="77.60" height="20" rx="3" ry="3" fill="hsl(213,18%,74%)"/>
+<text class="box-label" x="1424.80" y="196.00">next</text>
+</g>
+<text class="subtitle" x="24" y="356">Generated from go tool pprof flamegraph data</text>
+</svg>

@@ -1,4 +1,8 @@
-profiles/*.prof
-profiles/*.out
-results/
+lab1/profiles/*.prof
+lab1/profiles/*.out
+lab1/results/
+lab1/scripts/__pycache__/
+lab1/figures/*.svg.png
+lab1/figures/*.html.png
+.DS_Store
 .venv/

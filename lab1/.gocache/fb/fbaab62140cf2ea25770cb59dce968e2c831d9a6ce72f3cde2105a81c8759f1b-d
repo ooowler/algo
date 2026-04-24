@@ -1,0 +1,5 @@
+./perfecthash.go
+./bench_growth_test.go
+./bench_scale_test.go
+./metrics_test.go
+./perfecthash_test.go

@@ -1,0 +1,275 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="366" viewBox="0 0 1600 366" role="img" aria-label="perfecthash flamegraph">
+<style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;}.title{font-size:24px;font-weight:700;fill:#222;}.subtitle{font-size:13px;fill:#5d5d5d;}.box-label{font-size:12px;fill:#222;pointer-events:none;}.box{stroke:#ffffff;stroke-width:1;}</style>
+<rect x="0" y="0" width="1600" height="366" fill="#fffaf5"/>
+<text class="title" x="24" y="34">perfecthash flamegraph</text>
+<text class="subtitle" x="24" y="56">pprof static flamegraph • total samples 1.01s • widest path is the hottest path</text>
+<g><title>program&#10;1.01s (100.0%)</title>
+<rect class="box" x="24.00" y="314.00" width="1552.00" height="20" rx="3" ry="3" fill="hsl(38,82%,62%)"/>
+<text class="box-label" x="28.00" y="328.00">program</text>
+</g>
+<g><title>runtime.main&#10;830.0ms (82.2%)</title>
+<rect class="box" x="24.00" y="292.00" width="1275.41" height="20" rx="3" ry="3" fill="hsl(24,84%,59%)"/>
+<text class="box-label" x="28.00" y="306.00">runtime.main</text>
+</g>
+<g><title>main.main&#10;830.0ms (82.2%)</title>
+<rect class="box" x="24.00" y="270.00" width="1275.41" height="20" rx="3" ry="3" fill="hsl(12,78%,69%)"/>
+<text class="box-label" x="28.00" y="284.00">main.main</text>
+</g>
+<g><title>main.writeCPU&#10;830.0ms (82.2%)</title>
+<rect class="box" x="24.00" y="248.00" width="1275.41" height="20" rx="3" ry="3" fill="hsl(19,79%,72%)"/>
+<text class="box-label" x="28.00" y="262.00">main.writeCPU</text>
+</g>
+<g><title>main.preparePerfectHash.func1&#10;830.0ms (82.2%)</title>
+<rect class="box" x="24.00" y="226.00" width="1275.41" height="20" rx="3" ry="3" fill="hsl(44,76%,63%)"/>
+<text class="box-label" x="28.00" y="240.00">main.preparePerfectHash.func1</text>
+</g>
+<g><title>algo/perfecthash.Build&#10;130.0ms (12.9%)</title>
+<rect class="box" x="24.00" y="204.00" width="199.76" height="20" rx="3" ry="3" fill="hsl(40,85%,70%)"/>
+<text class="box-label" x="28.00" y="218.00">perfecthash.Build</text>
+</g>
+<g><title>algo/perfecthash.tryBuild&#10;120.0ms (11.9%)</title>
+<rect class="box" x="24.00" y="182.00" width="184.40" height="20" rx="3" ry="3" fill="hsl(24,83%,71%)"/>
+<text class="box-label" x="28.00" y="196.00">perfecthash.tryBuild</text>
+</g>
+<g><title>algo/perfecthash.placeBucket&#10;40.0ms (4.0%)</title>
+<rect class="box" x="24.00" y="160.00" width="61.47" height="20" rx="3" ry="3" fill="hsl(23,76%,62%)"/>
+<text class="box-label" x="28.00" y="174.00">placeB…</text>
+</g>
+<g><title>algo/perfecthash.slotHash&#10;10.0ms (1.0%)</title>
+<rect class="box" x="24.00" y="138.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(54,73%,72%)"/>
+</g>
+<g><title>algo/perfecthash.mix&#10;10.0ms (1.0%)</title>
+<rect class="box" x="24.00" y="116.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(35,77%,58%)"/>
+</g>
+<g><title>runtime.makeslice&#10;10.0ms (1.0%)</title>
+<rect class="box" x="85.47" y="160.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(18,73%,69%)"/>
+</g>
+<g><title>runtime.mallocgc&#10;10.0ms (1.0%)</title>
+<rect class="box" x="85.47" y="138.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(31,75%,68%)"/>
+</g>
+<g><title>runtime.mallocgcLarge&#10;10.0ms (1.0%)</title>
+<rect class="box" x="85.47" y="116.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(55,86%,68%)"/>
+</g>
+<g><title>runtime.memclrNoHeapPointersChunked&#10;10.0ms (1.0%)</title>
+<rect class="box" x="85.47" y="94.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(24,86%,64%)"/>
+</g>
+<g><title>runtime.memclrNoHeapPointers&#10;10.0ms (1.0%)</title>
+<rect class="box" x="85.47" y="72.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(9,72%,73%)"/>
+</g>
+<g><title>sort.Slice&#10;10.0ms (1.0%)</title>
+<rect class="box" x="100.83" y="160.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(44,89%,62%)"/>
+</g>
+<g><title>sort.pdqsort_func&#10;10.0ms (1.0%)</title>
+<rect class="box" x="100.83" y="138.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(25,83%,68%)"/>
+</g>
+<g><title>sort.pdqsort_func&#10;10.0ms (1.0%)</title>
+<rect class="box" x="100.83" y="116.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(25,83%,68%)"/>
+</g>
+<g><title>sort.partitionEqual_func&#10;10.0ms (1.0%)</title>
+<rect class="box" x="100.83" y="94.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(13,89%,65%)"/>
+</g>
+<g><title>algo/perfecthash.hashKey&#10;10.0ms (1.0%)</title>
+<rect class="box" x="208.40" y="182.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(18,80%,71%)"/>
+</g>
+<g><title>algo/perfecthash.(*Index).Get&#10;670.0ms (66.3%)</title>
+<rect class="box" x="223.76" y="204.00" width="1029.54" height="20" rx="3" ry="3" fill="hsl(53,76%,66%)"/>
+<text class="box-label" x="227.76" y="218.00">perfecthash.(*Index).Get</text>
+</g>
+<g><title>algo/perfecthash.hashKey&#10;50.0ms (5.0%)</title>
+<rect class="box" x="223.76" y="182.00" width="76.83" height="20" rx="3" ry="3" fill="hsl(18,80%,71%)"/>
+<text class="box-label" x="227.76" y="196.00">hashKey</text>
+</g>
+<g><title>runtime.memequal&#10;30.0ms (3.0%)</title>
+<rect class="box" x="300.59" y="182.00" width="46.10" height="20" rx="3" ry="3" fill="hsl(50,76%,69%)"/>
+<text class="box-label" x="304.59" y="196.00">meme…</text>
+</g>
+<g><title>runtime.gcBgMarkWorker&#10;80.0ms (7.9%)</title>
+<rect class="box" x="1299.41" y="292.00" width="122.93" height="20" rx="3" ry="3" fill="hsl(40,87%,62%)"/>
+<text class="box-label" x="1303.41" y="306.00">gcBgMarkWorker</text>
+</g>
+<g><title>runtime.systemstack&#10;80.0ms (7.9%)</title>
+<rect class="box" x="1299.41" y="270.00" width="122.93" height="20" rx="3" ry="3" fill="hsl(40,73%,73%)"/>
+<text class="box-label" x="1303.41" y="284.00">systemstack</text>
+</g>
+<g><title>runtime.gcBgMarkWorker.func2&#10;80.0ms (7.9%)</title>
+<rect class="box" x="1299.41" y="248.00" width="122.93" height="20" rx="3" ry="3" fill="hsl(34,77%,65%)"/>
+<text class="box-label" x="1303.41" y="262.00">func2</text>
+</g>
+<g><title>runtime.gcDrainMarkWorkerDedicated&#10;70.0ms (6.9%)</title>
+<rect class="box" x="1299.41" y="226.00" width="107.56" height="20" rx="3" ry="3" fill="hsl(55,73%,64%)"/>
+<text class="box-label" x="1303.41" y="240.00">gcDrainMarkWo…</text>
+</g>
+<g><title>runtime.gcDrain&#10;70.0ms (6.9%)</title>
+<rect class="box" x="1299.41" y="204.00" width="107.56" height="20" rx="3" ry="3" fill="hsl(40,88%,61%)"/>
+<text class="box-label" x="1303.41" y="218.00">gcDrain</text>
+</g>
+<g><title>runtime.scanobject&#10;70.0ms (6.9%)</title>
+<rect class="box" x="1299.41" y="182.00" width="107.56" height="20" rx="3" ry="3" fill="hsl(37,82%,59%)"/>
+<text class="box-label" x="1303.41" y="196.00">scanobject</text>
+</g>
+<g><title>runtime.findObject&#10;20.0ms (2.0%)</title>
+<rect class="box" x="1299.41" y="160.00" width="30.73" height="20" rx="3" ry="3" fill="hsl(38,73%,70%)"/>
+</g>
+<g><title>runtime.greyobject&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1330.14" y="160.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(49,74%,70%)"/>
+</g>
+<g><title>runtime.markBits.isMarked&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1330.14" y="138.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(37,84%,71%)"/>
+</g>
+<g><title>runtime.typePointers.next&#10;30.0ms (3.0%)</title>
+<rect class="box" x="1345.50" y="160.00" width="46.10" height="20" rx="3" ry="3" fill="hsl(48,74%,58%)"/>
+<text class="box-label" x="1349.50" y="174.00">next</text>
+</g>
+<g><title>runtime.gcDrainMarkWorkerIdle&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1406.97" y="226.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(34,81%,68%)"/>
+</g>
+<g><title>runtime.gcDrain&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1406.97" y="204.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(40,88%,61%)"/>
+</g>
+<g><title>runtime.scanobject&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1406.97" y="182.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(37,82%,59%)"/>
+</g>
+<g><title>runtime.typePointers.next&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1406.97" y="160.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(48,74%,58%)"/>
+</g>
+<g><title>runtime.morestack&#10;50.0ms (5.0%)</title>
+<rect class="box" x="1422.34" y="292.00" width="76.83" height="20" rx="3" ry="3" fill="hsl(17,74%,60%)"/>
+<text class="box-label" x="1426.34" y="306.00">morestack</text>
+</g>
+<g><title>runtime.newstack&#10;50.0ms (5.0%)</title>
+<rect class="box" x="1422.34" y="270.00" width="76.83" height="20" rx="3" ry="3" fill="hsl(55,88%,67%)"/>
+<text class="box-label" x="1426.34" y="284.00">newstack</text>
+</g>
+<g><title>runtime.gopreempt_m&#10;50.0ms (5.0%)</title>
+<rect class="box" x="1422.34" y="248.00" width="76.83" height="20" rx="3" ry="3" fill="hsl(9,89%,66%)"/>
+<text class="box-label" x="1426.34" y="262.00">gopreemp…</text>
+</g>
+<g><title>runtime.goschedImpl&#10;50.0ms (5.0%)</title>
+<rect class="box" x="1422.34" y="226.00" width="76.83" height="20" rx="3" ry="3" fill="hsl(50,86%,59%)"/>
+<text class="box-label" x="1426.34" y="240.00">goschedI…</text>
+</g>
+<g><title>runtime.wakep&#10;50.0ms (5.0%)</title>
+<rect class="box" x="1422.34" y="204.00" width="76.83" height="20" rx="3" ry="3" fill="hsl(30,83%,59%)"/>
+<text class="box-label" x="1426.34" y="218.00">wakep</text>
+</g>
+<g><title>runtime.startm&#10;50.0ms (5.0%)</title>
+<rect class="box" x="1422.34" y="182.00" width="76.83" height="20" rx="3" ry="3" fill="hsl(42,78%,66%)"/>
+<text class="box-label" x="1426.34" y="196.00">startm</text>
+</g>
+<g><title>runtime.notewakeup&#10;50.0ms (5.0%)</title>
+<rect class="box" x="1422.34" y="160.00" width="76.83" height="20" rx="3" ry="3" fill="hsl(9,76%,73%)"/>
+<text class="box-label" x="1426.34" y="174.00">notewake…</text>
+</g>
+<g><title>runtime.semawakeup&#10;50.0ms (5.0%)</title>
+<rect class="box" x="1422.34" y="138.00" width="76.83" height="20" rx="3" ry="3" fill="hsl(26,77%,60%)"/>
+<text class="box-label" x="1426.34" y="152.00">semawake…</text>
+</g>
+<g><title>runtime.pthread_cond_signal&#10;50.0ms (5.0%)</title>
+<rect class="box" x="1422.34" y="116.00" width="76.83" height="20" rx="3" ry="3" fill="hsl(30,84%,69%)"/>
+<text class="box-label" x="1426.34" y="130.00">pthread_…</text>
+</g>
+<g><title>runtime.mcall&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1499.17" y="292.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(54,88%,59%)"/>
+</g>
+<g><title>runtime.park_m&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1499.17" y="270.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(42,80%,60%)"/>
+</g>
+<g><title>runtime.schedule&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1499.17" y="248.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(46,79%,69%)"/>
+</g>
+<g><title>runtime.findRunnable&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1499.17" y="226.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(58,75%,70%)"/>
+</g>
+<g><title>runtime.stopm&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1499.17" y="204.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(18,89%,58%)"/>
+</g>
+<g><title>runtime.mPark&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1499.17" y="182.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(53,74%,61%)"/>
+</g>
+<g><title>runtime.notesleep&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1499.17" y="160.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(18,74%,66%)"/>
+</g>
+<g><title>runtime.semasleep&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1499.17" y="138.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(49,77%,58%)"/>
+</g>
+<g><title>runtime.pthread_cond_wait&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1499.17" y="116.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(36,83%,72%)"/>
+</g>
+<g><title>runtime.systemstack&#10;40.0ms (4.0%)</title>
+<rect class="box" x="1514.53" y="292.00" width="61.47" height="20" rx="3" ry="3" fill="hsl(40,73%,73%)"/>
+<text class="box-label" x="1518.53" y="306.00">system…</text>
+</g>
+<g><title>runtime.gcBgMarkWorker.func2&#10;30.0ms (3.0%)</title>
+<rect class="box" x="1514.53" y="270.00" width="46.10" height="20" rx="3" ry="3" fill="hsl(34,77%,65%)"/>
+<text class="box-label" x="1518.53" y="284.00">func2</text>
+</g>
+<g><title>runtime.gcDrainMarkWorkerDedicated&#10;30.0ms (3.0%)</title>
+<rect class="box" x="1514.53" y="248.00" width="46.10" height="20" rx="3" ry="3" fill="hsl(55,73%,64%)"/>
+<text class="box-label" x="1518.53" y="262.00">gcDr…</text>
+</g>
+<g><title>runtime.gcDrain&#10;30.0ms (3.0%)</title>
+<rect class="box" x="1514.53" y="226.00" width="46.10" height="20" rx="3" ry="3" fill="hsl(40,88%,61%)"/>
+<text class="box-label" x="1518.53" y="240.00">gcDr…</text>
+</g>
+<g><title>runtime.gcFlushBgCredit&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1514.53" y="204.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(23,74%,66%)"/>
+</g>
+<g><title>runtime.ready&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1514.53" y="182.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(31,89%,64%)"/>
+</g>
+<g><title>runtime.wakep&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1514.53" y="160.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(30,83%,59%)"/>
+</g>
+<g><title>runtime.startm&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1514.53" y="138.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(42,78%,66%)"/>
+</g>
+<g><title>runtime.notewakeup&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1514.53" y="116.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(9,76%,73%)"/>
+</g>
+<g><title>runtime.semawakeup&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1514.53" y="94.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(26,77%,60%)"/>
+</g>
+<g><title>runtime.pthread_cond_signal&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1514.53" y="72.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(30,84%,69%)"/>
+</g>
+<g><title>runtime.(*gcWork).balance&#10;20.0ms (2.0%)</title>
+<rect class="box" x="1529.90" y="204.00" width="30.73" height="20" rx="3" ry="3" fill="hsl(10,89%,61%)"/>
+</g>
+<g><title>runtime.(*gcControllerState).enlistWorker&#10;20.0ms (2.0%)</title>
+<rect class="box" x="1529.90" y="182.00" width="30.73" height="20" rx="3" ry="3" fill="hsl(50,75%,66%)"/>
+</g>
+<g><title>runtime.preemptone&#10;20.0ms (2.0%)</title>
+<rect class="box" x="1529.90" y="160.00" width="30.73" height="20" rx="3" ry="3" fill="hsl(31,82%,60%)"/>
+</g>
+<g><title>runtime.preemptM&#10;20.0ms (2.0%)</title>
+<rect class="box" x="1529.90" y="138.00" width="30.73" height="20" rx="3" ry="3" fill="hsl(27,75%,65%)"/>
+</g>
+<g><title>runtime.signalM&#10;20.0ms (2.0%)</title>
+<rect class="box" x="1529.90" y="116.00" width="30.73" height="20" rx="3" ry="3" fill="hsl(43,78%,58%)"/>
+</g>
+<g><title>runtime.pthread_kill&#10;20.0ms (2.0%)</title>
+<rect class="box" x="1529.90" y="94.00" width="30.73" height="20" rx="3" ry="3" fill="hsl(26,89%,63%)"/>
+</g>
+<g><title>runtime.gcMarkDone.forEachP.func5&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1560.63" y="270.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(20,76%,63%)"/>
+</g>
+<g><title>runtime.forEachPInternal&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1560.63" y="248.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(36,86%,59%)"/>
+</g>
+<g><title>runtime.preemptall&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1560.63" y="226.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(16,86%,67%)"/>
+</g>
+<g><title>runtime.preemptone&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1560.63" y="204.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(31,82%,60%)"/>
+</g>
+<g><title>runtime.preemptM&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1560.63" y="182.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(27,75%,65%)"/>
+</g>
+<g><title>runtime.signalM&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1560.63" y="160.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(43,78%,58%)"/>
+</g>
+<g><title>runtime.pthread_kill&#10;10.0ms (1.0%)</title>
+<rect class="box" x="1560.63" y="138.00" width="15.37" height="20" rx="3" ry="3" fill="hsl(26,89%,63%)"/>
+</g>
+<text class="subtitle" x="24" y="356">Generated from go tool pprof flamegraph data</text>
+</svg>

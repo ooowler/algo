@@ -1,0 +1,613 @@
+{
+  "demo": false,
+  "rows": [
+    {
+      "name": "LSH nbits=32",
+      "recall": 0.032563,
+      "build_s": 0.02568108300329186,
+      "search_ms_per_q": 0.12956488088006154,
+      "search_ms_stdev": 0.015931357956378178,
+      "index_bytes": 4016477
+    },
+    {
+      "name": "LSH nbits=64",
+      "recall": 0.086508,
+      "build_s": 0.2146471250016475,
+      "search_ms_per_q": 0.12847579580004093,
+      "search_ms_stdev": 0.01996779885384572,
+      "index_bytes": 8032861
+    },
+    {
+      "name": "LSH nbits=96",
+      "recall": 0.140248,
+      "build_s": 0.07689745799871162,
+      "search_ms_per_q": 0.5186170441398281,
+      "search_ms_stdev": 0.020662421152715375,
+      "index_bytes": 12049245
+    },
+    {
+      "name": "LSH nbits=128",
+      "recall": 0.18379,
+      "build_s": 0.10957170800247695,
+      "search_ms_per_q": 0.10757591834000778,
+      "search_ms_stdev": 0.008416842041701003,
+      "index_bytes": 16065629
+    },
+    {
+      "name": "LSH nbits=192",
+      "recall": 0.257037,
+      "build_s": 0.13704954099375755,
+      "search_ms_per_q": 0.4180043458400178,
+      "search_ms_stdev": 0.03992081165572181,
+      "index_bytes": 24098397
+    },
+    {
+      "name": "LSH nbits=256",
+      "recall": 0.30564,
+      "build_s": 0.23391279199859127,
+      "search_ms_per_q": 0.12573984665970783,
+      "search_ms_stdev": 0.010777147583330055,
+      "index_bytes": 32131165
+    },
+    {
+      "name": "HNSW M=16 efc=40 efs=32",
+      "recall": 0.638459,
+      "build_s": 14.120422583990148,
+      "search_ms_per_q": 0.010869899159879425,
+      "search_ms_stdev": 0.0008940774903544298,
+      "index_bytes": 656258362
+    },
+    {
+      "name": "HNSW M=16 efc=40 efs=64",
+      "recall": 0.788455,
+      "build_s": 14.120422583990148,
+      "search_ms_per_q": 0.017280739159905353,
+      "search_ms_stdev": 0.0010278404027607236,
+      "index_bytes": 656258362
+    },
+    {
+      "name": "HNSW M=16 efc=40 efs=128",
+      "recall": 0.897619,
+      "build_s": 14.120422583990148,
+      "search_ms_per_q": 0.030541174139652866,
+      "search_ms_stdev": 0.0010316319321207051,
+      "index_bytes": 656258362
+    },
+    {
+      "name": "HNSW M=16 efc=40 efs=256",
+      "recall": 0.958238,
+      "build_s": 14.120422583990148,
+      "search_ms_per_q": 0.0578240282999468,
+      "search_ms_stdev": 0.0029251281037963686,
+      "index_bytes": 656258362
+    },
+    {
+      "name": "HNSW M=16 efc=200 efs=32",
+      "recall": 0.721783,
+      "build_s": 63.180346625013044,
+      "search_ms_per_q": 0.012957960019994063,
+      "search_ms_stdev": 0.001086709308013404,
+      "index_bytes": 656258362
+    },
+    {
+      "name": "HNSW M=16 efc=200 efs=64",
+      "recall": 0.86956,
+      "build_s": 63.180346625013044,
+      "search_ms_per_q": 0.023992766699811912,
+      "search_ms_stdev": 0.003915920465743412,
+      "index_bytes": 656258362
+    },
+    {
+      "name": "HNSW M=16 efc=200 efs=128",
+      "recall": 0.956246,
+      "build_s": 63.180346625013044,
+      "search_ms_per_q": 0.03764065332012251,
+      "search_ms_stdev": 0.0013673405512212293,
+      "index_bytes": 656258362
+    },
+    {
+      "name": "HNSW M=16 efc=200 efs=256",
+      "recall": 0.989281,
+      "build_s": 63.180346625013044,
+      "search_ms_per_q": 0.07124710083997343,
+      "search_ms_stdev": 0.003945296009691989,
+      "index_bytes": 656258362
+    },
+    {
+      "name": "HNSW M=32 efc=40 efs=32",
+      "recall": 0.804527,
+      "build_s": 24.641150249997736,
+      "search_ms_per_q": 0.021499494159943424,
+      "search_ms_stdev": 0.0018904623154440414,
+      "index_bytes": 784129506
+    },
+    {
+      "name": "HNSW M=32 efc=40 efs=64",
+      "recall": 0.912485,
+      "build_s": 24.641150249997736,
+      "search_ms_per_q": 0.029634740019682793,
+      "search_ms_stdev": 0.0038244869970000023,
+      "index_bytes": 784129506
+    },
+    {
+      "name": "HNSW M=32 efc=40 efs=128",
+      "recall": 0.96994,
+      "build_s": 24.641150249997736,
+      "search_ms_per_q": 0.04968237748020329,
+      "search_ms_stdev": 0.003012874381408631,
+      "index_bytes": 784129506
+    },
+    {
+      "name": "HNSW M=32 efc=40 efs=256",
+      "recall": 0.991882,
+      "build_s": 24.641150249997736,
+      "search_ms_per_q": 0.08789495998003985,
+      "search_ms_stdev": 0.002103166795517816,
+      "index_bytes": 784129506
+    },
+    {
+      "name": "HNSW M=32 efc=200 efs=32",
+      "recall": 0.784168,
+      "build_s": 73.70747691699944,
+      "search_ms_per_q": 0.01698081420006929,
+      "search_ms_stdev": 0.0007202835668761359,
+      "index_bytes": 784129506
+    },
+    {
+      "name": "HNSW M=32 efc=200 efs=64",
+      "recall": 0.910754,
+      "build_s": 73.70747691699944,
+      "search_ms_per_q": 0.02714766500022961,
+      "search_ms_stdev": 0.0010562773414629376,
+      "index_bytes": 784129506
+    },
+    {
+      "name": "HNSW M=32 efc=200 efs=128",
+      "recall": 0.974471,
+      "build_s": 73.70747691699944,
+      "search_ms_per_q": 0.046035513340320904,
+      "search_ms_stdev": 0.0017068217923449003,
+      "index_bytes": 784129506
+    },
+    {
+      "name": "HNSW M=32 efc=200 efs=256",
+      "recall": 0.994641,
+      "build_s": 73.70747691699944,
+      "search_ms_per_q": 0.08555589415977011,
+      "search_ms_stdev": 0.004499356512522606,
+      "index_bytes": 784129506
+    },
+    {
+      "name": "IVFPQ nlist=256 m=8 nprobe=1",
+      "recall": 0.305682,
+      "build_s": 5.009698333000415,
+      "search_ms_per_q": 0.004780009159876499,
+      "search_ms_stdev": 0.00023867453387889153,
+      "index_bytes": 16264372
+    },
+    {
+      "name": "IVFPQ nlist=256 m=8 nprobe=4",
+      "recall": 0.426943,
+      "build_s": 5.009698333000415,
+      "search_ms_per_q": 0.011630115019506775,
+      "search_ms_stdev": 0.0015380372124499482,
+      "index_bytes": 16264372
+    },
+    {
+      "name": "IVFPQ nlist=256 m=8 nprobe=8",
+      "recall": 0.450212,
+      "build_s": 5.009698333000415,
+      "search_ms_per_q": 0.018919923319772353,
+      "search_ms_stdev": 0.0013550750210739755,
+      "index_bytes": 16264372
+    },
+    {
+      "name": "IVFPQ nlist=256 m=8 nprobe=16",
+      "recall": 0.457792,
+      "build_s": 5.009698333000415,
+      "search_ms_per_q": 0.028292280820314774,
+      "search_ms_stdev": 0.0012440457645692753,
+      "index_bytes": 16264372
+    },
+    {
+      "name": "IVFPQ nlist=256 m=8 nprobe=32",
+      "recall": 0.459198,
+      "build_s": 5.009698333000415,
+      "search_ms_per_q": 0.05208086998027284,
+      "search_ms_stdev": 0.0015763099710190396,
+      "index_bytes": 16264372
+    },
+    {
+      "name": "IVFPQ nlist=256 m=8 nprobe=64",
+      "recall": 0.459282,
+      "build_s": 5.009698333000415,
+      "search_ms_per_q": 0.10260658165992936,
+      "search_ms_stdev": 0.0062836313233294765,
+      "index_bytes": 16264372
+    },
+    {
+      "name": "IVFPQ nlist=256 m=16 nprobe=1",
+      "recall": 0.367917,
+      "build_s": 3.981188457997632,
+      "search_ms_per_q": 0.007401064980367664,
+      "search_ms_stdev": 0.0011686791299395276,
+      "index_bytes": 24264372
+    },
+    {
+      "name": "IVFPQ nlist=256 m=16 nprobe=4",
+      "recall": 0.565994,
+      "build_s": 3.981188457997632,
+      "search_ms_per_q": 0.015359620859962888,
+      "search_ms_stdev": 0.0007025792787351582,
+      "index_bytes": 24264372
+    },
+    {
+      "name": "IVFPQ nlist=256 m=16 nprobe=8",
+      "recall": 0.610928,
+      "build_s": 3.981188457997632,
+      "search_ms_per_q": 0.027943324140214828,
+      "search_ms_stdev": 0.0013025654426974112,
+      "index_bytes": 24264372
+    },
+    {
+      "name": "IVFPQ nlist=256 m=16 nprobe=16",
+      "recall": 0.62849,
+      "build_s": 3.981188457997632,
+      "search_ms_per_q": 0.04490814167977078,
+      "search_ms_stdev": 0.0016271140683321212,
+      "index_bytes": 24264372
+    },
+    {
+      "name": "IVFPQ nlist=256 m=16 nprobe=32",
+      "recall": 0.63264,
+      "build_s": 3.981188457997632,
+      "search_ms_per_q": 0.08521304829977452,
+      "search_ms_stdev": 0.006300789538153241,
+      "index_bytes": 24264372
+    },
+    {
+      "name": "IVFPQ nlist=256 m=16 nprobe=64",
+      "recall": 0.633086,
+      "build_s": 3.981188457997632,
+      "search_ms_per_q": 0.15475137416040524,
+      "search_ms_stdev": 0.004425689032317759,
+      "index_bytes": 24264372
+    },
+    {
+      "name": "IVFPQ nlist=256 m=32 nprobe=1",
+      "recall": 0.400861,
+      "build_s": 4.922164500007057,
+      "search_ms_per_q": 0.010092415839899331,
+      "search_ms_stdev": 0.001475945692428281,
+      "index_bytes": 40264372
+    },
+    {
+      "name": "IVFPQ nlist=256 m=32 nprobe=4",
+      "recall": 0.66697,
+      "build_s": 4.922164500007057,
+      "search_ms_per_q": 0.024580979179881977,
+      "search_ms_stdev": 0.0022659951047546705,
+      "index_bytes": 40264372
+    },
+    {
+      "name": "IVFPQ nlist=256 m=32 nprobe=8",
+      "recall": 0.736603,
+      "build_s": 4.922164500007057,
+      "search_ms_per_q": 0.041873038320336495,
+      "search_ms_stdev": 0.002873593781316927,
+      "index_bytes": 40264372
+    },
+    {
+      "name": "IVFPQ nlist=256 m=32 nprobe=16",
+      "recall": 0.766013,
+      "build_s": 4.922164500007057,
+      "search_ms_per_q": 0.074828446659958,
+      "search_ms_stdev": 0.002420471996050384,
+      "index_bytes": 40264372
+    },
+    {
+      "name": "IVFPQ nlist=256 m=32 nprobe=32",
+      "recall": 0.773686,
+      "build_s": 4.922164500007057,
+      "search_ms_per_q": 0.14148935834004078,
+      "search_ms_stdev": 0.007837412216633059,
+      "index_bytes": 40264372
+    },
+    {
+      "name": "IVFPQ nlist=256 m=32 nprobe=64",
+      "recall": 0.774639,
+      "build_s": 4.922164500007057,
+      "search_ms_per_q": 0.2682908441798645,
+      "search_ms_stdev": 0.01030077368140982,
+      "index_bytes": 40264372
+    },
+    {
+      "name": "IVFPQ nlist=1024 m=8 nprobe=1",
+      "recall": 0.246598,
+      "build_s": 6.7645133750047535,
+      "search_ms_per_q": 0.003340653359773569,
+      "search_ms_stdev": 0.0001467993338188511,
+      "index_bytes": 16663732
+    },
+    {
+      "name": "IVFPQ nlist=1024 m=8 nprobe=4",
+      "recall": 0.40049,
+      "build_s": 6.7645133750047535,
+      "search_ms_per_q": 0.005295679980190471,
+      "search_ms_stdev": 0.0014662558577066924,
+      "index_bytes": 16663732
+    },
+    {
+      "name": "IVFPQ nlist=1024 m=8 nprobe=8",
+      "recall": 0.443531,
+      "build_s": 6.7645133750047535,
+      "search_ms_per_q": 0.00842831500020111,
+      "search_ms_stdev": 0.002295537965229851,
+      "index_bytes": 16663732
+    },
+    {
+      "name": "IVFPQ nlist=1024 m=8 nprobe=16",
+      "recall": 0.464998,
+      "build_s": 6.7645133750047535,
+      "search_ms_per_q": 0.011255451660254039,
+      "search_ms_stdev": 0.0009672556089990095,
+      "index_bytes": 16663732
+    },
+    {
+      "name": "IVFPQ nlist=1024 m=8 nprobe=32",
+      "recall": 0.473006,
+      "build_s": 6.7645133750047535,
+      "search_ms_per_q": 0.01719692336017033,
+      "search_ms_stdev": 0.0010670106418203896,
+      "index_bytes": 16663732
+    },
+    {
+      "name": "IVFPQ nlist=1024 m=8 nprobe=64",
+      "recall": 0.4749,
+      "build_s": 6.7645133750047535,
+      "search_ms_per_q": 0.03019918581994716,
+      "search_ms_stdev": 0.0019816029498398993,
+      "index_bytes": 16663732
+    },
+    {
+      "name": "IVFPQ nlist=1024 m=16 nprobe=1",
+      "recall": 0.273962,
+      "build_s": 5.422357249990455,
+      "search_ms_per_q": 0.005072877460042946,
+      "search_ms_stdev": 0.00083495952600059,
+      "index_bytes": 24663732
+    },
+    {
+      "name": "IVFPQ nlist=1024 m=16 nprobe=4",
+      "recall": 0.500102,
+      "build_s": 5.422357249990455,
+      "search_ms_per_q": 0.007505979179695714,
+      "search_ms_stdev": 0.0003499809609774332,
+      "index_bytes": 24663732
+    },
+    {
+      "name": "IVFPQ nlist=1024 m=16 nprobe=8",
+      "recall": 0.576722,
+      "build_s": 5.422357249990455,
+      "search_ms_per_q": 0.010317986639565787,
+      "search_ms_stdev": 0.0006392975634399323,
+      "index_bytes": 24663732
+    },
+    {
+      "name": "IVFPQ nlist=1024 m=16 nprobe=16",
+      "recall": 0.619792,
+      "build_s": 5.422357249990455,
+      "search_ms_per_q": 0.01635323415946914,
+      "search_ms_stdev": 0.0015763188520491883,
+      "index_bytes": 24663732
+    },
+    {
+      "name": "IVFPQ nlist=1024 m=16 nprobe=32",
+      "recall": 0.638697,
+      "build_s": 5.422357249990455,
+      "search_ms_per_q": 0.02921287831995869,
+      "search_ms_stdev": 0.005394797910846118,
+      "index_bytes": 24663732
+    },
+    {
+      "name": "IVFPQ nlist=1024 m=16 nprobe=64",
+      "recall": 0.644536,
+      "build_s": 5.422357249990455,
+      "search_ms_per_q": 0.05393022915959591,
+      "search_ms_stdev": 0.003762970928661723,
+      "index_bytes": 24663732
+    },
+    {
+      "name": "IVFPQ nlist=1024 m=32 nprobe=1",
+      "recall": 0.285255,
+      "build_s": 6.6107844169891905,
+      "search_ms_per_q": 0.006130410000041593,
+      "search_ms_stdev": 0.0007662430631366133,
+      "index_bytes": 40663732
+    },
+    {
+      "name": "IVFPQ nlist=1024 m=32 nprobe=4",
+      "recall": 0.561031,
+      "build_s": 6.6107844169891905,
+      "search_ms_per_q": 0.011176066680054646,
+      "search_ms_stdev": 0.0013885081100513297,
+      "index_bytes": 40663732
+    },
+    {
+      "name": "IVFPQ nlist=1024 m=32 nprobe=8",
+      "recall": 0.671217,
+      "build_s": 6.6107844169891905,
+      "search_ms_per_q": 0.015088733360171316,
+      "search_ms_stdev": 0.0006174261601908756,
+      "index_bytes": 40663732
+    },
+    {
+      "name": "IVFPQ nlist=1024 m=32 nprobe=16",
+      "recall": 0.738208,
+      "build_s": 6.6107844169891905,
+      "search_ms_per_q": 0.02614693162002368,
+      "search_ms_stdev": 0.0025016436783889856,
+      "index_bytes": 40663732
+    },
+    {
+      "name": "IVFPQ nlist=1024 m=32 nprobe=32",
+      "recall": 0.769965,
+      "build_s": 6.6107844169891905,
+      "search_ms_per_q": 0.044912535840121566,
+      "search_ms_stdev": 0.0027806612655472585,
+      "index_bytes": 40663732
+    },
+    {
+      "name": "IVFPQ nlist=1024 m=32 nprobe=64",
+      "recall": 0.7809,
+      "build_s": 6.6107844169891905,
+      "search_ms_per_q": 0.09540461833938024,
+      "search_ms_stdev": 0.005527190673980575,
+      "index_bytes": 40663732
+    },
+    {
+      "name": "IVFPQ nlist=4096 m=8 nprobe=1",
+      "recall": 0.184264,
+      "build_s": 14.989474250003695,
+      "search_ms_per_q": 0.003517461679875851,
+      "search_ms_stdev": 0.00020614985833259817,
+      "index_bytes": 18261172
+    },
+    {
+      "name": "IVFPQ nlist=4096 m=8 nprobe=4",
+      "recall": 0.350987,
+      "build_s": 14.989474250003695,
+      "search_ms_per_q": 0.005029964999994263,
+      "search_ms_stdev": 0.0011732733922202095,
+      "index_bytes": 18261172
+    },
+    {
+      "name": "IVFPQ nlist=4096 m=8 nprobe=8",
+      "recall": 0.415172,
+      "build_s": 14.989474250003695,
+      "search_ms_per_q": 0.006073673339560628,
+      "search_ms_stdev": 0.0006799741115253322,
+      "index_bytes": 18261172
+    },
+    {
+      "name": "IVFPQ nlist=4096 m=8 nprobe=16",
+      "recall": 0.456542,
+      "build_s": 14.989474250003695,
+      "search_ms_per_q": 0.008673756659845822,
+      "search_ms_stdev": 0.0012083744550272738,
+      "index_bytes": 18261172
+    },
+    {
+      "name": "IVFPQ nlist=4096 m=8 nprobe=32",
+      "recall": 0.478406,
+      "build_s": 14.989474250003695,
+      "search_ms_per_q": 0.012810322500299664,
+      "search_ms_stdev": 0.002197901279623834,
+      "index_bytes": 18261172
+    },
+    {
+      "name": "IVFPQ nlist=4096 m=8 nprobe=64",
+      "recall": 0.487495,
+      "build_s": 14.989474250003695,
+      "search_ms_per_q": 0.019841920860053507,
+      "search_ms_stdev": 0.0021908375202286004,
+      "index_bytes": 18261172
+    },
+    {
+      "name": "IVFPQ nlist=4096 m=16 nprobe=1",
+      "recall": 0.190991,
+      "build_s": 13.395267375002732,
+      "search_ms_per_q": 0.0044736241397913545,
+      "search_ms_stdev": 0.0004298599584167848,
+      "index_bytes": 26261172
+    },
+    {
+      "name": "IVFPQ nlist=4096 m=16 nprobe=4",
+      "recall": 0.404264,
+      "build_s": 13.395267375002732,
+      "search_ms_per_q": 0.006622593360079918,
+      "search_ms_stdev": 0.0008517233087600181,
+      "index_bytes": 26261172
+    },
+    {
+      "name": "IVFPQ nlist=4096 m=16 nprobe=8",
+      "recall": 0.505904,
+      "build_s": 13.395267375002732,
+      "search_ms_per_q": 0.008074732499953826,
+      "search_ms_stdev": 0.0011661786580663817,
+      "index_bytes": 26261172
+    },
+    {
+      "name": "IVFPQ nlist=4096 m=16 nprobe=16",
+      "recall": 0.579996,
+      "build_s": 13.395267375002732,
+      "search_ms_per_q": 0.010973311639681925,
+      "search_ms_stdev": 0.0015573943557211864,
+      "index_bytes": 26261172
+    },
+    {
+      "name": "IVFPQ nlist=4096 m=16 nprobe=32",
+      "recall": 0.624228,
+      "build_s": 13.395267375002732,
+      "search_ms_per_q": 0.015461806660168803,
+      "search_ms_stdev": 0.0006861884458435558,
+      "index_bytes": 26261172
+    },
+    {
+      "name": "IVFPQ nlist=4096 m=16 nprobe=64",
+      "recall": 0.645548,
+      "build_s": 13.395267375002732,
+      "search_ms_per_q": 0.02738795081997523,
+      "search_ms_stdev": 0.0024225388639490656,
+      "index_bytes": 26261172
+    },
+    {
+      "name": "IVFPQ nlist=4096 m=32 nprobe=1",
+      "recall": 0.193458,
+      "build_s": 14.553759292000905,
+      "search_ms_per_q": 0.005383721659891307,
+      "search_ms_stdev": 0.0015505107232749362,
+      "index_bytes": 42261172
+    },
+    {
+      "name": "IVFPQ nlist=4096 m=32 nprobe=4",
+      "recall": 0.428585,
+      "build_s": 14.553759292000905,
+      "search_ms_per_q": 0.007074585880036466,
+      "search_ms_stdev": 0.0003857186488321677,
+      "index_bytes": 42261172
+    },
+    {
+      "name": "IVFPQ nlist=4096 m=32 nprobe=8",
+      "recall": 0.558716,
+      "build_s": 14.553759292000905,
+      "search_ms_per_q": 0.010084919159999118,
+      "search_ms_stdev": 0.0006312721357316227,
+      "index_bytes": 42261172
+    },
+    {
+      "name": "IVFPQ nlist=4096 m=32 nprobe=16",
+      "recall": 0.665278,
+      "build_s": 14.553759292000905,
+      "search_ms_per_q": 0.0145532324994565,
+      "search_ms_stdev": 0.0007881370721913417,
+      "index_bytes": 42261172
+    },
+    {
+      "name": "IVFPQ nlist=4096 m=32 nprobe=32",
+      "recall": 0.735246,
+      "build_s": 14.553759292000905,
+      "search_ms_per_q": 0.02378747082024347,
+      "search_ms_stdev": 0.001384129537196247,
+      "index_bytes": 42261172
+    },
+    {
+      "name": "IVFPQ nlist=4096 m=32 nprobe=64",
+      "recall": 0.771543,
+      "build_s": 14.553759292000905,
+      "search_ms_per_q": 0.044597478340147066,
+      "search_ms_stdev": 0.0028866935687796814,
+      "index_bytes": 42261172
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+./hashtable.go
+./bench_growth_test.go
+./bench_scale_test.go
+./hashtable_test.go

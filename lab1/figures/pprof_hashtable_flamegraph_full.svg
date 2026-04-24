@@ -1,0 +1,443 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="410" viewBox="0 0 1600 410" role="img" aria-label="hashtable flamegraph">
+<style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;}.title{font-size:24px;font-weight:700;fill:#222;}.subtitle{font-size:13px;fill:#5d5d5d;}.box-label{font-size:12px;fill:#222;pointer-events:none;}.box{stroke:#ffffff;stroke-width:1;}</style>
+<rect x="0" y="0" width="1600" height="410" fill="#fffaf5"/>
+<text class="title" x="24" y="34">hashtable flamegraph</text>
+<text class="subtitle" x="24" y="56">pprof static flamegraph • total samples 4.35s • widest path is the hottest path</text>
+<g><title>runtime.main&#10;4.29s (98.6%)</title>
+<rect class="box" x="24.00" y="358.00" width="1530.59" height="20" rx="3" ry="3" fill="hsl(221,18%,74%)"/>
+<text class="box-label" x="28.00" y="372.00">runtime.main</text>
+</g>
+<g><title>main.main&#10;4.29s (98.6%)</title>
+<rect class="box" x="24.00" y="336.00" width="1530.59" height="20" rx="3" ry="3" fill="hsl(94,52%,76%)"/>
+<text class="box-label" x="28.00" y="350.00">main.main</text>
+</g>
+<g><title>main.writeCPU&#10;4.29s (98.6%)</title>
+<rect class="box" x="24.00" y="314.00" width="1530.59" height="20" rx="3" ry="3" fill="hsl(141,52%,76%)"/>
+<text class="box-label" x="28.00" y="328.00">main.writeCPU</text>
+</g>
+<g><title>main.runHashtable&#10;4.29s (98.6%)</title>
+<rect class="box" x="24.00" y="292.00" width="1530.59" height="20" rx="3" ry="3" fill="hsl(188,52%,76%)"/>
+<text class="box-label" x="28.00" y="306.00">main.runHashtable</text>
+</g>
+<g><title>algo/hashtable.(*DiskHashTable).Set&#10;3.44s (79.1%)</title>
+<rect class="box" x="24.00" y="270.00" width="1227.33" height="20" rx="3" ry="3" fill="hsl(37,78%,72%)"/>
+<text class="box-label" x="28.00" y="284.00">hashtable.(*DiskHashTable).Set</text>
+</g>
+<g><title>algo/hashtable.appendRecord&#10;3.39s (77.9%)</title>
+<rect class="box" x="24.00" y="248.00" width="1209.49" height="20" rx="3" ry="3" fill="hsl(36,78%,72%)"/>
+<text class="box-label" x="28.00" y="262.00">hashtable.appendRecord</text>
+</g>
+<g><title>os.OpenFile&#10;2.01s (46.2%)</title>
+<rect class="box" x="24.00" y="226.00" width="717.13" height="20" rx="3" ry="3" fill="hsl(25,70%,76%)"/>
+<text class="box-label" x="28.00" y="240.00">os.OpenFile</text>
+</g>
+<g><title>os.openFileNolog&#10;2.01s (46.2%)</title>
+<rect class="box" x="24.00" y="204.00" width="717.13" height="20" rx="3" ry="3" fill="hsl(24,70%,76%)"/>
+<text class="box-label" x="28.00" y="218.00">os.openFileNolog</text>
+</g>
+<g><title>os.ignoringEINTR&#10;2.00s (46.0%)</title>
+<rect class="box" x="24.00" y="182.00" width="713.56" height="20" rx="3" ry="3" fill="hsl(23,70%,76%)"/>
+<text class="box-label" x="28.00" y="196.00">os.ignoringEINTR</text>
+</g>
+<g><title>os.openFileNolog.func1&#10;2.00s (46.0%)</title>
+<rect class="box" x="24.00" y="160.00" width="713.56" height="20" rx="3" ry="3" fill="hsl(22,70%,76%)"/>
+<text class="box-label" x="28.00" y="174.00">os.openFileNolog.func1</text>
+</g>
+<g><title>os.open&#10;2.00s (46.0%)</title>
+<rect class="box" x="24.00" y="138.00" width="713.56" height="20" rx="3" ry="3" fill="hsl(21,70%,76%)"/>
+<text class="box-label" x="28.00" y="152.00">os.open</text>
+</g>
+<g><title>syscall.Open&#10;2.00s (46.0%)</title>
+<rect class="box" x="24.00" y="116.00" width="713.56" height="20" rx="3" ry="3" fill="hsl(20,70%,76%)"/>
+<text class="box-label" x="28.00" y="130.00">syscall.Open</text>
+</g>
+<g><title>syscall.syscall&#10;2.00s (46.0%)</title>
+<rect class="box" x="24.00" y="94.00" width="713.56" height="20" rx="3" ry="3" fill="hsl(19,70%,76%)"/>
+<text class="box-label" x="28.00" y="108.00">syscall.syscall</text>
+</g>
+<g><title>os.newFile&#10;10.0ms (0.2%)</title>
+<rect class="box" x="737.56" y="182.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(29,70%,76%)"/>
+</g>
+<g><title>os.ignoringEINTR&#10;10.0ms (0.2%)</title>
+<rect class="box" x="737.56" y="160.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(23,70%,76%)"/>
+</g>
+<g><title>os.newFile.func1&#10;10.0ms (0.2%)</title>
+<rect class="box" x="737.56" y="138.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(28,70%,76%)"/>
+</g>
+<g><title>syscall.Fstat&#10;10.0ms (0.2%)</title>
+<rect class="box" x="737.56" y="116.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(27,70%,76%)"/>
+</g>
+<g><title>syscall.syscall&#10;10.0ms (0.2%)</title>
+<rect class="box" x="737.56" y="94.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(19,70%,76%)"/>
+</g>
+<g><title>os.(*File).Write&#10;650.0ms (14.9%)</title>
+<rect class="box" x="741.13" y="226.00" width="231.91" height="20" rx="3" ry="3" fill="hsl(18,70%,76%)"/>
+<text class="box-label" x="745.13" y="240.00">os.(*File).Write</text>
+</g>
+<g><title>os.(*File).write&#10;650.0ms (14.9%)</title>
+<rect class="box" x="741.13" y="204.00" width="231.91" height="20" rx="3" ry="3" fill="hsl(17,70%,76%)"/>
+<text class="box-label" x="745.13" y="218.00">os.(*File).write</text>
+</g>
+<g><title>internal/poll.(*FD).Write&#10;650.0ms (14.9%)</title>
+<rect class="box" x="741.13" y="182.00" width="231.91" height="20" rx="3" ry="3" fill="hsl(16,70%,76%)"/>
+<text class="box-label" x="745.13" y="196.00">poll.(*FD).Write</text>
+</g>
+<g><title>internal/poll.ignoringEINTRIO&#10;650.0ms (14.9%)</title>
+<rect class="box" x="741.13" y="160.00" width="231.91" height="20" rx="3" ry="3" fill="hsl(15,70%,76%)"/>
+<text class="box-label" x="745.13" y="174.00">poll.ignoringEINTRIO</text>
+</g>
+<g><title>syscall.Write&#10;650.0ms (14.9%)</title>
+<rect class="box" x="741.13" y="138.00" width="231.91" height="20" rx="3" ry="3" fill="hsl(14,70%,76%)"/>
+<text class="box-label" x="745.13" y="152.00">syscall.Write</text>
+</g>
+<g><title>syscall.write&#10;650.0ms (14.9%)</title>
+<rect class="box" x="741.13" y="116.00" width="231.91" height="20" rx="3" ry="3" fill="hsl(13,70%,76%)"/>
+<text class="box-label" x="745.13" y="130.00">syscall.write</text>
+</g>
+<g><title>syscall.syscall&#10;650.0ms (14.9%)</title>
+<rect class="box" x="741.13" y="94.00" width="231.91" height="20" rx="3" ry="3" fill="hsl(19,70%,76%)"/>
+<text class="box-label" x="745.13" y="108.00">syscall.syscall</text>
+</g>
+<g><title>os.(*File).Close&#10;730.0ms (16.8%)</title>
+<rect class="box" x="973.04" y="226.00" width="260.45" height="20" rx="3" ry="3" fill="hsl(12,70%,76%)"/>
+<text class="box-label" x="977.04" y="240.00">os.(*File).Close</text>
+</g>
+<g><title>os.(*file).close&#10;730.0ms (16.8%)</title>
+<rect class="box" x="973.04" y="204.00" width="260.45" height="20" rx="3" ry="3" fill="hsl(11,70%,76%)"/>
+<text class="box-label" x="977.04" y="218.00">os.(*file).close</text>
+</g>
+<g><title>internal/poll.(*FD).Close&#10;730.0ms (16.8%)</title>
+<rect class="box" x="973.04" y="182.00" width="260.45" height="20" rx="3" ry="3" fill="hsl(10,70%,76%)"/>
+<text class="box-label" x="977.04" y="196.00">poll.(*FD).Close</text>
+</g>
+<g><title>internal/poll.(*FD).decref&#10;730.0ms (16.8%)</title>
+<rect class="box" x="973.04" y="160.00" width="260.45" height="20" rx="3" ry="3" fill="hsl(9,70%,76%)"/>
+<text class="box-label" x="977.04" y="174.00">poll.(*FD).decref</text>
+</g>
+<g><title>internal/poll.(*FD).destroy&#10;730.0ms (16.8%)</title>
+<rect class="box" x="973.04" y="138.00" width="260.45" height="20" rx="3" ry="3" fill="hsl(8,70%,76%)"/>
+<text class="box-label" x="977.04" y="152.00">poll.(*FD).destroy</text>
+</g>
+<g><title>internal/poll.(*SysFile).destroy&#10;730.0ms (16.8%)</title>
+<rect class="box" x="973.04" y="116.00" width="260.45" height="20" rx="3" ry="3" fill="hsl(31,70%,76%)"/>
+<text class="box-label" x="977.04" y="130.00">poll.(*SysFile).destroy</text>
+</g>
+<g><title>syscall.Close&#10;730.0ms (16.8%)</title>
+<rect class="box" x="973.04" y="94.00" width="260.45" height="20" rx="3" ry="3" fill="hsl(30,70%,76%)"/>
+<text class="box-label" x="977.04" y="108.00">syscall.Close</text>
+</g>
+<g><title>syscall.syscall&#10;730.0ms (16.8%)</title>
+<rect class="box" x="973.04" y="72.00" width="260.45" height="20" rx="3" ry="3" fill="hsl(19,70%,76%)"/>
+<text class="box-label" x="977.04" y="86.00">syscall.syscall</text>
+</g>
+<g><title>algo/hashtable.compactBucketIfNeeded&#10;50.0ms (1.1%)</title>
+<rect class="box" x="1233.49" y="248.00" width="17.84" height="20" rx="3" ry="3" fill="hsl(27,78%,72%)"/>
+</g>
+<g><title>os.WriteFile&#10;40.0ms (0.9%)</title>
+<rect class="box" x="1233.49" y="226.00" width="14.27" height="20" rx="3" ry="3" fill="hsl(28,70%,76%)"/>
+</g>
+<g><title>os.OpenFile&#10;30.0ms (0.7%)</title>
+<rect class="box" x="1233.49" y="204.00" width="10.70" height="20" rx="3" ry="3" fill="hsl(25,70%,76%)"/>
+</g>
+<g><title>os.openFileNolog&#10;30.0ms (0.7%)</title>
+<rect class="box" x="1233.49" y="182.00" width="10.70" height="20" rx="3" ry="3" fill="hsl(24,70%,76%)"/>
+</g>
+<g><title>os.ignoringEINTR&#10;30.0ms (0.7%)</title>
+<rect class="box" x="1233.49" y="160.00" width="10.70" height="20" rx="3" ry="3" fill="hsl(23,70%,76%)"/>
+</g>
+<g><title>os.openFileNolog.func1&#10;30.0ms (0.7%)</title>
+<rect class="box" x="1233.49" y="138.00" width="10.70" height="20" rx="3" ry="3" fill="hsl(22,70%,76%)"/>
+</g>
+<g><title>os.open&#10;30.0ms (0.7%)</title>
+<rect class="box" x="1233.49" y="116.00" width="10.70" height="20" rx="3" ry="3" fill="hsl(21,70%,76%)"/>
+</g>
+<g><title>syscall.Open&#10;30.0ms (0.7%)</title>
+<rect class="box" x="1233.49" y="94.00" width="10.70" height="20" rx="3" ry="3" fill="hsl(20,70%,76%)"/>
+</g>
+<g><title>syscall.syscall&#10;30.0ms (0.7%)</title>
+<rect class="box" x="1233.49" y="72.00" width="10.70" height="20" rx="3" ry="3" fill="hsl(19,70%,76%)"/>
+</g>
+<g><title>os.(*File).Write&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1244.19" y="204.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(18,70%,76%)"/>
+</g>
+<g><title>os.(*File).write&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1244.19" y="182.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(17,70%,76%)"/>
+</g>
+<g><title>internal/poll.(*FD).Write&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1244.19" y="160.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(16,70%,76%)"/>
+</g>
+<g><title>internal/poll.ignoringEINTRIO&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1244.19" y="138.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(15,70%,76%)"/>
+</g>
+<g><title>syscall.Write&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1244.19" y="116.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(14,70%,76%)"/>
+</g>
+<g><title>syscall.write&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1244.19" y="94.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(13,70%,76%)"/>
+</g>
+<g><title>syscall.syscall&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1244.19" y="72.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(19,70%,76%)"/>
+</g>
+<g><title>os.Rename&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1247.76" y="226.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(21,70%,76%)"/>
+</g>
+<g><title>os.rename&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1247.76" y="204.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(20,70%,76%)"/>
+</g>
+<g><title>os.ignoringEINTR&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1247.76" y="182.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(23,70%,76%)"/>
+</g>
+<g><title>os.rename.func1&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1247.76" y="160.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(19,70%,76%)"/>
+</g>
+<g><title>syscall.Rename&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1247.76" y="138.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(18,70%,76%)"/>
+</g>
+<g><title>syscall.syscall&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1247.76" y="116.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(19,70%,76%)"/>
+</g>
+<g><title>algo/hashtable.(*DiskHashTable).Delete&#10;780.0ms (17.9%)</title>
+<rect class="box" x="1251.33" y="270.00" width="278.29" height="20" rx="3" ry="3" fill="hsl(40,78%,72%)"/>
+<text class="box-label" x="1255.33" y="284.00">hashtable.(*DiskHashTable).Delete</text>
+</g>
+<g><title>algo/hashtable.appendRecord&#10;770.0ms (17.7%)</title>
+<rect class="box" x="1251.33" y="248.00" width="274.72" height="20" rx="3" ry="3" fill="hsl(36,78%,72%)"/>
+<text class="box-label" x="1255.33" y="262.00">hashtable.appendRecord</text>
+</g>
+<g><title>os.(*File).Close&#10;180.0ms (4.1%)</title>
+<rect class="box" x="1251.33" y="226.00" width="64.22" height="20" rx="3" ry="3" fill="hsl(12,70%,76%)"/>
+<text class="box-label" x="1255.33" y="240.00">Close</text>
+</g>
+<g><title>os.(*file).close&#10;180.0ms (4.1%)</title>
+<rect class="box" x="1251.33" y="204.00" width="64.22" height="20" rx="3" ry="3" fill="hsl(11,70%,76%)"/>
+<text class="box-label" x="1255.33" y="218.00">close</text>
+</g>
+<g><title>internal/poll.(*FD).Close&#10;180.0ms (4.1%)</title>
+<rect class="box" x="1251.33" y="182.00" width="64.22" height="20" rx="3" ry="3" fill="hsl(10,70%,76%)"/>
+<text class="box-label" x="1255.33" y="196.00">Close</text>
+</g>
+<g><title>internal/poll.(*FD).decref&#10;180.0ms (4.1%)</title>
+<rect class="box" x="1251.33" y="160.00" width="64.22" height="20" rx="3" ry="3" fill="hsl(9,70%,76%)"/>
+<text class="box-label" x="1255.33" y="174.00">decref</text>
+</g>
+<g><title>internal/poll.(*FD).destroy&#10;180.0ms (4.1%)</title>
+<rect class="box" x="1251.33" y="138.00" width="64.22" height="20" rx="3" ry="3" fill="hsl(8,70%,76%)"/>
+<text class="box-label" x="1255.33" y="152.00">destroy</text>
+</g>
+<g><title>internal/poll.(*SysFile).destroy&#10;180.0ms (4.1%)</title>
+<rect class="box" x="1251.33" y="116.00" width="64.22" height="20" rx="3" ry="3" fill="hsl(31,70%,76%)"/>
+<text class="box-label" x="1255.33" y="130.00">destroy</text>
+</g>
+<g><title>syscall.Close&#10;180.0ms (4.1%)</title>
+<rect class="box" x="1251.33" y="94.00" width="64.22" height="20" rx="3" ry="3" fill="hsl(30,70%,76%)"/>
+<text class="box-label" x="1255.33" y="108.00">Close</text>
+</g>
+<g><title>syscall.syscall&#10;180.0ms (4.1%)</title>
+<rect class="box" x="1251.33" y="72.00" width="64.22" height="20" rx="3" ry="3" fill="hsl(19,70%,76%)"/>
+<text class="box-label" x="1255.33" y="86.00">syscall</text>
+</g>
+<g><title>os.(*File).Write&#10;130.0ms (3.0%)</title>
+<rect class="box" x="1315.55" y="226.00" width="46.38" height="20" rx="3" ry="3" fill="hsl(18,70%,76%)"/>
+<text class="box-label" x="1319.55" y="240.00">Write</text>
+</g>
+<g><title>os.(*File).write&#10;130.0ms (3.0%)</title>
+<rect class="box" x="1315.55" y="204.00" width="46.38" height="20" rx="3" ry="3" fill="hsl(17,70%,76%)"/>
+<text class="box-label" x="1319.55" y="218.00">write</text>
+</g>
+<g><title>internal/poll.(*FD).Write&#10;130.0ms (3.0%)</title>
+<rect class="box" x="1315.55" y="182.00" width="46.38" height="20" rx="3" ry="3" fill="hsl(16,70%,76%)"/>
+<text class="box-label" x="1319.55" y="196.00">Write</text>
+</g>
+<g><title>internal/poll.ignoringEINTRIO&#10;130.0ms (3.0%)</title>
+<rect class="box" x="1315.55" y="160.00" width="46.38" height="20" rx="3" ry="3" fill="hsl(15,70%,76%)"/>
+<text class="box-label" x="1319.55" y="174.00">igno…</text>
+</g>
+<g><title>syscall.Write&#10;130.0ms (3.0%)</title>
+<rect class="box" x="1315.55" y="138.00" width="46.38" height="20" rx="3" ry="3" fill="hsl(14,70%,76%)"/>
+<text class="box-label" x="1319.55" y="152.00">Write</text>
+</g>
+<g><title>syscall.write&#10;130.0ms (3.0%)</title>
+<rect class="box" x="1315.55" y="116.00" width="46.38" height="20" rx="3" ry="3" fill="hsl(13,70%,76%)"/>
+<text class="box-label" x="1319.55" y="130.00">write</text>
+</g>
+<g><title>syscall.syscall&#10;130.0ms (3.0%)</title>
+<rect class="box" x="1315.55" y="94.00" width="46.38" height="20" rx="3" ry="3" fill="hsl(19,70%,76%)"/>
+<text class="box-label" x="1319.55" y="108.00">sysc…</text>
+</g>
+<g><title>os.OpenFile&#10;460.0ms (10.6%)</title>
+<rect class="box" x="1361.93" y="226.00" width="164.12" height="20" rx="3" ry="3" fill="hsl(25,70%,76%)"/>
+<text class="box-label" x="1365.93" y="240.00">os.OpenFile</text>
+</g>
+<g><title>os.openFileNolog&#10;460.0ms (10.6%)</title>
+<rect class="box" x="1361.93" y="204.00" width="164.12" height="20" rx="3" ry="3" fill="hsl(24,70%,76%)"/>
+<text class="box-label" x="1365.93" y="218.00">os.openFileNolog</text>
+</g>
+<g><title>os.ignoringEINTR&#10;460.0ms (10.6%)</title>
+<rect class="box" x="1361.93" y="182.00" width="164.12" height="20" rx="3" ry="3" fill="hsl(23,70%,76%)"/>
+<text class="box-label" x="1365.93" y="196.00">os.ignoringEINTR</text>
+</g>
+<g><title>os.openFileNolog.func1&#10;460.0ms (10.6%)</title>
+<rect class="box" x="1361.93" y="160.00" width="164.12" height="20" rx="3" ry="3" fill="hsl(22,70%,76%)"/>
+<text class="box-label" x="1365.93" y="174.00">os.openFileNolog.func1</text>
+</g>
+<g><title>os.open&#10;460.0ms (10.6%)</title>
+<rect class="box" x="1361.93" y="138.00" width="164.12" height="20" rx="3" ry="3" fill="hsl(21,70%,76%)"/>
+<text class="box-label" x="1365.93" y="152.00">os.open</text>
+</g>
+<g><title>syscall.Open&#10;460.0ms (10.6%)</title>
+<rect class="box" x="1361.93" y="116.00" width="164.12" height="20" rx="3" ry="3" fill="hsl(20,70%,76%)"/>
+<text class="box-label" x="1365.93" y="130.00">syscall.Open</text>
+</g>
+<g><title>syscall.syscall&#10;460.0ms (10.6%)</title>
+<rect class="box" x="1361.93" y="94.00" width="164.12" height="20" rx="3" ry="3" fill="hsl(19,70%,76%)"/>
+<text class="box-label" x="1365.93" y="108.00">syscall.syscall</text>
+</g>
+<g><title>algo/hashtable.compactBucketIfNeeded&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1526.05" y="248.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(27,78%,72%)"/>
+</g>
+<g><title>os.Rename&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1526.05" y="226.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(21,70%,76%)"/>
+</g>
+<g><title>os.rename&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1526.05" y="204.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(20,70%,76%)"/>
+</g>
+<g><title>os.ignoringEINTR&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1526.05" y="182.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(23,70%,76%)"/>
+</g>
+<g><title>os.rename.func1&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1526.05" y="160.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(19,70%,76%)"/>
+</g>
+<g><title>syscall.Rename&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1526.05" y="138.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(18,70%,76%)"/>
+</g>
+<g><title>syscall.syscall&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1526.05" y="116.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(19,70%,76%)"/>
+</g>
+<g><title>os.RemoveAll&#10;70.0ms (1.6%)</title>
+<rect class="box" x="1529.62" y="270.00" width="24.97" height="20" rx="3" ry="3" fill="hsl(15,70%,76%)"/>
+</g>
+<g><title>os.removeAll&#10;70.0ms (1.6%)</title>
+<rect class="box" x="1529.62" y="248.00" width="24.97" height="20" rx="3" ry="3" fill="hsl(14,70%,76%)"/>
+</g>
+<g><title>os.removeAllFrom&#10;70.0ms (1.6%)</title>
+<rect class="box" x="1529.62" y="226.00" width="24.97" height="20" rx="3" ry="3" fill="hsl(13,70%,76%)"/>
+</g>
+<g><title>os.removeAllFrom&#10;70.0ms (1.6%)</title>
+<rect class="box" x="1529.62" y="204.00" width="24.97" height="20" rx="3" ry="3" fill="hsl(13,70%,76%)"/>
+</g>
+<g><title>os.removefileat&#10;70.0ms (1.6%)</title>
+<rect class="box" x="1529.62" y="182.00" width="24.97" height="20" rx="3" ry="3" fill="hsl(12,70%,76%)"/>
+</g>
+<g><title>os.ignoringEINTR&#10;70.0ms (1.6%)</title>
+<rect class="box" x="1529.62" y="160.00" width="24.97" height="20" rx="3" ry="3" fill="hsl(23,70%,76%)"/>
+</g>
+<g><title>os.removeAllFrom.removefileat.func1&#10;70.0ms (1.6%)</title>
+<rect class="box" x="1529.62" y="138.00" width="24.97" height="20" rx="3" ry="3" fill="hsl(11,70%,76%)"/>
+</g>
+<g><title>internal/syscall/unix.Unlinkat&#10;70.0ms (1.6%)</title>
+<rect class="box" x="1529.62" y="116.00" width="24.97" height="20" rx="3" ry="3" fill="hsl(50,52%,76%)"/>
+</g>
+<g><title>syscall.unlinkat&#10;70.0ms (1.6%)</title>
+<rect class="box" x="1529.62" y="94.00" width="24.97" height="20" rx="3" ry="3" fill="hsl(9,70%,76%)"/>
+</g>
+<g><title>syscall.syscall&#10;70.0ms (1.6%)</title>
+<rect class="box" x="1529.62" y="72.00" width="24.97" height="20" rx="3" ry="3" fill="hsl(19,70%,76%)"/>
+</g>
+<g><title>runtime.gcBgMarkWorker&#10;30.0ms (0.7%)</title>
+<rect class="box" x="1554.59" y="358.00" width="10.70" height="20" rx="3" ry="3" fill="hsl(216,18%,74%)"/>
+</g>
+<g><title>runtime.systemstack&#10;30.0ms (0.7%)</title>
+<rect class="box" x="1554.59" y="336.00" width="10.70" height="20" rx="3" ry="3" fill="hsl(227,18%,74%)"/>
+</g>
+<g><title>runtime.gcBgMarkWorker.func2&#10;30.0ms (0.7%)</title>
+<rect class="box" x="1554.59" y="314.00" width="10.70" height="20" rx="3" ry="3" fill="hsl(220,18%,74%)"/>
+</g>
+<g><title>runtime.gcDrainMarkWorkerDedicated&#10;30.0ms (0.7%)</title>
+<rect class="box" x="1554.59" y="292.00" width="10.70" height="20" rx="3" ry="3" fill="hsl(213,18%,74%)"/>
+</g>
+<g><title>runtime.gcDrain&#10;30.0ms (0.7%)</title>
+<rect class="box" x="1554.59" y="270.00" width="10.70" height="20" rx="3" ry="3" fill="hsl(224,18%,74%)"/>
+</g>
+<g><title>runtime.scanobject&#10;30.0ms (0.7%)</title>
+<rect class="box" x="1554.59" y="248.00" width="10.70" height="20" rx="3" ry="3" fill="hsl(217,18%,74%)"/>
+</g>
+<g><title>runtime.findObject&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1554.59" y="226.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(210,18%,74%)"/>
+</g>
+<g><title>runtime.spanOf&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1554.59" y="204.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(221,18%,74%)"/>
+</g>
+<g><title>runtime.greyobject&#10;20.0ms (0.5%)</title>
+<rect class="box" x="1558.16" y="226.00" width="7.14" height="20" rx="3" ry="3" fill="hsl(225,18%,74%)"/>
+</g>
+<g><title>runtime.markBits.setMarked&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1558.16" y="204.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(218,18%,74%)"/>
+</g>
+<g><title>runtime.pageIndexOf&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1561.73" y="204.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(220,18%,74%)"/>
+</g>
+<g><title>runtime.mcall&#10;20.0ms (0.5%)</title>
+<rect class="box" x="1565.30" y="358.00" width="7.14" height="20" rx="3" ry="3" fill="hsl(211,18%,74%)"/>
+</g>
+<g><title>runtime.park_m&#10;20.0ms (0.5%)</title>
+<rect class="box" x="1565.30" y="336.00" width="7.14" height="20" rx="3" ry="3" fill="hsl(222,18%,74%)"/>
+</g>
+<g><title>runtime.schedule&#10;20.0ms (0.5%)</title>
+<rect class="box" x="1565.30" y="314.00" width="7.14" height="20" rx="3" ry="3" fill="hsl(215,18%,74%)"/>
+</g>
+<g><title>runtime.findRunnable&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1565.30" y="292.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(226,18%,74%)"/>
+</g>
+<g><title>runtime.stopm&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1565.30" y="270.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(219,18%,74%)"/>
+</g>
+<g><title>runtime.mPark&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1565.30" y="248.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(212,18%,74%)"/>
+</g>
+<g><title>runtime.notesleep&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1565.30" y="226.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(223,18%,74%)"/>
+</g>
+<g><title>runtime.semasleep&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1565.30" y="204.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(216,18%,74%)"/>
+</g>
+<g><title>runtime.pthread_cond_wait&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1565.30" y="182.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(227,18%,74%)"/>
+</g>
+<g><title>runtime.resetspinning&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1568.86" y="292.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(217,18%,74%)"/>
+</g>
+<g><title>runtime.wakep&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1568.86" y="270.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(210,18%,74%)"/>
+</g>
+<g><title>runtime.startm&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1568.86" y="248.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(221,18%,74%)"/>
+</g>
+<g><title>runtime.notewakeup&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1568.86" y="226.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(214,18%,74%)"/>
+</g>
+<g><title>runtime.semawakeup&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1568.86" y="204.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(225,18%,74%)"/>
+</g>
+<g><title>runtime.pthread_cond_signal&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1568.86" y="182.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(218,18%,74%)"/>
+</g>
+<g><title>runtime.systemstack&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1572.43" y="358.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(227,18%,74%)"/>
+</g>
+<g><title>runtime.exitsyscallfast.func1&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1572.43" y="336.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(219,18%,74%)"/>
+</g>
+<g><title>runtime.exitsyscallfast_pidle&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1572.43" y="314.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(212,18%,74%)"/>
+</g>
+<g><title>runtime.notewakeup&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1572.43" y="292.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(214,18%,74%)"/>
+</g>
+<g><title>runtime.semawakeup&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1572.43" y="270.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(225,18%,74%)"/>
+</g>
+<g><title>runtime.pthread_cond_signal&#10;10.0ms (0.2%)</title>
+<rect class="box" x="1572.43" y="248.00" width="3.57" height="20" rx="3" ry="3" fill="hsl(218,18%,74%)"/>
+</g>
+<text class="subtitle" x="24" y="400">Generated from go tool pprof flamegraph data</text>
+</svg>
