@@ -1,0 +1,17 @@
+File: profile
+Type: alloc_space
+Time: 2026-04-23 23:20:25 MSK
+Showing nodes accounting for 250.45MB, 99.15% of 252.59MB total
+Dropped 14 nodes (cum <= 1.26MB)
+Showing top 10 nodes out of 28
+      flat  flat%   sum%        cum   cum%
+  114.03MB 45.14% 45.14%   225.05MB 89.10%  lab4/concurrentmap.(*Map[go.shape.string,go.shape.int]).store
+  111.02MB 43.95% 89.10%   111.02MB 43.95%  lab4/concurrentmap.cloneEntries[go.shape.string,go.shape.int] (inline)
+   14.08MB  5.58% 94.67%    18.08MB  7.16%  main.makeKeys
+    4.51MB  1.79% 96.46%     4.51MB  1.79%  runtime.allocm
+    3.50MB  1.39% 97.84%        4MB  1.58%  fmt.Sprintf
+    1.72MB  0.68% 98.53%     1.72MB  0.68%  runtime/pprof.StartCPUProfile
+    1.58MB  0.63% 99.15%     1.58MB  0.63%  lab4/concurrentmap.newTable[go.shape.string,go.shape.int] (inline)
+         0     0% 99.15%    71.01MB 28.11%  lab4/concurrentmap.(*Map[go.shape.string,go.shape.int]).Merge
+         0     0% 99.15%   154.03MB 60.98%  lab4/concurrentmap.(*Map[go.shape.string,go.shape.int]).Put
+         0     0% 99.15%     1.58MB  0.63%  lab4/concurrentmap.NewStringMap[go.shape.int]

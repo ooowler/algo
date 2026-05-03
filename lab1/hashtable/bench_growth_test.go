@@ -34,21 +34,36 @@ func makeBenchKeys(start, count int) []string {
 	return keys
 }
 
-func makeProbeKeys(keys []string, maxProbes int) []string {
+func makeHotBucketProbeKeys(h *DiskHashTable, keys []string, maxProbes int) []string {
 	if len(keys) == 0 {
 		return nil
 	}
-	count := len(keys)
-	if count > maxProbes {
-		count = maxProbes
+	target := h.bucketIndex(keys[0])
+	found := make([]string, 0, maxProbes)
+	for _, key := range keys {
+		if h.bucketIndex(key) == target {
+			found = append(found, key)
+			if len(found) == maxProbes {
+				break
+			}
+		}
 	}
-	count = nextPow2(count)
-	probes := make([]string, count)
+	if len(found) == 0 {
+		found = append(found, keys[0])
+	}
+	probes := make([]string, nextPow2(len(found)))
 	for i := range probes {
-		idx := int((uint64(i) * 11400714819323198485) % uint64(len(keys)))
-		probes[i] = keys[idx]
+		probes[i] = found[i%len(found)]
 	}
 	return probes
+}
+
+func closeBenchTable(b *testing.B, h *DiskHashTable) {
+	b.Helper()
+	b.StopTimer()
+	if err := h.Close(); err != nil {
+		b.Fatal(err)
+	}
 }
 
 func nextPow2(v int) int {
@@ -86,7 +101,7 @@ func BenchmarkGrowthDisk_Insert(b *testing.B) {
 			if err != nil {
 				b.Fatal(err)
 			}
-			defer h.Close()
+			defer closeBenchTable(b, h)
 			seedTable(h, makeBenchKeys(0, n))
 			insertKeys := makeBenchKeys(n, b.N)
 			runtime.GC()
@@ -95,6 +110,9 @@ func BenchmarkGrowthDisk_Insert(b *testing.B) {
 				if err := h.Set(insertKeys[i], "value"); err != nil {
 					b.Fatal(err)
 				}
+			}
+			if err := h.Flush(); err != nil {
+				b.Fatal(err)
 			}
 		})
 	}
@@ -107,7 +125,7 @@ func BenchmarkGrowthDisk_Update(b *testing.B) {
 			if err != nil {
 				b.Fatal(err)
 			}
-			defer h.Close()
+			defer closeBenchTable(b, h)
 			keys := makeBenchKeys(0, n)
 			seedTable(h, keys)
 			runtime.GC()
@@ -116,6 +134,9 @@ func BenchmarkGrowthDisk_Update(b *testing.B) {
 				if err := h.Set(keys[i%n], "updated"); err != nil {
 					b.Fatal(err)
 				}
+			}
+			if err := h.Flush(); err != nil {
+				b.Fatal(err)
 			}
 		})
 	}
@@ -129,7 +150,7 @@ func BenchmarkGrowthDisk_Delete(b *testing.B) {
 			if err != nil {
 				b.Fatal(err)
 			}
-			defer h.Close()
+			defer closeBenchTable(b, h)
 			keys := makeBenchKeys(0, total)
 			seedTable(h, keys)
 			runtime.GC()
@@ -138,6 +159,9 @@ func BenchmarkGrowthDisk_Delete(b *testing.B) {
 				if err := h.Delete(keys[i]); err != nil {
 					b.Fatal(err)
 				}
+			}
+			if err := h.Flush(); err != nil {
+				b.Fatal(err)
 			}
 		})
 	}
@@ -150,10 +174,10 @@ func BenchmarkGrowthDisk_Get(b *testing.B) {
 			if err != nil {
 				b.Fatal(err)
 			}
-			defer h.Close()
+			defer closeBenchTable(b, h)
 			keys := makeBenchKeys(0, n)
 			seedTable(h, keys)
-			probes := makeProbeKeys(keys, 4096)
+			probes := makeHotBucketProbeKeys(h, keys, 32)
 			probeMask := len(probes) - 1
 			warm := len(probes) * 16
 			if warm > 65536 {

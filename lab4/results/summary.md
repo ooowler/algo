@@ -1,0 +1,5 @@
+- Get: на N=1048576 concurrent = 70.44 ns, plain = 56.16 ns, overhead = 1.25x
+- Put: на N=1048576 concurrent = 390.94 ns, plain = 156.62 ns, overhead = 2.50x
+- Merge: на N=1048576 concurrent = 221.18 ns, plain = 62.89 ns, overhead = 3.52x
+- ParallelBalanced: 10948346 ops/s
+- ParallelReadMostly: 57116747 ops/s

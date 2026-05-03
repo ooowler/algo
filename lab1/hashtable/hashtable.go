@@ -16,6 +16,7 @@ const (
 
 	recordHeaderSize      = 9
 	bucketCompactMinTotal = 64
+	bucketWriteBufferSize = 64 * 1024
 
 	fnvOffset = 2166136261
 	fnvPrime  = 16777619
@@ -32,6 +33,7 @@ type bucketMeta struct {
 	liveRecords  int
 	staleRecords int
 	appendFile   *os.File
+	writeBuf     bytes.Buffer
 }
 
 type DiskHashTable struct {
@@ -93,7 +95,7 @@ func (h *DiskHashTable) Set(key, value string) error {
 	if err := b.ensureLoaded(meta); err != nil {
 		return err
 	}
-	if err := meta.appendRecord(&h.bufPool, recordSet, key, value); err != nil {
+	if err := meta.appendRecord(recordSet, key, value); err != nil {
 		return err
 	}
 	if _, exists := b.data[key]; exists {
@@ -134,7 +136,7 @@ func (h *DiskHashTable) Delete(key string) error {
 	if _, ok := b.data[key]; !ok {
 		return nil
 	}
-	if err := meta.appendRecord(&h.bufPool, recordDelete, key, ""); err != nil {
+	if err := meta.appendRecord(recordDelete, key, ""); err != nil {
 		return err
 	}
 	delete(b.data, key)
@@ -149,6 +151,19 @@ func (h *DiskHashTable) Close() error {
 		b := &h.buckets[i]
 		b.mu.Lock()
 		if err := h.meta[i].closeAppendFile(); err != nil && firstErr == nil {
+			firstErr = err
+		}
+		b.mu.Unlock()
+	}
+	return firstErr
+}
+
+func (h *DiskHashTable) Flush() error {
+	var firstErr error
+	for i := range h.buckets {
+		b := &h.buckets[i]
+		b.mu.Lock()
+		if err := h.meta[i].flushAppendBuffer(); err != nil && firstErr == nil {
 			firstErr = err
 		}
 		b.mu.Unlock()
@@ -211,25 +226,14 @@ func loadBucketFile(path string) (map[string]string, int, error) {
 	return data, totalRecords, nil
 }
 
-func (meta *bucketMeta) appendRecord(pool *sync.Pool, op byte, key, value string) error {
-	buf := pool.Get().(*bytes.Buffer)
-	buf.Reset()
-	defer pool.Put(buf)
-	buf.Grow(recordHeaderSize + len(key) + len(value))
-	buf.WriteByte(op)
-	var hdr [8]byte
-	binary.LittleEndian.PutUint32(hdr[0:4], uint32(len(key)))
-	binary.LittleEndian.PutUint32(hdr[4:8], uint32(len(value)))
-	buf.Write(hdr[:])
-	buf.WriteString(key)
-	buf.WriteString(value)
-
-	f, err := meta.appendHandle()
-	if err != nil {
+func (meta *bucketMeta) appendRecord(op byte, key, value string) error {
+	if err := writeRecord(&meta.writeBuf, op, key, value); err != nil {
 		return err
 	}
-	_, err = f.Write(buf.Bytes())
-	return err
+	if meta.writeBuf.Len() < bucketWriteBufferSize {
+		return nil
+	}
+	return meta.flushAppendBuffer()
 }
 
 func (meta *bucketMeta) appendHandle() (*os.File, error) {
@@ -245,12 +249,34 @@ func (meta *bucketMeta) appendHandle() (*os.File, error) {
 }
 
 func (meta *bucketMeta) closeAppendFile() error {
+	if err := meta.flushAppendBuffer(); err != nil {
+		return err
+	}
 	if meta.appendFile == nil {
 		return nil
 	}
 	err := meta.appendFile.Close()
 	meta.appendFile = nil
 	return err
+}
+
+func (meta *bucketMeta) flushAppendBuffer() error {
+	if meta.writeBuf.Len() == 0 {
+		return nil
+	}
+	f, err := meta.appendHandle()
+	if err != nil {
+		return err
+	}
+	n, err := f.Write(meta.writeBuf.Bytes())
+	if err != nil {
+		return err
+	}
+	if n != meta.writeBuf.Len() {
+		return io.ErrShortWrite
+	}
+	meta.writeBuf.Reset()
+	return nil
 }
 
 func compactBucketIfNeeded(pool *sync.Pool, b *bucketState, meta *bucketMeta) error {
@@ -273,7 +299,7 @@ func compactBucketIfNeeded(pool *sync.Pool, b *bucketState, meta *bucketMeta) er
 	buf.Reset()
 	defer pool.Put(buf)
 	for key, value := range b.data {
-		if err := writeSetRecord(buf, key, value); err != nil {
+		if err := writeRecord(buf, recordSet, key, value); err != nil {
 			return err
 		}
 	}
@@ -294,11 +320,11 @@ func compactBucketIfNeeded(pool *sync.Pool, b *bucketState, meta *bucketMeta) er
 	return nil
 }
 
-func writeSetRecord(buf *bytes.Buffer, key, value string) error {
+func writeRecord(buf *bytes.Buffer, op byte, key, value string) error {
 	if len(key) > int(^uint32(0)) || len(value) > int(^uint32(0)) {
 		return fmt.Errorf("record is too large")
 	}
-	buf.WriteByte(recordSet)
+	buf.WriteByte(op)
 	var hdr [8]byte
 	binary.LittleEndian.PutUint32(hdr[0:4], uint32(len(key)))
 	binary.LittleEndian.PutUint32(hdr[4:8], uint32(len(value)))

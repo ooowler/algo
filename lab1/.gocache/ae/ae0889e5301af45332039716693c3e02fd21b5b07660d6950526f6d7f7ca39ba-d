@@ -1,5 +1,0 @@
-./grid.go
-./kdtree.go
-./point.go
-./bench_growth_test.go
-./geosearch_test.go

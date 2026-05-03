@@ -1,0 +1,17 @@
+File: profile
+Type: cpu
+Time: 2026-04-23 23:20:24 MSK
+Duration: 303.21ms, Total samples = 400ms (131.92%)
+Showing nodes accounting for 350ms, 87.50% of 400ms total
+Showing top 10 nodes out of 67
+      flat  flat%   sum%        cum   cum%
+     110ms 27.50% 27.50%      110ms 27.50%  runtime.memequal
+      70ms 17.50% 45.00%       70ms 17.50%  runtime.memclrNoHeapPointers
+      40ms 10.00% 55.00%       40ms 10.00%  runtime.madvise
+      30ms  7.50% 62.50%       30ms  7.50%  runtime.(*mspan).heapBitsSmallForAddr
+      30ms  7.50% 70.00%       30ms  7.50%  runtime.usleep
+      20ms  5.00% 75.00%       20ms  5.00%  lab4/concurrentmap.HashString
+      20ms  5.00% 80.00%       20ms  5.00%  runtime.findObject
+      10ms  2.50% 82.50%       10ms  2.50%  internal/runtime/atomic.(*Int64).Load
+      10ms  2.50% 85.00%       10ms  2.50%  internal/runtime/atomic.(*UnsafePointer).Load
+      10ms  2.50% 87.50%      130ms 32.50%  lab4/concurrentmap.(*Map[go.shape.string,go.shape.int]).Get

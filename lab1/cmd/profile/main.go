@@ -17,7 +17,12 @@ import (
 type workload struct {
 	name    string
 	n       int
-	prepare func(int) func()
+	prepare func(int) preparedWorkload
+}
+
+type preparedWorkload struct {
+	run     func()
+	cleanup func()
 }
 
 var workloads = []workload{
@@ -53,7 +58,7 @@ func main() {
 	}
 }
 
-func prepareHashtable(n int) func() {
+func prepareHashtable(n int) preparedWorkload {
 	keys := makeProfileKeys("k", n)
 	values := makeProfileValues("value", n)
 	ops := n / 2
@@ -66,47 +71,57 @@ func prepareHashtable(n int) func() {
 		updateValues[i] = values[(i*7)%n]
 	}
 
-	return func() {
-		defer func() {
+	var dir string
+	var table *hashtable.DiskHashTable
+	return preparedWorkload{
+		run: func() {
+			var err error
+			dir, err = os.MkdirTemp("", "dht-prof-*")
+			if err != nil {
+				panic(err)
+			}
+			table, err = hashtable.New(dir, max(64, n/16))
+			if err != nil {
+				panic(err)
+			}
+
+			for i := range keys {
+				must(table.Set(keys[i], values[i]))
+			}
+			must(table.Flush())
+			for pass := 0; pass < 2; pass++ {
+				for i := 0; i < ops; i++ {
+					must(table.Set(extraKeys[i], extraValues[i]))
+					must(table.Set(keys[i%n], updateValues[i]))
+					_, _, err = table.Get(getKeys[i])
+					must(err)
+					_, _, err = table.Get(extraKeys[i])
+					must(err)
+					if i > 0 {
+						must(table.Delete(extraKeys[i-1]))
+					}
+				}
+				must(table.Flush())
+			}
+		},
+		cleanup: func() {
+			if table != nil {
+				must(table.Close())
+			}
+			if dir != "" {
+				_ = os.RemoveAll(dir)
+			}
 			keys = nil
 			values = nil
 			extraKeys = nil
 			extraValues = nil
 			getKeys = nil
 			updateValues = nil
-		}()
-		dir, err := os.MkdirTemp("", "dht-prof-*")
-		if err != nil {
-			panic(err)
-		}
-		defer os.RemoveAll(dir)
-
-		table, err := hashtable.New(dir, max(64, n/16))
-		if err != nil {
-			panic(err)
-		}
-		defer table.Close()
-
-		for i := range keys {
-			must(table.Set(keys[i], values[i]))
-		}
-		for pass := 0; pass < 2; pass++ {
-			for i := 0; i < ops; i++ {
-				must(table.Set(extraKeys[i], extraValues[i]))
-				must(table.Set(keys[i%n], updateValues[i]))
-				_, _, err = table.Get(getKeys[i])
-				must(err)
-				_, _, err = table.Get(extraKeys[i])
-				must(err)
-				if i > 0 {
-					must(table.Delete(extraKeys[i-1]))
-				}
-			}
-		}
+		},
 	}
 }
 
-func preparePerfectHash(n int) func() {
+func preparePerfectHash(n int) preparedWorkload {
 	keys := make([]string, n)
 	values := make([]string, n)
 	keyWidth := len(strconv.Itoa(262144 - 1))
@@ -121,22 +136,24 @@ func preparePerfectHash(n int) func() {
 		lookupKeys[i] = keys[i%n]
 	}
 
-	return func() {
-		defer func() {
+	return preparedWorkload{
+		run: func() {
+			for pass := 0; pass < 12; pass++ {
+				index := perfecthash.Build(keys, values)
+				for _, key := range lookupKeys {
+					index.Get(key)
+				}
+			}
+		},
+		cleanup: func() {
 			keys = nil
 			values = nil
 			lookupKeys = nil
-		}()
-		for pass := 0; pass < 12; pass++ {
-			index := perfecthash.Build(keys, values)
-			for _, key := range lookupKeys {
-				index.Get(key)
-			}
-		}
+		},
 	}
 }
 
-func prepareLSH(n int) func() {
+func prepareLSH(n int) preparedWorkload {
 	const threshold = 1.5
 	baseSets := make([][]lsh.Point3D, 6)
 	addSets := make([][]lsh.Point3D, 6)
@@ -145,20 +162,22 @@ func prepareLSH(n int) func() {
 		addSets[pass] = lsh.GenerateDataset(max(1024, n/6), threshold, int64(99+pass))
 	}
 
-	return func() {
-		defer func() {
+	return preparedWorkload{
+		run: func() {
+			for pass := range baseSets {
+				index := lsh.BuildIndex(12, 10, threshold, rand.New(rand.NewSource(int64(7+pass))), baseSets[pass])
+				for _, point := range addSets[pass] {
+					index.Add(point)
+				}
+				for i := 0; i < 3; i++ {
+					index.FindDuplicates()
+				}
+			}
+		},
+		cleanup: func() {
 			baseSets = nil
 			addSets = nil
-		}()
-		for pass := range baseSets {
-			index := lsh.BuildIndex(12, 10, threshold, rand.New(rand.NewSource(int64(7+pass))), baseSets[pass])
-			for _, point := range addSets[pass] {
-				index.Add(point)
-			}
-			for i := 0; i < 3; i++ {
-				index.FindDuplicates()
-			}
-		}
+		},
 	}
 }
 
@@ -178,7 +197,7 @@ func makeProfileValues(prefix string, count int) []string {
 	return values
 }
 
-func writeCPU(path string, fn func()) error {
+func writeCPU(path string, work preparedWorkload) error {
 	file, err := os.Create(path)
 	if err != nil {
 		return err
@@ -187,14 +206,16 @@ func writeCPU(path string, fn func()) error {
 	if err := pprof.StartCPUProfile(file); err != nil {
 		return err
 	}
-	fn()
+	work.run()
 	pprof.StopCPUProfile()
+	work.cleanup()
 	return nil
 }
 
-func writeMem(path string, fn func()) error {
+func writeMem(path string, work preparedWorkload) error {
 	runtime.GC()
-	fn()
+	work.run()
+	work.cleanup()
 	runtime.GC()
 	file, err := os.Create(path)
 	if err != nil {

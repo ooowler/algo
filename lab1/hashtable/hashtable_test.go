@@ -42,6 +42,13 @@ func mustDelete(t *testing.T, h *DiskHashTable, key string) {
 	}
 }
 
+func mustClose(t *testing.T, h *DiskHashTable) {
+	t.Helper()
+	if err := h.Close(); err != nil {
+		t.Fatal(err)
+	}
+}
+
 func mustGet(t *testing.T, h *DiskHashTable, key string) (string, bool) {
 	t.Helper()
 	value, ok, err := h.Get(key)
@@ -78,6 +85,7 @@ func TestPersistenceAcrossReopen(t *testing.T) {
 	mustSet(t, h, "persist", "yes")
 	mustSet(t, h, "other", "value")
 	mustDelete(t, h, "other")
+	mustClose(t, h)
 
 	h = mustNew(t, dir, 8)
 	value, ok := mustGet(t, h, "persist")
@@ -87,6 +95,23 @@ func TestPersistenceAcrossReopen(t *testing.T) {
 	_, ok = mustGet(t, h, "other")
 	if ok {
 		t.Fatal("deleted key reappeared after reopen")
+	}
+}
+
+func TestFlushPersistsWithoutClose(t *testing.T) {
+	dir := tempDir(t)
+	h := mustNew(t, dir, 8)
+	defer h.Close()
+	mustSet(t, h, "buffered", "yes")
+	if err := h.Flush(); err != nil {
+		t.Fatal(err)
+	}
+
+	reopened := mustNew(t, dir, 8)
+	defer reopened.Close()
+	value, ok := mustGet(t, reopened, "buffered")
+	if !ok || value != "yes" {
+		t.Fatalf("expected flushed value, got %q ok=%v", value, ok)
 	}
 }
 
@@ -166,11 +191,13 @@ func TestRandomOperationsWithReopen(t *testing.T) {
 		}
 
 		if step%200 == 0 {
+			mustClose(t, h)
 			h = mustNew(t, dir, 32)
 			verify(step)
 		}
 	}
 
+	mustClose(t, h)
 	h = mustNew(t, dir, 32)
 	verify(2500)
 }

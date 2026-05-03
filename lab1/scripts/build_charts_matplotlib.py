@@ -24,7 +24,7 @@ LINE_RE = re.compile(
 )
 VALUE_RE = re.compile(r"^([0-9]+(?:\.[0-9]+)?)([A-Za-z]+)$")
 
-BENCH_COUNT = int(os.environ.get("GROWTH_BENCH_COUNT", "5"))
+BENCH_COUNT = int(os.environ.get("GROWTH_BENCH_COUNT", "20"))
 BENCHTIME = os.environ.get("GROWTH_BENCHTIME", "200ms")
 SIGMA = int(os.environ.get("GROWTH_SIGMA", "3"))
 GROWTH_TIMEOUT = os.environ.get("GROWTH_TIMEOUT", "3600s")
