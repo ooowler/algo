@@ -18,6 +18,8 @@
 | Search vs `N` | Naive линейно, KD/Grid сильно ниже | `60.38 ms` vs `90.4/142.6 us` на `1M` | OK |
 | Search vs radius | KD/Grid растут с радиусом | `0.3 us -> 101.8 us` для KD | OK |
 | Grid vs KD | Grid хуже на большом радиусе | `149.9 us` vs `101.8 us` при `2000 km` | OK |
+| CPU profile | distance math + tree/grid scan | `haversineH`, `searchKD`, `GridIndex.Search` | OK |
+| Memory profile | result slice allocations | `searchKD`, `GridIndex.Search` | bottleneck |
 
 ## Графики
 
@@ -26,6 +28,7 @@
 <p align="center"><img src="./figures/growth_search_compare_time.png" width="780"/></p>
 <p align="center"><img src="./figures/growth_search_compare_mem.png" width="780"/></p>
 <p align="center"><img src="./figures/radius_compare_time.png" width="780"/></p>
+<p align="center"><img src="./figures/pprof_geosearch_flamegraph.svg" width="920"/></p>
 
 ## KD-tree Build
 
@@ -54,3 +57,23 @@
 | 100 km | 0.7 ± 0.0 | 0.6 ± 0.0 | 3.0 ± 0.0 | 4 288× |
 | 500 km | 7.5 ± 0.1 | 8.6 ± 0.1 | 3.0 ± 0.0 | 396× |
 | 2 000 km | 101.8 ± 1.9 | 149.9 ± 0.3 | 3.1 ± 0.1 | 31× |
+
+## Профиль CPU
+
+| flat | flat% | cum | cum% | function |
+|---:|---:|---:|---:|---|
+| 1610ms | 16.25% | 1610ms | 16.25% | `runtime.pthread_kill` |
+| 1170ms | 11.81% | 1430ms | 14.43% | `math.sin` |
+| 850ms | 8.58% | 3060ms | 30.88% | `geo/geosearch.haversineH` |
+| 730ms | 7.37% | 2100ms | 21.19% | `geo/geosearch.searchKD` |
+| 500ms | 5.05% | 570ms | 5.75% | `math.cos` |
+| 490ms | 4.94% | 1550ms | 15.64% | `geo/geosearch.(*GridIndex).Search` |
+| 360ms | 3.63% | 1280ms | 12.92% | `geo/geosearch.(*NaiveIndex).Search` |
+
+## Профиль Memory
+
+| flat | flat% | cum | cum% | function |
+|---:|---:|---:|---:|---|
+| 5289.79MB | 49.73% | 5289.79MB | 49.73% | `geo/geosearch.searchKD` |
+| 5229.27MB | 49.16% | 5229.77MB | 49.16% | `geo/geosearch.(*GridIndex).Search` |
+| 53.36MB | 0.50% | 53.36MB | 0.50% | `geo/geosearch.(*NaiveIndex).Add` |

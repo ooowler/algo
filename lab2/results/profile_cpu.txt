@@ -1,0 +1,18 @@
+File: profile
+Type: cpu
+Time: 2026-05-15 14:22:58 MSK
+Duration: 6.15s, Total samples = 9910ms (161.13%)
+Showing nodes accounting for 7040ms, 71.04% of 9910ms total
+Dropped 81 nodes (cum <= 49.55ms)
+Showing top 10 nodes out of 86
+      flat  flat%   sum%        cum   cum%
+    1610ms 16.25% 16.25%     1610ms 16.25%  runtime.pthread_kill
+    1170ms 11.81% 28.05%     1430ms 14.43%  math.sin
+     850ms  8.58% 36.63%     3060ms 30.88%  geo/geosearch.haversineH
+     730ms  7.37% 44.00%     2100ms 21.19%  geo/geosearch.searchKD
+     500ms  5.05% 49.04%      570ms  5.75%  math.cos
+     490ms  4.94% 53.99%     1550ms 15.64%  geo/geosearch.(*GridIndex).Search
+     490ms  4.94% 58.93%      490ms  4.94%  runtime.markBits.setMarked (inline)
+     490ms  4.94% 63.87%      490ms  4.94%  runtime.pthread_cond_wait
+     360ms  3.63% 67.51%     1280ms 12.92%  geo/geosearch.(*NaiveIndex).Search
+     350ms  3.53% 71.04%     1480ms 14.93%  runtime.scanobject

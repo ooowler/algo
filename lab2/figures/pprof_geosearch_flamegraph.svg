@@ -1,0 +1,1270 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="828" viewBox="0 0 1600 828" role="img" aria-label="geosearch flamegraph">
+<style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;}.title{font-size:24px;font-weight:700;fill:#222;}.subtitle{font-size:13px;fill:#5d5d5d;}.box-label{font-size:12px;fill:#222;pointer-events:none;}.box{stroke:#ffffff;stroke-width:1;}</style>
+<rect x="0" y="0" width="1600" height="828" fill="#fffaf5"/>
+<text class="title" x="24" y="34">geosearch flamegraph</text>
+<text class="subtitle" x="24" y="56">pprof static flamegraph • total samples 9.91s • widest path is the hottest path</text>
+<g><title>program&#10;9.91s (100.0%)</title>
+<rect class="box" x="24.00" y="776.00" width="1552.00" height="20" rx="3" ry="3" fill="hsl(38,82%,62%)"/>
+<text class="box-label" x="28.00" y="790.00">program</text>
+</g>
+<g><title>runtime.systemstack&#10;1.98s (20.0%)</title>
+<rect class="box" x="24.00" y="754.00" width="310.09" height="20" rx="3" ry="3" fill="hsl(50,81%,73%)"/>
+<text class="box-label" x="28.00" y="768.00">runtime.systemstack</text>
+</g>
+<g><title>runtime.(*mheap).alloc.func1&#10;120.0ms (1.2%)</title>
+<rect class="box" x="24.00" y="732.00" width="18.79" height="20" rx="3" ry="3" fill="hsl(36,87%,71%)"/>
+</g>
+<g><title>runtime.(*mheap).allocSpan&#10;120.0ms (1.2%)</title>
+<rect class="box" x="24.00" y="710.00" width="18.79" height="20" rx="3" ry="3" fill="hsl(32,74%,60%)"/>
+</g>
+<g><title>runtime.sysUsed&#10;110.0ms (1.1%)</title>
+<rect class="box" x="24.00" y="688.00" width="17.23" height="20" rx="3" ry="3" fill="hsl(12,78%,60%)"/>
+</g>
+<g><title>runtime.sysUsedOS&#10;110.0ms (1.1%)</title>
+<rect class="box" x="24.00" y="666.00" width="17.23" height="20" rx="3" ry="3" fill="hsl(23,85%,69%)"/>
+</g>
+<g><title>runtime.madvise&#10;110.0ms (1.1%)</title>
+<rect class="box" x="24.00" y="644.00" width="17.23" height="20" rx="3" ry="3" fill="hsl(21,89%,72%)"/>
+</g>
+<g><title>runtime.lock&#10;10.0ms (0.1%)</title>
+<rect class="box" x="41.23" y="688.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(12,88%,71%)"/>
+</g>
+<g><title>runtime.lockWithRank&#10;10.0ms (0.1%)</title>
+<rect class="box" x="41.23" y="666.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(15,75%,65%)"/>
+</g>
+<g><title>runtime.lock2&#10;10.0ms (0.1%)</title>
+<rect class="box" x="41.23" y="644.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(20,82%,68%)"/>
+</g>
+<g><title>runtime.semasleep&#10;10.0ms (0.1%)</title>
+<rect class="box" x="41.23" y="622.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(18,74%,71%)"/>
+</g>
+<g><title>runtime.pthread_cond_wait&#10;10.0ms (0.1%)</title>
+<rect class="box" x="41.23" y="600.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(33,89%,61%)"/>
+</g>
+<g><title>runtime.gcBgMarkWorker.func2&#10;1.61s (16.2%)</title>
+<rect class="box" x="42.79" y="732.00" width="252.14" height="20" rx="3" ry="3" fill="hsl(10,78%,60%)"/>
+<text class="box-label" x="46.79" y="746.00">runtime.gcBgMarkWorker.func2</text>
+</g>
+<g><title>runtime.gcDrainMarkWorkerIdle&#10;1.14s (11.5%)</title>
+<rect class="box" x="42.79" y="710.00" width="178.53" height="20" rx="3" ry="3" fill="hsl(34,86%,59%)"/>
+<text class="box-label" x="46.79" y="724.00">gcDrainMarkWorkerIdle</text>
+</g>
+<g><title>runtime.gcDrain&#10;1.14s (11.5%)</title>
+<rect class="box" x="42.79" y="688.00" width="178.53" height="20" rx="3" ry="3" fill="hsl(36,83%,62%)"/>
+<text class="box-label" x="46.79" y="702.00">runtime.gcDrain</text>
+</g>
+<g><title>runtime.(*gcWork).balance&#10;1.14s (11.5%)</title>
+<rect class="box" x="42.79" y="666.00" width="178.53" height="20" rx="3" ry="3" fill="hsl(10,72%,63%)"/>
+<text class="box-label" x="46.79" y="680.00">(*gcWork).balance</text>
+</g>
+<g><title>runtime.(*gcControllerState).enlistWorker&#10;1.13s (11.4%)</title>
+<rect class="box" x="42.79" y="644.00" width="176.97" height="20" rx="3" ry="3" fill="hsl(18,81%,65%)"/>
+<text class="box-label" x="46.79" y="658.00">enlistWorker</text>
+</g>
+<g><title>runtime.preemptone&#10;1.13s (11.4%)</title>
+<rect class="box" x="42.79" y="622.00" width="176.97" height="20" rx="3" ry="3" fill="hsl(27,78%,64%)"/>
+<text class="box-label" x="46.79" y="636.00">runtime.preemptone</text>
+</g>
+<g><title>runtime.preemptM&#10;1.13s (11.4%)</title>
+<rect class="box" x="42.79" y="600.00" width="176.97" height="20" rx="3" ry="3" fill="hsl(31,84%,66%)"/>
+<text class="box-label" x="46.79" y="614.00">runtime.preemptM</text>
+</g>
+<g><title>runtime.signalM&#10;1.13s (11.4%)</title>
+<rect class="box" x="42.79" y="578.00" width="176.97" height="20" rx="3" ry="3" fill="hsl(43,85%,67%)"/>
+<text class="box-label" x="46.79" y="592.00">runtime.signalM</text>
+</g>
+<g><title>runtime.pthread_kill&#10;1.13s (11.4%)</title>
+<rect class="box" x="42.79" y="556.00" width="176.97" height="20" rx="3" ry="3" fill="hsl(10,82%,66%)"/>
+<text class="box-label" x="46.79" y="570.00">runtime.pthread_kill</text>
+</g>
+<g><title>runtime.handoff&#10;10.0ms (0.1%)</title>
+<rect class="box" x="219.76" y="644.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(27,81%,61%)"/>
+</g>
+<g><title>runtime.getempty&#10;10.0ms (0.1%)</title>
+<rect class="box" x="219.76" y="622.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(13,88%,72%)"/>
+</g>
+<g><title>runtime.getempty.func1&#10;10.0ms (0.1%)</title>
+<rect class="box" x="219.76" y="600.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(18,86%,72%)"/>
+</g>
+<g><title>runtime.(*mheap).allocManual&#10;10.0ms (0.1%)</title>
+<rect class="box" x="219.76" y="578.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(40,75%,67%)"/>
+</g>
+<g><title>runtime.(*mheap).allocSpan&#10;10.0ms (0.1%)</title>
+<rect class="box" x="219.76" y="556.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(32,74%,60%)"/>
+</g>
+<g><title>runtime.lock&#10;10.0ms (0.1%)</title>
+<rect class="box" x="219.76" y="534.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(12,88%,71%)"/>
+</g>
+<g><title>runtime.lockWithRank&#10;10.0ms (0.1%)</title>
+<rect class="box" x="219.76" y="512.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(15,75%,65%)"/>
+</g>
+<g><title>runtime.lock2&#10;10.0ms (0.1%)</title>
+<rect class="box" x="219.76" y="490.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(20,82%,68%)"/>
+</g>
+<g><title>runtime.osyield&#10;10.0ms (0.1%)</title>
+<rect class="box" x="219.76" y="468.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(57,87%,58%)"/>
+</g>
+<g><title>runtime.usleep&#10;10.0ms (0.1%)</title>
+<rect class="box" x="219.76" y="446.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(59,75%,72%)"/>
+</g>
+<g><title>runtime.gcDrainMarkWorkerDedicated&#10;470.0ms (4.7%)</title>
+<rect class="box" x="221.33" y="710.00" width="73.61" height="20" rx="3" ry="3" fill="hsl(11,77%,63%)"/>
+<text class="box-label" x="225.33" y="724.00">gcDrainM…</text>
+</g>
+<g><title>runtime.gcDrain&#10;470.0ms (4.7%)</title>
+<rect class="box" x="221.33" y="688.00" width="73.61" height="20" rx="3" ry="3" fill="hsl(36,83%,62%)"/>
+<text class="box-label" x="225.33" y="702.00">gcDrain</text>
+</g>
+<g><title>runtime.(*gcWork).balance&#10;450.0ms (4.5%)</title>
+<rect class="box" x="221.33" y="666.00" width="70.47" height="20" rx="3" ry="3" fill="hsl(10,72%,63%)"/>
+<text class="box-label" x="225.33" y="680.00">balance</text>
+</g>
+<g><title>runtime.(*gcControllerState).enlistWorker&#10;450.0ms (4.5%)</title>
+<rect class="box" x="221.33" y="644.00" width="70.47" height="20" rx="3" ry="3" fill="hsl(18,81%,65%)"/>
+<text class="box-label" x="225.33" y="658.00">enlistW…</text>
+</g>
+<g><title>runtime.preemptone&#10;450.0ms (4.5%)</title>
+<rect class="box" x="221.33" y="622.00" width="70.47" height="20" rx="3" ry="3" fill="hsl(27,78%,64%)"/>
+<text class="box-label" x="225.33" y="636.00">preempt…</text>
+</g>
+<g><title>runtime.preemptM&#10;450.0ms (4.5%)</title>
+<rect class="box" x="221.33" y="600.00" width="70.47" height="20" rx="3" ry="3" fill="hsl(31,84%,66%)"/>
+<text class="box-label" x="225.33" y="614.00">preemptM</text>
+</g>
+<g><title>runtime.signalM&#10;450.0ms (4.5%)</title>
+<rect class="box" x="221.33" y="578.00" width="70.47" height="20" rx="3" ry="3" fill="hsl(43,85%,67%)"/>
+<text class="box-label" x="225.33" y="592.00">signalM</text>
+</g>
+<g><title>runtime.pthread_kill&#10;450.0ms (4.5%)</title>
+<rect class="box" x="221.33" y="556.00" width="70.47" height="20" rx="3" ry="3" fill="hsl(10,82%,66%)"/>
+<text class="box-label" x="225.33" y="570.00">pthread…</text>
+</g>
+<g><title>runtime.markroot&#10;20.0ms (0.2%)</title>
+<rect class="box" x="291.80" y="666.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(24,74%,63%)"/>
+</g>
+<g><title>runtime.markroot.func1&#10;20.0ms (0.2%)</title>
+<rect class="box" x="291.80" y="644.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(56,78%,58%)"/>
+</g>
+<g><title>runtime.suspendG&#10;20.0ms (0.2%)</title>
+<rect class="box" x="291.80" y="622.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(58,89%,69%)"/>
+</g>
+<g><title>runtime.preemptM&#10;20.0ms (0.2%)</title>
+<rect class="box" x="291.80" y="600.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(31,84%,66%)"/>
+</g>
+<g><title>runtime.signalM&#10;20.0ms (0.2%)</title>
+<rect class="box" x="291.80" y="578.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(43,85%,67%)"/>
+</g>
+<g><title>runtime.pthread_kill&#10;20.0ms (0.2%)</title>
+<rect class="box" x="291.80" y="556.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(10,82%,66%)"/>
+</g>
+<g><title>runtime.gcStart.func4&#10;230.0ms (2.3%)</title>
+<rect class="box" x="294.93" y="732.00" width="36.02" height="20" rx="3" ry="3" fill="hsl(18,77%,72%)"/>
+</g>
+<g><title>runtime.startTheWorldWithSema&#10;230.0ms (2.3%)</title>
+<rect class="box" x="294.93" y="710.00" width="36.02" height="20" rx="3" ry="3" fill="hsl(12,72%,71%)"/>
+</g>
+<g><title>runtime.netpoll&#10;230.0ms (2.3%)</title>
+<rect class="box" x="294.93" y="688.00" width="36.02" height="20" rx="3" ry="3" fill="hsl(29,82%,63%)"/>
+</g>
+<g><title>runtime.kevent&#10;230.0ms (2.3%)</title>
+<rect class="box" x="294.93" y="666.00" width="36.02" height="20" rx="3" ry="3" fill="hsl(23,74%,60%)"/>
+</g>
+<g><title>runtime.gcMarkTermination.func3&#10;10.0ms (0.1%)</title>
+<rect class="box" x="330.95" y="732.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(31,89%,62%)"/>
+</g>
+<g><title>runtime.startTheWorldWithSema&#10;10.0ms (0.1%)</title>
+<rect class="box" x="330.95" y="710.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(12,72%,71%)"/>
+</g>
+<g><title>runtime.netpoll&#10;10.0ms (0.1%)</title>
+<rect class="box" x="330.95" y="688.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(29,82%,63%)"/>
+</g>
+<g><title>runtime.kevent&#10;10.0ms (0.1%)</title>
+<rect class="box" x="330.95" y="666.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(23,74%,60%)"/>
+</g>
+<g><title>runtime.gcMarkDone.forEachP.func5&#10;10.0ms (0.1%)</title>
+<rect class="box" x="332.52" y="732.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(32,89%,67%)"/>
+</g>
+<g><title>runtime.forEachPInternal&#10;10.0ms (0.1%)</title>
+<rect class="box" x="332.52" y="710.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(32,73%,65%)"/>
+</g>
+<g><title>runtime.preemptall&#10;10.0ms (0.1%)</title>
+<rect class="box" x="332.52" y="688.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(40,84%,67%)"/>
+</g>
+<g><title>runtime.preemptone&#10;10.0ms (0.1%)</title>
+<rect class="box" x="332.52" y="666.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(27,78%,64%)"/>
+</g>
+<g><title>runtime.preemptM&#10;10.0ms (0.1%)</title>
+<rect class="box" x="332.52" y="644.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(31,84%,66%)"/>
+</g>
+<g><title>runtime.signalM&#10;10.0ms (0.1%)</title>
+<rect class="box" x="332.52" y="622.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(43,85%,67%)"/>
+</g>
+<g><title>runtime.pthread_kill&#10;10.0ms (0.1%)</title>
+<rect class="box" x="332.52" y="600.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(10,82%,66%)"/>
+</g>
+<g><title>runtime.gcBgMarkWorker&#10;1.97s (19.9%)</title>
+<rect class="box" x="334.09" y="754.00" width="308.52" height="20" rx="3" ry="3" fill="hsl(53,78%,69%)"/>
+<text class="box-label" x="338.09" y="768.00">runtime.gcBgMarkWorker</text>
+</g>
+<g><title>runtime.systemstack&#10;1.95s (19.7%)</title>
+<rect class="box" x="334.09" y="732.00" width="305.39" height="20" rx="3" ry="3" fill="hsl(50,81%,73%)"/>
+<text class="box-label" x="338.09" y="746.00">runtime.systemstack</text>
+</g>
+<g><title>runtime.gcBgMarkWorker.func2&#10;1.95s (19.7%)</title>
+<rect class="box" x="334.09" y="710.00" width="305.39" height="20" rx="3" ry="3" fill="hsl(10,78%,60%)"/>
+<text class="box-label" x="338.09" y="724.00">runtime.gcBgMarkWorker.func2</text>
+</g>
+<g><title>runtime.gcDrainMarkWorkerDedicated&#10;840.0ms (8.5%)</title>
+<rect class="box" x="334.09" y="688.00" width="131.55" height="20" rx="3" ry="3" fill="hsl(11,77%,63%)"/>
+<text class="box-label" x="338.09" y="702.00">gcDrainMarkWorke…</text>
+</g>
+<g><title>runtime.gcDrain&#10;840.0ms (8.5%)</title>
+<rect class="box" x="334.09" y="666.00" width="131.55" height="20" rx="3" ry="3" fill="hsl(36,83%,62%)"/>
+<text class="box-label" x="338.09" y="680.00">runtime.gcDrain</text>
+</g>
+<g><title>runtime.scanobject&#10;650.0ms (6.6%)</title>
+<rect class="box" x="334.09" y="644.00" width="101.80" height="20" rx="3" ry="3" fill="hsl(41,76%,69%)"/>
+<text class="box-label" x="338.09" y="658.00">scanobject</text>
+</g>
+<g><title>runtime.(*mspan).typePointersOfUnchecked&#10;30.0ms (0.3%)</title>
+<rect class="box" x="334.09" y="622.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(27,82%,71%)"/>
+</g>
+<g><title>runtime.(*mspan).heapBitsSmallForAddr&#10;30.0ms (0.3%)</title>
+<rect class="box" x="334.09" y="600.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(8,78%,64%)"/>
+</g>
+<g><title>runtime.spanHeapBitsRange&#10;10.0ms (0.1%)</title>
+<rect class="box" x="334.09" y="578.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(17,80%,67%)"/>
+</g>
+<g><title>runtime.greyobject&#10;390.0ms (3.9%)</title>
+<rect class="box" x="338.79" y="622.00" width="61.08" height="20" rx="3" ry="3" fill="hsl(42,86%,62%)"/>
+<text class="box-label" x="342.79" y="636.00">greyob…</text>
+</g>
+<g><title>runtime.pageIndexOf&#10;20.0ms (0.2%)</title>
+<rect class="box" x="338.79" y="600.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(9,89%,61%)"/>
+</g>
+<g><title>runtime.markBits.setMarked&#10;280.0ms (2.8%)</title>
+<rect class="box" x="341.92" y="600.00" width="43.85" height="20" rx="3" ry="3" fill="hsl(13,78%,71%)"/>
+<text class="box-label" x="345.92" y="614.00">setM…</text>
+</g>
+<g><title>runtime.(*gcWork).putObjFast&#10;10.0ms (0.1%)</title>
+<rect class="box" x="385.77" y="600.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(54,78%,65%)"/>
+</g>
+<g><title>runtime.(*mspan).markBitsForIndex&#10;10.0ms (0.1%)</title>
+<rect class="box" x="387.33" y="600.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(50,73%,63%)"/>
+</g>
+<g><title>runtime.(*gcBits).bitp&#10;10.0ms (0.1%)</title>
+<rect class="box" x="387.33" y="578.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(57,85%,59%)"/>
+</g>
+<g><title>runtime.(*gcBits).bytep&#10;10.0ms (0.1%)</title>
+<rect class="box" x="387.33" y="556.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(13,86%,58%)"/>
+</g>
+<g><title>runtime.typePointers.nextFast&#10;20.0ms (0.2%)</title>
+<rect class="box" x="399.86" y="622.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(33,75%,59%)"/>
+</g>
+<g><title>runtime.typePointers.next&#10;40.0ms (0.4%)</title>
+<rect class="box" x="402.99" y="622.00" width="6.26" height="20" rx="3" ry="3" fill="hsl(13,87%,65%)"/>
+</g>
+<g><title>runtime.findObject&#10;30.0ms (0.3%)</title>
+<rect class="box" x="409.26" y="622.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(24,88%,73%)"/>
+</g>
+<g><title>runtime.(*gcWork).tryGetObjFast&#10;30.0ms (0.3%)</title>
+<rect class="box" x="435.88" y="644.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(53,83%,66%)"/>
+</g>
+<g><title>runtime.(*gcWork).balance&#10;40.0ms (0.4%)</title>
+<rect class="box" x="440.58" y="644.00" width="6.26" height="20" rx="3" ry="3" fill="hsl(10,72%,63%)"/>
+</g>
+<g><title>runtime.handoff&#10;40.0ms (0.4%)</title>
+<rect class="box" x="440.58" y="622.00" width="6.26" height="20" rx="3" ry="3" fill="hsl(27,81%,61%)"/>
+</g>
+<g><title>runtime.getempty&#10;30.0ms (0.3%)</title>
+<rect class="box" x="440.58" y="600.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(13,88%,72%)"/>
+</g>
+<g><title>runtime.(*lfstack).pop&#10;30.0ms (0.3%)</title>
+<rect class="box" x="440.58" y="578.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(34,87%,71%)"/>
+</g>
+<g><title>runtime.lfstackUnpack&#10;10.0ms (0.1%)</title>
+<rect class="box" x="440.58" y="556.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(18,80%,60%)"/>
+</g>
+<g><title>runtime.taggedPointer.pointer&#10;10.0ms (0.1%)</title>
+<rect class="box" x="440.58" y="534.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(37,83%,60%)"/>
+</g>
+<g><title>runtime.putfull&#10;10.0ms (0.1%)</title>
+<rect class="box" x="445.28" y="600.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(59,73%,72%)"/>
+</g>
+<g><title>runtime.(*lfstack).push&#10;10.0ms (0.1%)</title>
+<rect class="box" x="445.28" y="578.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(31,73%,72%)"/>
+</g>
+<g><title>runtime.gcDrainMarkWorkerIdle&#10;1.11s (11.2%)</title>
+<rect class="box" x="465.64" y="688.00" width="173.84" height="20" rx="3" ry="3" fill="hsl(34,86%,59%)"/>
+<text class="box-label" x="469.64" y="702.00">gcDrainMarkWorkerIdle</text>
+</g>
+<g><title>runtime.gcDrain&#10;1.11s (11.2%)</title>
+<rect class="box" x="465.64" y="666.00" width="173.84" height="20" rx="3" ry="3" fill="hsl(36,83%,62%)"/>
+<text class="box-label" x="469.64" y="680.00">runtime.gcDrain</text>
+</g>
+<g><title>runtime.scanobject&#10;830.0ms (8.4%)</title>
+<rect class="box" x="465.64" y="644.00" width="129.99" height="20" rx="3" ry="3" fill="hsl(41,76%,69%)"/>
+<text class="box-label" x="469.64" y="658.00">scanobject</text>
+</g>
+<g><title>runtime.(*mspan).typePointersOfUnchecked&#10;60.0ms (0.6%)</title>
+<rect class="box" x="465.64" y="622.00" width="9.40" height="20" rx="3" ry="3" fill="hsl(27,82%,71%)"/>
+</g>
+<g><title>runtime.(*mspan).heapBitsSmallForAddr&#10;50.0ms (0.5%)</title>
+<rect class="box" x="465.64" y="600.00" width="7.83" height="20" rx="3" ry="3" fill="hsl(8,78%,64%)"/>
+</g>
+<g><title>runtime.greyobject&#10;400.0ms (4.0%)</title>
+<rect class="box" x="475.04" y="622.00" width="62.64" height="20" rx="3" ry="3" fill="hsl(42,86%,62%)"/>
+<text class="box-label" x="479.04" y="636.00">greyob…</text>
+</g>
+<g><title>runtime.markBits.setMarked&#10;210.0ms (2.1%)</title>
+<rect class="box" x="475.04" y="600.00" width="32.89" height="20" rx="3" ry="3" fill="hsl(13,78%,71%)"/>
+</g>
+<g><title>runtime.(*gcWork).putObjFast&#10;10.0ms (0.1%)</title>
+<rect class="box" x="507.92" y="600.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(54,78%,65%)"/>
+</g>
+<g><title>runtime.(*mspan).markBitsForIndex&#10;10.0ms (0.1%)</title>
+<rect class="box" x="509.49" y="600.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(50,73%,63%)"/>
+</g>
+<g><title>runtime.(*gcBits).bitp&#10;10.0ms (0.1%)</title>
+<rect class="box" x="509.49" y="578.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(57,85%,59%)"/>
+</g>
+<g><title>runtime.(*gcBits).bytep&#10;10.0ms (0.1%)</title>
+<rect class="box" x="509.49" y="556.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(13,86%,58%)"/>
+</g>
+<g><title>runtime.findObject&#10;100.0ms (1.0%)</title>
+<rect class="box" x="537.68" y="622.00" width="15.66" height="20" rx="3" ry="3" fill="hsl(24,88%,73%)"/>
+</g>
+<g><title>runtime.spanOf&#10;50.0ms (0.5%)</title>
+<rect class="box" x="537.68" y="600.00" width="7.83" height="20" rx="3" ry="3" fill="hsl(58,78%,59%)"/>
+</g>
+<g><title>runtime.(*mspan).base&#10;30.0ms (0.3%)</title>
+<rect class="box" x="545.51" y="600.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(28,82%,58%)"/>
+</g>
+<g><title>runtime.typePointers.nextFast&#10;30.0ms (0.3%)</title>
+<rect class="box" x="553.34" y="622.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(33,75%,59%)"/>
+</g>
+<g><title>runtime.spanOfUnchecked&#10;10.0ms (0.1%)</title>
+<rect class="box" x="558.04" y="622.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(18,85%,69%)"/>
+</g>
+<g><title>runtime.typePointers.next&#10;20.0ms (0.2%)</title>
+<rect class="box" x="559.60" y="622.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(13,87%,65%)"/>
+</g>
+<g><title>runtime.(*gcWork).tryGetObj&#10;50.0ms (0.5%)</title>
+<rect class="box" x="595.62" y="644.00" width="7.83" height="20" rx="3" ry="3" fill="hsl(12,84%,68%)"/>
+</g>
+<g><title>runtime.trygetfull&#10;30.0ms (0.3%)</title>
+<rect class="box" x="595.62" y="622.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(11,86%,63%)"/>
+</g>
+<g><title>runtime.(*lfstack).pop&#10;20.0ms (0.2%)</title>
+<rect class="box" x="595.62" y="600.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(34,87%,71%)"/>
+</g>
+<g><title>runtime.putempty&#10;20.0ms (0.2%)</title>
+<rect class="box" x="600.32" y="622.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(14,79%,65%)"/>
+</g>
+<g><title>runtime.(*workbuf).checkempty&#10;10.0ms (0.1%)</title>
+<rect class="box" x="600.32" y="600.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(23,78%,65%)"/>
+</g>
+<g><title>runtime.(*gcWork).tryGetObjFast&#10;40.0ms (0.4%)</title>
+<rect class="box" x="603.46" y="644.00" width="6.26" height="20" rx="3" ry="3" fill="hsl(53,83%,66%)"/>
+</g>
+<g><title>runtime.(*gcWork).balance&#10;80.0ms (0.8%)</title>
+<rect class="box" x="609.72" y="644.00" width="12.53" height="20" rx="3" ry="3" fill="hsl(10,72%,63%)"/>
+</g>
+<g><title>runtime.handoff&#10;80.0ms (0.8%)</title>
+<rect class="box" x="609.72" y="622.00" width="12.53" height="20" rx="3" ry="3" fill="hsl(27,81%,61%)"/>
+</g>
+<g><title>runtime.getempty&#10;80.0ms (0.8%)</title>
+<rect class="box" x="609.72" y="600.00" width="12.53" height="20" rx="3" ry="3" fill="hsl(13,88%,72%)"/>
+</g>
+<g><title>runtime.(*lfstack).pop&#10;70.0ms (0.7%)</title>
+<rect class="box" x="609.72" y="578.00" width="10.96" height="20" rx="3" ry="3" fill="hsl(34,87%,71%)"/>
+</g>
+<g><title>internal/runtime/atomic.(*Int64).Add&#10;20.0ms (0.2%)</title>
+<rect class="box" x="622.25" y="644.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(40,72%,60%)"/>
+</g>
+<g><title>runtime.nanotime&#10;10.0ms (0.1%)</title>
+<rect class="box" x="639.48" y="732.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(53,74%,68%)"/>
+</g>
+<g><title>runtime.nanotime1&#10;10.0ms (0.1%)</title>
+<rect class="box" x="639.48" y="710.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(47,88%,68%)"/>
+</g>
+<g><title>runtime.gcMarkDone&#10;10.0ms (0.1%)</title>
+<rect class="box" x="641.04" y="732.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(54,89%,72%)"/>
+</g>
+<g><title>runtime.gcMarkTermination&#10;10.0ms (0.1%)</title>
+<rect class="box" x="641.04" y="710.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(39,81%,72%)"/>
+</g>
+<g><title>runtime.mProf_Flush&#10;10.0ms (0.1%)</title>
+<rect class="box" x="641.04" y="688.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(22,72%,67%)"/>
+</g>
+<g><title>runtime.mProf_FlushLocked&#10;10.0ms (0.1%)</title>
+<rect class="box" x="641.04" y="666.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(47,82%,70%)"/>
+</g>
+<g><title>runtime.(*memRecordCycle).add&#10;10.0ms (0.1%)</title>
+<rect class="box" x="641.04" y="644.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(47,85%,60%)"/>
+</g>
+<g><title>runtime.main&#10;4.93s (49.7%)</title>
+<rect class="box" x="642.61" y="754.00" width="772.08" height="20" rx="3" ry="3" fill="hsl(15,89%,66%)"/>
+<text class="box-label" x="646.61" y="768.00">runtime.main</text>
+</g>
+<g><title>main.main&#10;4.93s (49.7%)</title>
+<rect class="box" x="642.61" y="732.00" width="772.08" height="20" rx="3" ry="3" fill="hsl(13,89%,61%)"/>
+<text class="box-label" x="646.61" y="746.00">main.main</text>
+</g>
+<g><title>main.writeCPU&#10;4.93s (49.7%)</title>
+<rect class="box" x="642.61" y="710.00" width="772.08" height="20" rx="3" ry="3" fill="hsl(40,74%,70%)"/>
+<text class="box-label" x="646.61" y="724.00">main.writeCPU</text>
+</g>
+<g><title>main.prepare.func1&#10;4.93s (49.7%)</title>
+<rect class="box" x="642.61" y="688.00" width="772.08" height="20" rx="3" ry="3" fill="hsl(12,86%,69%)"/>
+<text class="box-label" x="646.61" y="702.00">main.prepare.func1</text>
+</g>
+<g><title>geo/geosearch.(*KDTree).Search&#10;2.10s (21.2%)</title>
+<rect class="box" x="642.61" y="666.00" width="328.88" height="20" rx="3" ry="3" fill="hsl(49,84%,61%)"/>
+<text class="box-label" x="646.61" y="680.00">geosearch.(*KDTree).Search</text>
+</g>
+<g><title>geo/geosearch.searchKD&#10;2.10s (21.2%)</title>
+<rect class="box" x="642.61" y="644.00" width="328.88" height="20" rx="3" ry="3" fill="hsl(41,75%,68%)"/>
+<text class="box-label" x="646.61" y="658.00">geosearch.searchKD</text>
+</g>
+<g><title>geo/geosearch.searchKD&#10;2.10s (21.2%)</title>
+<rect class="box" x="642.61" y="622.00" width="328.88" height="20" rx="3" ry="3" fill="hsl(41,75%,68%)"/>
+<text class="box-label" x="646.61" y="636.00">geosearch.searchKD</text>
+</g>
+<g><title>geo/geosearch.searchKD&#10;2.10s (21.2%)</title>
+<rect class="box" x="642.61" y="600.00" width="328.88" height="20" rx="3" ry="3" fill="hsl(41,75%,68%)"/>
+<text class="box-label" x="646.61" y="614.00">geosearch.searchKD</text>
+</g>
+<g><title>geo/geosearch.searchKD&#10;2.10s (21.2%)</title>
+<rect class="box" x="642.61" y="578.00" width="328.88" height="20" rx="3" ry="3" fill="hsl(41,75%,68%)"/>
+<text class="box-label" x="646.61" y="592.00">geosearch.searchKD</text>
+</g>
+<g><title>geo/geosearch.searchKD&#10;2.10s (21.2%)</title>
+<rect class="box" x="642.61" y="556.00" width="328.88" height="20" rx="3" ry="3" fill="hsl(41,75%,68%)"/>
+<text class="box-label" x="646.61" y="570.00">geosearch.searchKD</text>
+</g>
+<g><title>geo/geosearch.searchKD&#10;2.09s (21.1%)</title>
+<rect class="box" x="642.61" y="534.00" width="327.31" height="20" rx="3" ry="3" fill="hsl(41,75%,68%)"/>
+<text class="box-label" x="646.61" y="548.00">geosearch.searchKD</text>
+</g>
+<g><title>geo/geosearch.searchKD&#10;2.09s (21.1%)</title>
+<rect class="box" x="642.61" y="512.00" width="327.31" height="20" rx="3" ry="3" fill="hsl(41,75%,68%)"/>
+<text class="box-label" x="646.61" y="526.00">geosearch.searchKD</text>
+</g>
+<g><title>geo/geosearch.searchKD&#10;2.09s (21.1%)</title>
+<rect class="box" x="642.61" y="490.00" width="327.31" height="20" rx="3" ry="3" fill="hsl(41,75%,68%)"/>
+<text class="box-label" x="646.61" y="504.00">geosearch.searchKD</text>
+</g>
+<g><title>geo/geosearch.searchKD&#10;2.08s (21.0%)</title>
+<rect class="box" x="642.61" y="468.00" width="325.75" height="20" rx="3" ry="3" fill="hsl(41,75%,68%)"/>
+<text class="box-label" x="646.61" y="482.00">geosearch.searchKD</text>
+</g>
+<g><title>geo/geosearch.searchKD&#10;2.07s (20.9%)</title>
+<rect class="box" x="642.61" y="446.00" width="324.18" height="20" rx="3" ry="3" fill="hsl(41,75%,68%)"/>
+<text class="box-label" x="646.61" y="460.00">geosearch.searchKD</text>
+</g>
+<g><title>geo/geosearch.searchKD&#10;2.07s (20.9%)</title>
+<rect class="box" x="642.61" y="424.00" width="324.18" height="20" rx="3" ry="3" fill="hsl(41,75%,68%)"/>
+<text class="box-label" x="646.61" y="438.00">geosearch.searchKD</text>
+</g>
+<g><title>geo/geosearch.searchKD&#10;2.05s (20.7%)</title>
+<rect class="box" x="642.61" y="402.00" width="321.05" height="20" rx="3" ry="3" fill="hsl(41,75%,68%)"/>
+<text class="box-label" x="646.61" y="416.00">geosearch.searchKD</text>
+</g>
+<g><title>geo/geosearch.searchKD&#10;1.97s (19.9%)</title>
+<rect class="box" x="642.61" y="380.00" width="308.52" height="20" rx="3" ry="3" fill="hsl(41,75%,68%)"/>
+<text class="box-label" x="646.61" y="394.00">geosearch.searchKD</text>
+</g>
+<g><title>geo/geosearch.searchKD&#10;1.91s (19.3%)</title>
+<rect class="box" x="642.61" y="358.00" width="299.12" height="20" rx="3" ry="3" fill="hsl(41,75%,68%)"/>
+<text class="box-label" x="646.61" y="372.00">geosearch.searchKD</text>
+</g>
+<g><title>geo/geosearch.searchKD&#10;1.80s (18.2%)</title>
+<rect class="box" x="642.61" y="336.00" width="281.90" height="20" rx="3" ry="3" fill="hsl(41,75%,68%)"/>
+<text class="box-label" x="646.61" y="350.00">geosearch.searchKD</text>
+</g>
+<g><title>geo/geosearch.searchKD&#10;1.59s (16.0%)</title>
+<rect class="box" x="642.61" y="314.00" width="249.01" height="20" rx="3" ry="3" fill="hsl(41,75%,68%)"/>
+<text class="box-label" x="646.61" y="328.00">geosearch.searchKD</text>
+</g>
+<g><title>runtime.growslice&#10;60.0ms (0.6%)</title>
+<rect class="box" x="642.61" y="292.00" width="9.40" height="20" rx="3" ry="3" fill="hsl(17,85%,70%)"/>
+</g>
+<g><title>runtime.mallocgc&#10;40.0ms (0.4%)</title>
+<rect class="box" x="642.61" y="270.00" width="6.26" height="20" rx="3" ry="3" fill="hsl(31,75%,68%)"/>
+</g>
+<g><title>runtime.mallocgcLarge&#10;30.0ms (0.3%)</title>
+<rect class="box" x="642.61" y="248.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(55,86%,68%)"/>
+</g>
+<g><title>runtime.profilealloc&#10;20.0ms (0.2%)</title>
+<rect class="box" x="642.61" y="226.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(9,73%,70%)"/>
+</g>
+<g><title>runtime.mProf_Malloc&#10;20.0ms (0.2%)</title>
+<rect class="box" x="642.61" y="204.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(31,89%,59%)"/>
+</g>
+<g><title>runtime.stkbucket&#10;10.0ms (0.1%)</title>
+<rect class="box" x="642.61" y="182.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(57,72%,59%)"/>
+</g>
+<g><title>internal/runtime/atomic.(*UnsafePointer).Load&#10;10.0ms (0.1%)</title>
+<rect class="box" x="642.61" y="160.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(48,77%,59%)"/>
+</g>
+<g><title>runtime.gcTrigger.test&#10;10.0ms (0.1%)</title>
+<rect class="box" x="645.74" y="226.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(48,83%,73%)"/>
+</g>
+<g><title>runtime.newstack&#10;10.0ms (0.1%)</title>
+<rect class="box" x="645.74" y="204.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(36,87%,66%)"/>
+</g>
+<g><title>runtime.mallocgcSmallNoscan&#10;10.0ms (0.1%)</title>
+<rect class="box" x="647.31" y="248.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(52,86%,60%)"/>
+</g>
+<g><title>runtime.profilealloc&#10;10.0ms (0.1%)</title>
+<rect class="box" x="647.31" y="226.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(9,73%,70%)"/>
+</g>
+<g><title>runtime.mProf_Malloc&#10;10.0ms (0.1%)</title>
+<rect class="box" x="647.31" y="204.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(31,89%,59%)"/>
+</g>
+<g><title>runtime.stkbucket&#10;10.0ms (0.1%)</title>
+<rect class="box" x="647.31" y="182.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(57,72%,59%)"/>
+</g>
+<g><title>internal/runtime/atomic.(*UnsafePointer).Load&#10;10.0ms (0.1%)</title>
+<rect class="box" x="647.31" y="160.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(48,77%,59%)"/>
+</g>
+<g><title>runtime.memclrNoHeapPointers&#10;10.0ms (0.1%)</title>
+<rect class="box" x="648.87" y="270.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(57,88%,67%)"/>
+</g>
+<g><title>runtime.memmove&#10;10.0ms (0.1%)</title>
+<rect class="box" x="650.44" y="270.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(28,81%,64%)"/>
+</g>
+<g><title>geo/geosearch.searchKD&#10;1.19s (12.0%)</title>
+<rect class="box" x="652.00" y="292.00" width="186.37" height="20" rx="3" ry="3" fill="hsl(41,75%,68%)"/>
+<text class="box-label" x="656.00" y="306.00">geosearch.searchKD</text>
+</g>
+<g><title>geo/geosearch.searchKD&#10;620.0ms (6.3%)</title>
+<rect class="box" x="652.00" y="270.00" width="97.10" height="20" rx="3" ry="3" fill="hsl(41,75%,68%)"/>
+<text class="box-label" x="656.00" y="284.00">searchKD</text>
+</g>
+<g><title>geo/geosearch.haversineH&#10;290.0ms (2.9%)</title>
+<rect class="box" x="652.00" y="248.00" width="45.42" height="20" rx="3" ry="3" fill="hsl(31,78%,72%)"/>
+<text class="box-label" x="656.00" y="262.00">have…</text>
+</g>
+<g><title>math.Sin&#10;160.0ms (1.6%)</title>
+<rect class="box" x="652.00" y="226.00" width="25.06" height="20" rx="3" ry="3" fill="hsl(12,79%,60%)"/>
+</g>
+<g><title>math.sin&#10;160.0ms (1.6%)</title>
+<rect class="box" x="652.00" y="204.00" width="25.06" height="20" rx="3" ry="3" fill="hsl(57,80%,70%)"/>
+</g>
+<g><title>math.IsInf&#10;10.0ms (0.1%)</title>
+<rect class="box" x="652.00" y="182.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(31,83%,71%)"/>
+</g>
+<g><title>math.Cos&#10;60.0ms (0.6%)</title>
+<rect class="box" x="677.06" y="226.00" width="9.40" height="20" rx="3" ry="3" fill="hsl(33,77%,70%)"/>
+</g>
+<g><title>math.cos&#10;60.0ms (0.6%)</title>
+<rect class="box" x="677.06" y="204.00" width="9.40" height="20" rx="3" ry="3" fill="hsl(26,77%,63%)"/>
+</g>
+<g><title>runtime.asyncPreempt&#10;10.0ms (0.1%)</title>
+<rect class="box" x="677.06" y="182.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(33,88%,71%)"/>
+</g>
+<g><title>math.IsInf&#10;10.0ms (0.1%)</title>
+<rect class="box" x="678.63" y="182.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(31,83%,71%)"/>
+</g>
+<g><title>geo/geosearch.lngDelta&#10;10.0ms (0.1%)</title>
+<rect class="box" x="686.46" y="226.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(54,78%,66%)"/>
+</g>
+<g><title>runtime.growslice&#10;50.0ms (0.5%)</title>
+<rect class="box" x="697.42" y="248.00" width="7.83" height="20" rx="3" ry="3" fill="hsl(17,85%,70%)"/>
+</g>
+<g><title>runtime.mallocgc&#10;30.0ms (0.3%)</title>
+<rect class="box" x="697.42" y="226.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(31,75%,68%)"/>
+</g>
+<g><title>runtime.mallocgcLarge&#10;30.0ms (0.3%)</title>
+<rect class="box" x="697.42" y="204.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(55,86%,68%)"/>
+</g>
+<g><title>runtime.profilealloc&#10;30.0ms (0.3%)</title>
+<rect class="box" x="697.42" y="182.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(9,73%,70%)"/>
+</g>
+<g><title>runtime.mProf_Malloc&#10;30.0ms (0.3%)</title>
+<rect class="box" x="697.42" y="160.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(31,89%,59%)"/>
+</g>
+<g><title>runtime.stkbucket&#10;10.0ms (0.1%)</title>
+<rect class="box" x="697.42" y="138.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(57,72%,59%)"/>
+</g>
+<g><title>internal/runtime/atomic.(*UnsafePointer).Load&#10;10.0ms (0.1%)</title>
+<rect class="box" x="697.42" y="116.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(48,77%,59%)"/>
+</g>
+<g><title>runtime.callers&#10;10.0ms (0.1%)</title>
+<rect class="box" x="698.99" y="138.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(59,76%,69%)"/>
+</g>
+<g><title>runtime.systemstack&#10;10.0ms (0.1%)</title>
+<rect class="box" x="698.99" y="116.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(50,81%,73%)"/>
+</g>
+<g><title>runtime.callers.func1&#10;10.0ms (0.1%)</title>
+<rect class="box" x="698.99" y="94.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(21,74%,62%)"/>
+</g>
+<g><title>runtime.tracebackPCs&#10;10.0ms (0.1%)</title>
+<rect class="box" x="698.99" y="72.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(23,79%,61%)"/>
+</g>
+<g><title>runtime.memmove&#10;20.0ms (0.2%)</title>
+<rect class="box" x="702.12" y="226.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(28,81%,64%)"/>
+</g>
+<g><title>geo/geosearch.searchKD&#10;30.0ms (0.3%)</title>
+<rect class="box" x="705.25" y="248.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(41,75%,68%)"/>
+</g>
+<g><title>geo/geosearch.haversineH&#10;360.0ms (3.6%)</title>
+<rect class="box" x="749.10" y="270.00" width="56.38" height="20" rx="3" ry="3" fill="hsl(31,78%,72%)"/>
+<text class="box-label" x="753.10" y="284.00">haver…</text>
+</g>
+<g><title>geo/geosearch.lngDelta&#10;30.0ms (0.3%)</title>
+<rect class="box" x="749.10" y="248.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(54,78%,66%)"/>
+</g>
+<g><title>geo/geosearch.normalizeLng&#10;20.0ms (0.2%)</title>
+<rect class="box" x="749.10" y="226.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(40,81%,71%)"/>
+</g>
+<g><title>math.Cos&#10;70.0ms (0.7%)</title>
+<rect class="box" x="753.80" y="248.00" width="10.96" height="20" rx="3" ry="3" fill="hsl(33,77%,70%)"/>
+</g>
+<g><title>math.cos&#10;70.0ms (0.7%)</title>
+<rect class="box" x="753.80" y="226.00" width="10.96" height="20" rx="3" ry="3" fill="hsl(26,77%,63%)"/>
+</g>
+<g><title>math.IsInf&#10;20.0ms (0.2%)</title>
+<rect class="box" x="753.80" y="204.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(31,83%,71%)"/>
+</g>
+<g><title>math.Sin&#10;120.0ms (1.2%)</title>
+<rect class="box" x="764.76" y="248.00" width="18.79" height="20" rx="3" ry="3" fill="hsl(12,79%,60%)"/>
+</g>
+<g><title>math.sin&#10;120.0ms (1.2%)</title>
+<rect class="box" x="764.76" y="226.00" width="18.79" height="20" rx="3" ry="3" fill="hsl(57,80%,70%)"/>
+</g>
+<g><title>math.IsNaN&#10;40.0ms (0.4%)</title>
+<rect class="box" x="764.76" y="204.00" width="6.26" height="20" rx="3" ry="3" fill="hsl(41,75%,59%)"/>
+</g>
+<g><title>runtime.asyncPreempt&#10;10.0ms (0.1%)</title>
+<rect class="box" x="771.03" y="204.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(33,88%,71%)"/>
+</g>
+<g><title>runtime.growslice&#10;20.0ms (0.2%)</title>
+<rect class="box" x="805.48" y="270.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(17,85%,70%)"/>
+</g>
+<g><title>runtime.mallocgc&#10;20.0ms (0.2%)</title>
+<rect class="box" x="805.48" y="248.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(31,75%,68%)"/>
+</g>
+<g><title>runtime.mallocgcLarge&#10;20.0ms (0.2%)</title>
+<rect class="box" x="805.48" y="226.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(55,86%,68%)"/>
+</g>
+<g><title>runtime.profilealloc&#10;20.0ms (0.2%)</title>
+<rect class="box" x="805.48" y="204.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(9,73%,70%)"/>
+</g>
+<g><title>runtime.mProf_Malloc&#10;20.0ms (0.2%)</title>
+<rect class="box" x="805.48" y="182.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(31,89%,59%)"/>
+</g>
+<g><title>runtime.stkbucket&#10;20.0ms (0.2%)</title>
+<rect class="box" x="805.48" y="160.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(57,72%,59%)"/>
+</g>
+<g><title>internal/runtime/atomic.(*UnsafePointer).Load&#10;10.0ms (0.1%)</title>
+<rect class="box" x="805.48" y="138.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(48,77%,59%)"/>
+</g>
+<g><title>runtime.newBucket&#10;10.0ms (0.1%)</title>
+<rect class="box" x="807.05" y="138.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(18,77%,59%)"/>
+</g>
+<g><title>geo/geosearch.haversineH&#10;240.0ms (2.4%)</title>
+<rect class="box" x="838.37" y="292.00" width="37.59" height="20" rx="3" ry="3" fill="hsl(31,78%,72%)"/>
+</g>
+<g><title>math.Sin&#10;100.0ms (1.0%)</title>
+<rect class="box" x="838.37" y="270.00" width="15.66" height="20" rx="3" ry="3" fill="hsl(12,79%,60%)"/>
+</g>
+<g><title>math.sin&#10;100.0ms (1.0%)</title>
+<rect class="box" x="838.37" y="248.00" width="15.66" height="20" rx="3" ry="3" fill="hsl(57,80%,70%)"/>
+</g>
+<g><title>math.IsInf&#10;40.0ms (0.4%)</title>
+<rect class="box" x="838.37" y="226.00" width="6.26" height="20" rx="3" ry="3" fill="hsl(31,83%,71%)"/>
+</g>
+<g><title>runtime.asyncPreempt&#10;10.0ms (0.1%)</title>
+<rect class="box" x="838.37" y="204.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(33,88%,71%)"/>
+</g>
+<g><title>math.Cos&#10;40.0ms (0.4%)</title>
+<rect class="box" x="854.03" y="270.00" width="6.26" height="20" rx="3" ry="3" fill="hsl(33,77%,70%)"/>
+</g>
+<g><title>math.cos&#10;40.0ms (0.4%)</title>
+<rect class="box" x="854.03" y="248.00" width="6.26" height="20" rx="3" ry="3" fill="hsl(26,77%,63%)"/>
+</g>
+<g><title>runtime.asyncPreempt&#10;10.0ms (0.1%)</title>
+<rect class="box" x="854.03" y="226.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(33,88%,71%)"/>
+</g>
+<g><title>geo/geosearch.haversineH&#10;140.0ms (1.4%)</title>
+<rect class="box" x="891.62" y="314.00" width="21.93" height="20" rx="3" ry="3" fill="hsl(31,78%,72%)"/>
+</g>
+<g><title>math.Sin&#10;90.0ms (0.9%)</title>
+<rect class="box" x="891.62" y="292.00" width="14.09" height="20" rx="3" ry="3" fill="hsl(12,79%,60%)"/>
+</g>
+<g><title>math.sin&#10;90.0ms (0.9%)</title>
+<rect class="box" x="891.62" y="270.00" width="14.09" height="20" rx="3" ry="3" fill="hsl(57,80%,70%)"/>
+</g>
+<g><title>runtime.asyncPreempt&#10;10.0ms (0.1%)</title>
+<rect class="box" x="891.62" y="248.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(33,88%,71%)"/>
+</g>
+<g><title>math.Cos&#10;10.0ms (0.1%)</title>
+<rect class="box" x="905.71" y="292.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(33,77%,70%)"/>
+</g>
+<g><title>math.cos&#10;10.0ms (0.1%)</title>
+<rect class="box" x="905.71" y="270.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(26,77%,63%)"/>
+</g>
+<g><title>geo/geosearch.lngDelta&#10;10.0ms (0.1%)</title>
+<rect class="box" x="907.28" y="292.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(54,78%,66%)"/>
+</g>
+<g><title>geo/geosearch.normalizeLng&#10;10.0ms (0.1%)</title>
+<rect class="box" x="907.28" y="270.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(40,81%,71%)"/>
+</g>
+<g><title>runtime.growslice&#10;10.0ms (0.1%)</title>
+<rect class="box" x="913.54" y="314.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(17,85%,70%)"/>
+</g>
+<g><title>runtime.memmove&#10;10.0ms (0.1%)</title>
+<rect class="box" x="913.54" y="292.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(28,81%,64%)"/>
+</g>
+<g><title>geo/geosearch.haversineH&#10;70.0ms (0.7%)</title>
+<rect class="box" x="924.50" y="336.00" width="10.96" height="20" rx="3" ry="3" fill="hsl(31,78%,72%)"/>
+</g>
+<g><title>math.Sin&#10;30.0ms (0.3%)</title>
+<rect class="box" x="924.50" y="314.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(12,79%,60%)"/>
+</g>
+<g><title>math.sin&#10;30.0ms (0.3%)</title>
+<rect class="box" x="924.50" y="292.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(57,80%,70%)"/>
+</g>
+<g><title>geo/geosearch.lngDelta&#10;10.0ms (0.1%)</title>
+<rect class="box" x="929.20" y="314.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(54,78%,66%)"/>
+</g>
+<g><title>geo/geosearch.normalizeLng&#10;10.0ms (0.1%)</title>
+<rect class="box" x="929.20" y="292.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(40,81%,71%)"/>
+</g>
+<g><title>runtime.growslice&#10;10.0ms (0.1%)</title>
+<rect class="box" x="935.47" y="336.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(17,85%,70%)"/>
+</g>
+<g><title>runtime.memclrNoHeapPointers&#10;10.0ms (0.1%)</title>
+<rect class="box" x="935.47" y="314.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(57,88%,67%)"/>
+</g>
+<g><title>geo/geosearch.haversineH&#10;30.0ms (0.3%)</title>
+<rect class="box" x="941.73" y="358.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(31,78%,72%)"/>
+</g>
+<g><title>math.Cos&#10;10.0ms (0.1%)</title>
+<rect class="box" x="941.73" y="336.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(33,77%,70%)"/>
+</g>
+<g><title>math.cos&#10;10.0ms (0.1%)</title>
+<rect class="box" x="941.73" y="314.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(26,77%,63%)"/>
+</g>
+<g><title>math.Sin&#10;10.0ms (0.1%)</title>
+<rect class="box" x="943.30" y="336.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(12,79%,60%)"/>
+</g>
+<g><title>math.sin&#10;10.0ms (0.1%)</title>
+<rect class="box" x="943.30" y="314.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(57,80%,70%)"/>
+</g>
+<g><title>math.IsInf&#10;10.0ms (0.1%)</title>
+<rect class="box" x="943.30" y="292.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(31,83%,71%)"/>
+</g>
+<g><title>geo/geosearch.haversineH&#10;60.0ms (0.6%)</title>
+<rect class="box" x="951.13" y="380.00" width="9.40" height="20" rx="3" ry="3" fill="hsl(31,78%,72%)"/>
+</g>
+<g><title>math.Sin&#10;50.0ms (0.5%)</title>
+<rect class="box" x="951.13" y="358.00" width="7.83" height="20" rx="3" ry="3" fill="hsl(12,79%,60%)"/>
+</g>
+<g><title>math.sin&#10;50.0ms (0.5%)</title>
+<rect class="box" x="951.13" y="336.00" width="7.83" height="20" rx="3" ry="3" fill="hsl(57,80%,70%)"/>
+</g>
+<g><title>math.IsNaN&#10;10.0ms (0.1%)</title>
+<rect class="box" x="951.13" y="314.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(41,75%,59%)"/>
+</g>
+<g><title>geo/geosearch.haversineH&#10;20.0ms (0.2%)</title>
+<rect class="box" x="963.66" y="402.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(31,78%,72%)"/>
+</g>
+<g><title>math.Cos&#10;10.0ms (0.1%)</title>
+<rect class="box" x="963.66" y="380.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(33,77%,70%)"/>
+</g>
+<g><title>math.cos&#10;10.0ms (0.1%)</title>
+<rect class="box" x="963.66" y="358.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(26,77%,63%)"/>
+</g>
+<g><title>geo/geosearch.haversineH&#10;10.0ms (0.1%)</title>
+<rect class="box" x="968.36" y="468.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(31,78%,72%)"/>
+</g>
+<g><title>math.Sin&#10;10.0ms (0.1%)</title>
+<rect class="box" x="968.36" y="446.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(12,79%,60%)"/>
+</g>
+<g><title>math.sin&#10;10.0ms (0.1%)</title>
+<rect class="box" x="968.36" y="424.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(57,80%,70%)"/>
+</g>
+<g><title>geo/geosearch.(*NaiveIndex).Search&#10;1.28s (12.9%)</title>
+<rect class="box" x="971.49" y="666.00" width="200.46" height="20" rx="3" ry="3" fill="hsl(13,85%,68%)"/>
+<text class="box-label" x="975.49" y="680.00">(*NaiveIndex).Search</text>
+</g>
+<g><title>geo/geosearch.haversineH&#10;920.0ms (9.3%)</title>
+<rect class="box" x="971.49" y="644.00" width="144.08" height="20" rx="3" ry="3" fill="hsl(31,78%,72%)"/>
+<text class="box-label" x="975.49" y="658.00">haversineH</text>
+</g>
+<g><title>math.Cos&#10;170.0ms (1.7%)</title>
+<rect class="box" x="971.49" y="622.00" width="26.62" height="20" rx="3" ry="3" fill="hsl(33,77%,70%)"/>
+</g>
+<g><title>math.cos&#10;170.0ms (1.7%)</title>
+<rect class="box" x="971.49" y="600.00" width="26.62" height="20" rx="3" ry="3" fill="hsl(26,77%,63%)"/>
+</g>
+<g><title>geo/geosearch.lngDelta&#10;90.0ms (0.9%)</title>
+<rect class="box" x="998.11" y="622.00" width="14.09" height="20" rx="3" ry="3" fill="hsl(54,78%,66%)"/>
+</g>
+<g><title>geo/geosearch.normalizeLng&#10;90.0ms (0.9%)</title>
+<rect class="box" x="998.11" y="600.00" width="14.09" height="20" rx="3" ry="3" fill="hsl(40,81%,71%)"/>
+</g>
+<g><title>math.Sin&#10;410.0ms (4.1%)</title>
+<rect class="box" x="1012.21" y="622.00" width="64.21" height="20" rx="3" ry="3" fill="hsl(12,79%,60%)"/>
+<text class="box-label" x="1016.21" y="636.00">math.Sin</text>
+</g>
+<g><title>math.sin&#10;400.0ms (4.0%)</title>
+<rect class="box" x="1012.21" y="600.00" width="62.64" height="20" rx="3" ry="3" fill="hsl(57,80%,70%)"/>
+<text class="box-label" x="1016.21" y="614.00">sin</text>
+</g>
+<g><title>runtime.asyncPreempt&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1012.21" y="578.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(33,88%,71%)"/>
+</g>
+<g><title>math.IsNaN&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1013.77" y="578.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(41,75%,59%)"/>
+</g>
+<g><title>math.IsInf&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1015.34" y="578.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(31,83%,71%)"/>
+</g>
+<g><title>geo/geosearch.(*GridIndex).Search&#10;1.55s (15.6%)</title>
+<rect class="box" x="1171.95" y="666.00" width="242.74" height="20" rx="3" ry="3" fill="hsl(9,78%,64%)"/>
+<text class="box-label" x="1175.95" y="680.00">geosearch.(*GridIndex).Search</text>
+</g>
+<g><title>runtime.growslice&#10;110.0ms (1.1%)</title>
+<rect class="box" x="1171.95" y="644.00" width="17.23" height="20" rx="3" ry="3" fill="hsl(17,85%,70%)"/>
+</g>
+<g><title>runtime.memclrNoHeapPointers&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1171.95" y="622.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(57,88%,67%)"/>
+</g>
+<g><title>runtime.mallocgc&#10;70.0ms (0.7%)</title>
+<rect class="box" x="1175.08" y="622.00" width="10.96" height="20" rx="3" ry="3" fill="hsl(31,75%,68%)"/>
+</g>
+<g><title>runtime.mallocgcLarge&#10;30.0ms (0.3%)</title>
+<rect class="box" x="1175.08" y="600.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(55,86%,68%)"/>
+</g>
+<g><title>runtime.gcStart&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1175.08" y="578.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(51,85%,66%)"/>
+</g>
+<g><title>runtime.systemstack&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1175.08" y="556.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(50,81%,73%)"/>
+</g>
+<g><title>runtime.gcStart.func3&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1175.08" y="534.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(43,88%,68%)"/>
+</g>
+<g><title>runtime.finishsweep_m&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1175.08" y="512.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(14,89%,63%)"/>
+</g>
+<g><title>runtime.(*spanSet).reset&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1175.08" y="490.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(22,77%,65%)"/>
+</g>
+<g><title>internal/runtime/atomic.(*Uint32).Load&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1175.08" y="468.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(57,81%,59%)"/>
+</g>
+<g><title>internal/runtime/atomic.(*Pointer[go.shape.struct { runtime.spanSetBlockHeader2; runtime.spans [512]runtime.atomicMSpanPointer }]).Load&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1176.65" y="468.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(9,88%,60%)"/>
+</g>
+<g><title>internal/runtime/atomic.(*UnsafePointer).Load&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1176.65" y="446.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(48,77%,59%)"/>
+</g>
+<g><title>runtime.(*mcache).allocLarge&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1178.21" y="578.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(46,81%,66%)"/>
+</g>
+<g><title>runtime.(*mheap).alloc&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1178.21" y="556.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(58,81%,68%)"/>
+</g>
+<g><title>runtime.systemstack&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1178.21" y="534.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(50,81%,73%)"/>
+</g>
+<g><title>runtime.(*mheap).alloc.func1&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1178.21" y="512.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(36,87%,71%)"/>
+</g>
+<g><title>runtime.(*mheap).allocSpan&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1178.21" y="490.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(32,74%,60%)"/>
+</g>
+<g><title>runtime.mallocgcSmallNoscan&#10;40.0ms (0.4%)</title>
+<rect class="box" x="1179.78" y="600.00" width="6.26" height="20" rx="3" ry="3" fill="hsl(52,86%,60%)"/>
+</g>
+<g><title>runtime.profilealloc&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1179.78" y="578.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(9,73%,70%)"/>
+</g>
+<g><title>runtime.mProf_Malloc&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1179.78" y="556.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(31,89%,59%)"/>
+</g>
+<g><title>runtime.systemstack&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1179.78" y="534.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(50,81%,73%)"/>
+</g>
+<g><title>runtime.mProf_Malloc.func1&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1179.78" y="512.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(54,78%,69%)"/>
+</g>
+<g><title>runtime.setprofilebucket&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1179.78" y="490.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(56,85%,64%)"/>
+</g>
+<g><title>runtime.addspecial&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1179.78" y="468.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(48,77%,68%)"/>
+</g>
+<g><title>runtime.spanHasSpecials&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1179.78" y="446.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(37,85%,66%)"/>
+</g>
+<g><title>runtime.(*mcache).nextFree&#10;30.0ms (0.3%)</title>
+<rect class="box" x="1181.34" y="578.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(8,78%,62%)"/>
+</g>
+<g><title>runtime.(*mcache).refill&#10;30.0ms (0.3%)</title>
+<rect class="box" x="1181.34" y="556.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(8,74%,64%)"/>
+</g>
+<g><title>runtime.(*mcentral).cacheSpan&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1181.34" y="534.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(38,74%,66%)"/>
+</g>
+<g><title>runtime.(*mcentral).grow&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1181.34" y="512.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(50,74%,60%)"/>
+</g>
+<g><title>runtime.(*mheap).alloc&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1181.34" y="490.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(58,81%,68%)"/>
+</g>
+<g><title>runtime.systemstack&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1181.34" y="468.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(50,81%,73%)"/>
+</g>
+<g><title>runtime.(*mheap).alloc.func1&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1181.34" y="446.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(36,87%,71%)"/>
+</g>
+<g><title>runtime.(*mheap).allocSpan&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1181.34" y="424.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(32,74%,60%)"/>
+</g>
+<g><title>runtime.(*mheap).initSpan&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1181.34" y="402.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(28,83%,62%)"/>
+</g>
+<g><title>runtime.(*mspan).init&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1181.34" y="380.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(59,80%,73%)"/>
+</g>
+<g><title>runtime.(*mSpanStateBox).set&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1181.34" y="358.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(42,89%,62%)"/>
+</g>
+<g><title>internal/runtime/atomic.(*Uint8).Store&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1181.34" y="336.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(25,87%,73%)"/>
+</g>
+<g><title>runtime.(*pageAlloc).alloc&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1182.91" y="402.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(44,72%,58%)"/>
+</g>
+<g><title>runtime.(*pageAlloc).allocRange&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1182.91" y="380.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(52,86%,67%)"/>
+</g>
+<g><title>runtime.(*pageAlloc).update&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1182.91" y="358.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(32,76%,58%)"/>
+</g>
+<g><title>runtime.(*pallocBits).summarize&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1182.91" y="336.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(56,86%,65%)"/>
+</g>
+<g><title>runtime.(*mcentral).uncacheSpan&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1184.48" y="534.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(8,83%,64%)"/>
+</g>
+<g><title>runtime.(*spanSet).push&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1184.48" y="512.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(24,89%,59%)"/>
+</g>
+<g><title>runtime.(*atomicHeadTailIndex).incTail&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1184.48" y="490.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(54,86%,63%)"/>
+</g>
+<g><title>internal/runtime/atomic.(*Uint64).Add&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1184.48" y="468.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(59,85%,68%)"/>
+</g>
+<g><title>runtime.memmove&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1186.04" y="622.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(28,81%,64%)"/>
+</g>
+<g><title>geo/geosearch.haversineH&#10;920.0ms (9.3%)</title>
+<rect class="box" x="1189.17" y="644.00" width="144.08" height="20" rx="3" ry="3" fill="hsl(31,78%,72%)"/>
+<text class="box-label" x="1193.17" y="658.00">haversineH</text>
+</g>
+<g><title>math.Sin&#10;460.0ms (4.6%)</title>
+<rect class="box" x="1189.17" y="622.00" width="72.04" height="20" rx="3" ry="3" fill="hsl(12,79%,60%)"/>
+<text class="box-label" x="1193.17" y="636.00">math.Sin</text>
+</g>
+<g><title>math.sin&#10;460.0ms (4.6%)</title>
+<rect class="box" x="1189.17" y="600.00" width="72.04" height="20" rx="3" ry="3" fill="hsl(57,80%,70%)"/>
+<text class="box-label" x="1193.17" y="614.00">math.sin</text>
+</g>
+<g><title>math.IsInf&#10;70.0ms (0.7%)</title>
+<rect class="box" x="1189.17" y="578.00" width="10.96" height="20" rx="3" ry="3" fill="hsl(31,83%,71%)"/>
+</g>
+<g><title>math.IsNaN&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1200.14" y="578.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(41,75%,59%)"/>
+</g>
+<g><title>runtime.asyncPreempt&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1203.27" y="578.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(33,88%,71%)"/>
+</g>
+<g><title>geo/geosearch.lngDelta&#10;50.0ms (0.5%)</title>
+<rect class="box" x="1261.21" y="622.00" width="7.83" height="20" rx="3" ry="3" fill="hsl(54,78%,66%)"/>
+</g>
+<g><title>geo/geosearch.normalizeLng&#10;30.0ms (0.3%)</title>
+<rect class="box" x="1261.21" y="600.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(40,81%,71%)"/>
+</g>
+<g><title>math.Cos&#10;200.0ms (2.0%)</title>
+<rect class="box" x="1269.05" y="622.00" width="31.32" height="20" rx="3" ry="3" fill="hsl(33,77%,70%)"/>
+<text class="box-label" x="1273.05" y="636.00">Cos</text>
+</g>
+<g><title>math.cos&#10;200.0ms (2.0%)</title>
+<rect class="box" x="1269.05" y="600.00" width="31.32" height="20" rx="3" ry="3" fill="hsl(26,77%,63%)"/>
+<text class="box-label" x="1273.05" y="614.00">cos</text>
+</g>
+<g><title>math.IsInf&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1269.05" y="578.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(31,83%,71%)"/>
+</g>
+<g><title>runtime.mapaccess1_fast64&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1333.26" y="644.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(22,89%,66%)"/>
+</g>
+<g><title>runtime.asyncPreempt&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1336.39" y="644.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(33,88%,71%)"/>
+</g>
+<g><title>runtime.mcall&#10;760.0ms (7.7%)</title>
+<rect class="box" x="1414.69" y="754.00" width="119.02" height="20" rx="3" ry="3" fill="hsl(54,88%,59%)"/>
+<text class="box-label" x="1418.69" y="768.00">runtime.mcall</text>
+</g>
+<g><title>runtime.park_m&#10;760.0ms (7.7%)</title>
+<rect class="box" x="1414.69" y="732.00" width="119.02" height="20" rx="3" ry="3" fill="hsl(42,80%,60%)"/>
+<text class="box-label" x="1418.69" y="746.00">runtime.park_m</text>
+</g>
+<g><title>runtime.schedule&#10;750.0ms (7.6%)</title>
+<rect class="box" x="1414.69" y="710.00" width="117.46" height="20" rx="3" ry="3" fill="hsl(46,79%,69%)"/>
+<text class="box-label" x="1418.69" y="724.00">schedule</text>
+</g>
+<g><title>runtime.resetspinning&#10;100.0ms (1.0%)</title>
+<rect class="box" x="1414.69" y="688.00" width="15.66" height="20" rx="3" ry="3" fill="hsl(29,74%,70%)"/>
+</g>
+<g><title>runtime.wakep&#10;100.0ms (1.0%)</title>
+<rect class="box" x="1414.69" y="666.00" width="15.66" height="20" rx="3" ry="3" fill="hsl(47,72%,68%)"/>
+</g>
+<g><title>runtime.startm&#10;90.0ms (0.9%)</title>
+<rect class="box" x="1414.69" y="644.00" width="14.09" height="20" rx="3" ry="3" fill="hsl(17,87%,66%)"/>
+</g>
+<g><title>runtime.notewakeup&#10;90.0ms (0.9%)</title>
+<rect class="box" x="1414.69" y="622.00" width="14.09" height="20" rx="3" ry="3" fill="hsl(48,77%,59%)"/>
+</g>
+<g><title>runtime.semawakeup&#10;90.0ms (0.9%)</title>
+<rect class="box" x="1414.69" y="600.00" width="14.09" height="20" rx="3" ry="3" fill="hsl(9,88%,63%)"/>
+</g>
+<g><title>runtime.pthread_cond_signal&#10;90.0ms (0.9%)</title>
+<rect class="box" x="1414.69" y="578.00" width="14.09" height="20" rx="3" ry="3" fill="hsl(35,73%,66%)"/>
+</g>
+<g><title>runtime.lock&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1428.79" y="644.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(12,88%,71%)"/>
+</g>
+<g><title>runtime.lockWithRank&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1428.79" y="622.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(15,75%,65%)"/>
+</g>
+<g><title>runtime.lock2&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1428.79" y="600.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(20,82%,68%)"/>
+</g>
+<g><title>runtime.osyield&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1428.79" y="578.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(57,87%,58%)"/>
+</g>
+<g><title>runtime.usleep&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1428.79" y="556.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(59,75%,72%)"/>
+</g>
+<g><title>runtime.findRunnable&#10;620.0ms (6.3%)</title>
+<rect class="box" x="1430.35" y="688.00" width="97.10" height="20" rx="3" ry="3" fill="hsl(25,73%,59%)"/>
+<text class="box-label" x="1434.35" y="702.00">findRunnable</text>
+</g>
+<g><title>runtime.stopm&#10;490.0ms (4.9%)</title>
+<rect class="box" x="1430.35" y="666.00" width="76.74" height="20" rx="3" ry="3" fill="hsl(39,73%,70%)"/>
+<text class="box-label" x="1434.35" y="680.00">stopm</text>
+</g>
+<g><title>runtime.mPark&#10;480.0ms (4.8%)</title>
+<rect class="box" x="1430.35" y="644.00" width="75.17" height="20" rx="3" ry="3" fill="hsl(18,86%,58%)"/>
+<text class="box-label" x="1434.35" y="658.00">mPark</text>
+</g>
+<g><title>runtime.notesleep&#10;480.0ms (4.8%)</title>
+<rect class="box" x="1430.35" y="622.00" width="75.17" height="20" rx="3" ry="3" fill="hsl(39,89%,64%)"/>
+<text class="box-label" x="1434.35" y="636.00">notesleep</text>
+</g>
+<g><title>runtime.semasleep&#10;480.0ms (4.8%)</title>
+<rect class="box" x="1430.35" y="600.00" width="75.17" height="20" rx="3" ry="3" fill="hsl(18,74%,71%)"/>
+<text class="box-label" x="1434.35" y="614.00">semasleep</text>
+</g>
+<g><title>runtime.pthread_cond_wait&#10;480.0ms (4.8%)</title>
+<rect class="box" x="1430.35" y="578.00" width="75.17" height="20" rx="3" ry="3" fill="hsl(33,89%,61%)"/>
+<text class="box-label" x="1434.35" y="592.00">pthread_…</text>
+</g>
+<g><title>runtime.lock&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1505.53" y="644.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(12,88%,71%)"/>
+</g>
+<g><title>runtime.lockWithRank&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1505.53" y="622.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(15,75%,65%)"/>
+</g>
+<g><title>runtime.lock2&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1505.53" y="600.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(20,82%,68%)"/>
+</g>
+<g><title>runtime.osyield&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1505.53" y="578.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(57,87%,58%)"/>
+</g>
+<g><title>runtime.usleep&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1505.53" y="556.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(59,75%,72%)"/>
+</g>
+<g><title>runtime.netpoll&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1507.09" y="666.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(29,82%,63%)"/>
+</g>
+<g><title>runtime.kevent&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1507.09" y="644.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(23,74%,60%)"/>
+</g>
+<g><title>runtime.stealWork&#10;30.0ms (0.3%)</title>
+<rect class="box" x="1510.22" y="666.00" width="4.70" height="20" rx="3" ry="3" fill="hsl(59,89%,68%)"/>
+</g>
+<g><title>runtime.(*timers).check&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1510.22" y="644.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(20,84%,64%)"/>
+</g>
+<g><title>runtime.runqsteal&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1511.79" y="644.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(12,72%,71%)"/>
+</g>
+<g><title>runtime.runqgrab&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1511.79" y="622.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(48,81%,60%)"/>
+</g>
+<g><title>runtime.usleep&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1511.79" y="600.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(59,75%,72%)"/>
+</g>
+<g><title>runtime.lock&#10;70.0ms (0.7%)</title>
+<rect class="box" x="1514.92" y="666.00" width="10.96" height="20" rx="3" ry="3" fill="hsl(12,88%,71%)"/>
+</g>
+<g><title>runtime.lockWithRank&#10;70.0ms (0.7%)</title>
+<rect class="box" x="1514.92" y="644.00" width="10.96" height="20" rx="3" ry="3" fill="hsl(15,75%,65%)"/>
+</g>
+<g><title>runtime.lock2&#10;70.0ms (0.7%)</title>
+<rect class="box" x="1514.92" y="622.00" width="10.96" height="20" rx="3" ry="3" fill="hsl(20,82%,68%)"/>
+</g>
+<g><title>runtime.osyield&#10;70.0ms (0.7%)</title>
+<rect class="box" x="1514.92" y="600.00" width="10.96" height="20" rx="3" ry="3" fill="hsl(57,87%,58%)"/>
+</g>
+<g><title>runtime.usleep&#10;70.0ms (0.7%)</title>
+<rect class="box" x="1514.92" y="578.00" width="10.96" height="20" rx="3" ry="3" fill="hsl(59,75%,72%)"/>
+</g>
+<g><title>runtime.(*m).clearAllpSnapshot&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1525.88" y="666.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(25,76%,73%)"/>
+</g>
+<g><title>gcWriteBarrier&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1525.88" y="644.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(16,83%,59%)"/>
+</g>
+<g><title>runtime.wakep&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1527.45" y="688.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(47,72%,68%)"/>
+</g>
+<g><title>runtime.lock&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1527.45" y="666.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(12,88%,71%)"/>
+</g>
+<g><title>runtime.lockWithRank&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1527.45" y="644.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(15,75%,65%)"/>
+</g>
+<g><title>runtime.lock2&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1527.45" y="622.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(20,82%,68%)"/>
+</g>
+<g><title>runtime.osyield&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1527.45" y="600.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(57,87%,58%)"/>
+</g>
+<g><title>runtime.usleep&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1527.45" y="578.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(59,75%,72%)"/>
+</g>
+<g><title>runtime.startm&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1529.02" y="666.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(17,87%,66%)"/>
+</g>
+<g><title>runtime.notewakeup&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1529.02" y="644.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(48,77%,59%)"/>
+</g>
+<g><title>runtime.semawakeup&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1529.02" y="622.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(9,88%,63%)"/>
+</g>
+<g><title>runtime.pthread_cond_signal&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1529.02" y="600.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(35,73%,66%)"/>
+</g>
+<g><title>runtime.execute&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1530.58" y="688.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(27,82%,62%)"/>
+</g>
+<g><title>runtime.casgstatus&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1530.58" y="666.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(31,81%,71%)"/>
+</g>
+<g><title>runtime.nanotime&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1530.58" y="644.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(53,74%,68%)"/>
+</g>
+<g><title>runtime.nanotime1&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1530.58" y="622.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(47,88%,68%)"/>
+</g>
+<g><title>runtime.gcBgMarkWorker.func1&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1532.15" y="710.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(48,88%,59%)"/>
+</g>
+<g><title>runtime.(*lfstack).push&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1532.15" y="688.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(31,73%,72%)"/>
+</g>
+<g><title>runtime.bgsweep&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1533.72" y="754.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(18,77%,69%)"/>
+</g>
+<g><title>runtime.sweepone&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1533.72" y="732.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(28,74%,71%)"/>
+</g>
+<g><title>runtime.(*mheap).nextSpanForSweep&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1533.72" y="710.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(49,80%,64%)"/>
+</g>
+<g><title>runtime.(*spanSet).pop&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1533.72" y="688.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(46,87%,65%)"/>
+</g>
+<g><title>runtime.(*sweepLocked).sweep&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1535.28" y="710.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(10,81%,58%)"/>
+</g>
+<g><title>runtime.morestack&#10;250.0ms (2.5%)</title>
+<rect class="box" x="1536.85" y="754.00" width="39.15" height="20" rx="3" ry="3" fill="hsl(12,79%,71%)"/>
+</g>
+<g><title>runtime.newstack&#10;250.0ms (2.5%)</title>
+<rect class="box" x="1536.85" y="732.00" width="39.15" height="20" rx="3" ry="3" fill="hsl(36,87%,66%)"/>
+</g>
+<g><title>runtime.gopreempt_m&#10;250.0ms (2.5%)</title>
+<rect class="box" x="1536.85" y="710.00" width="39.15" height="20" rx="3" ry="3" fill="hsl(48,84%,65%)"/>
+</g>
+<g><title>runtime.goschedImpl&#10;250.0ms (2.5%)</title>
+<rect class="box" x="1536.85" y="688.00" width="39.15" height="20" rx="3" ry="3" fill="hsl(37,81%,58%)"/>
+</g>
+<g><title>runtime.wakep&#10;130.0ms (1.3%)</title>
+<rect class="box" x="1536.85" y="666.00" width="20.36" height="20" rx="3" ry="3" fill="hsl(47,72%,68%)"/>
+</g>
+<g><title>runtime.startm&#10;130.0ms (1.3%)</title>
+<rect class="box" x="1536.85" y="644.00" width="20.36" height="20" rx="3" ry="3" fill="hsl(17,87%,66%)"/>
+</g>
+<g><title>runtime.notewakeup&#10;130.0ms (1.3%)</title>
+<rect class="box" x="1536.85" y="622.00" width="20.36" height="20" rx="3" ry="3" fill="hsl(48,77%,59%)"/>
+</g>
+<g><title>runtime.semawakeup&#10;130.0ms (1.3%)</title>
+<rect class="box" x="1536.85" y="600.00" width="20.36" height="20" rx="3" ry="3" fill="hsl(9,88%,63%)"/>
+</g>
+<g><title>runtime.pthread_cond_signal&#10;130.0ms (1.3%)</title>
+<rect class="box" x="1536.85" y="578.00" width="20.36" height="20" rx="3" ry="3" fill="hsl(35,73%,66%)"/>
+</g>
+<g><title>runtime.lock&#10;100.0ms (1.0%)</title>
+<rect class="box" x="1557.21" y="666.00" width="15.66" height="20" rx="3" ry="3" fill="hsl(12,88%,71%)"/>
+</g>
+<g><title>runtime.lockWithRank&#10;100.0ms (1.0%)</title>
+<rect class="box" x="1557.21" y="644.00" width="15.66" height="20" rx="3" ry="3" fill="hsl(15,75%,65%)"/>
+</g>
+<g><title>runtime.lock2&#10;100.0ms (1.0%)</title>
+<rect class="box" x="1557.21" y="622.00" width="15.66" height="20" rx="3" ry="3" fill="hsl(20,82%,68%)"/>
+</g>
+<g><title>runtime.osyield&#10;100.0ms (1.0%)</title>
+<rect class="box" x="1557.21" y="600.00" width="15.66" height="20" rx="3" ry="3" fill="hsl(57,87%,58%)"/>
+</g>
+<g><title>runtime.usleep&#10;100.0ms (1.0%)</title>
+<rect class="box" x="1557.21" y="578.00" width="15.66" height="20" rx="3" ry="3" fill="hsl(59,75%,72%)"/>
+</g>
+<g><title>runtime.schedule&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1572.87" y="666.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(46,79%,69%)"/>
+</g>
+<g><title>runtime.findRunnable&#10;20.0ms (0.2%)</title>
+<rect class="box" x="1572.87" y="644.00" width="3.13" height="20" rx="3" ry="3" fill="hsl(25,73%,59%)"/>
+</g>
+<g><title>runtime.lock&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1572.87" y="622.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(12,88%,71%)"/>
+</g>
+<g><title>runtime.lockWithRank&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1572.87" y="600.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(15,75%,65%)"/>
+</g>
+<g><title>runtime.lock2&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1572.87" y="578.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(20,82%,68%)"/>
+</g>
+<g><title>runtime.osyield&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1572.87" y="556.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(57,87%,58%)"/>
+</g>
+<g><title>runtime.usleep&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1572.87" y="534.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(59,75%,72%)"/>
+</g>
+<g><title>internal/runtime/atomic.(*Uint32).Load&#10;10.0ms (0.1%)</title>
+<rect class="box" x="1574.43" y="622.00" width="1.57" height="20" rx="3" ry="3" fill="hsl(57,81%,59%)"/>
+</g>
+<text class="subtitle" x="24" y="818">Generated from go tool pprof flamegraph data</text>
+</svg>

@@ -1,17 +1,18 @@
 File: profile
 Type: cpu
-Time: 2026-04-23 23:20:24 MSK
-Duration: 303.21ms, Total samples = 400ms (131.92%)
-Showing nodes accounting for 350ms, 87.50% of 400ms total
-Showing top 10 nodes out of 67
+Time: 2026-05-15 14:27:26 MSK
+Duration: 807.66ms, Total samples = 2430ms (300.87%)
+Showing nodes accounting for 2030ms, 83.54% of 2430ms total
+Dropped 33 nodes (cum <= 12.15ms)
+Showing top 10 nodes out of 73
       flat  flat%   sum%        cum   cum%
-     110ms 27.50% 27.50%      110ms 27.50%  runtime.memequal
-      70ms 17.50% 45.00%       70ms 17.50%  runtime.memclrNoHeapPointers
-      40ms 10.00% 55.00%       40ms 10.00%  runtime.madvise
-      30ms  7.50% 62.50%       30ms  7.50%  runtime.(*mspan).heapBitsSmallForAddr
-      30ms  7.50% 70.00%       30ms  7.50%  runtime.usleep
-      20ms  5.00% 75.00%       20ms  5.00%  lab4/concurrentmap.HashString
-      20ms  5.00% 80.00%       20ms  5.00%  runtime.findObject
-      10ms  2.50% 82.50%       10ms  2.50%  internal/runtime/atomic.(*Int64).Load
-      10ms  2.50% 85.00%       10ms  2.50%  internal/runtime/atomic.(*UnsafePointer).Load
-      10ms  2.50% 87.50%      130ms 32.50%  lab4/concurrentmap.(*Map[go.shape.string,go.shape.int]).Get
+    1040ms 42.80% 42.80%     1040ms 42.80%  runtime.memequal
+     320ms 13.17% 55.97%     1410ms 58.02%  lab4/concurrentmap.(*Map[go.shape.string,go.shape.int]).Get
+     150ms  6.17% 62.14%      150ms  6.17%  runtime.usleep
+     110ms  4.53% 66.67%      140ms  5.76%  runtime.greyobject
+      80ms  3.29% 69.96%       80ms  3.29%  runtime.pthread_cond_signal
+      80ms  3.29% 73.25%       80ms  3.29%  runtime.pthread_kill
+      70ms  2.88% 76.13%       70ms  2.88%  runtime.(*mspan).heapBitsSmallForAddr
+      70ms  2.88% 79.01%       70ms  2.88%  runtime.madvise
+      60ms  2.47% 81.48%       60ms  2.47%  lab4/concurrentmap.HashString
+      50ms  2.06% 83.54%       50ms  2.06%  runtime.memclrNoHeapPointers

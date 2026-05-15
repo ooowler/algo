@@ -1,0 +1,15 @@
+File: profile
+Type: alloc_space
+Time: 2026-05-15 14:23:10 MSK
+Showing nodes accounting for 10572.92MB, 99.39% of 10637.28MB total
+Dropped 44 nodes (cum <= 53.19MB)
+      flat  flat%   sum%        cum   cum%
+ 5289.79MB 49.73% 49.73%  5289.79MB 49.73%  geo/geosearch.searchKD
+ 5229.27MB 49.16% 98.89%  5229.77MB 49.16%  geo/geosearch.(*GridIndex).Search
+   53.36MB   0.5% 99.39%    53.36MB   0.5%  geo/geosearch.(*NaiveIndex).Add (inline)
+    0.50MB 0.0047% 99.39% 10630.31MB 99.93%  runtime.main
+         0     0% 99.39%  5289.79MB 49.73%  geo/geosearch.(*KDTree).Search
+         0     0% 99.39% 10629.31MB 99.93%  main.main
+         0     0% 99.39% 10620.16MB 99.84%  main.prepare.func1
+         0     0% 99.39%  5355.24MB 50.34%  main.writeCPU
+         0     0% 99.39%  5264.92MB 49.49%  main.writeMem

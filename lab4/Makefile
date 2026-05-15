@@ -18,10 +18,11 @@ bench:
 	env GOCACHE=$(GOCACHE_DIR) GOTMPDIR=$(GOTMPDIR_DIR) go test ./concurrentmap -run=^$$ -bench='Growth|Parallel' -benchmem -benchtime=$(BENCHTIME) -count=$(BENCH_COUNT) -timeout=1800s > results/bench.txt
 
 profile:
-	mkdir -p $(GOCACHE_DIR) $(GOTMPDIR_DIR) results
+	mkdir -p $(GOCACHE_DIR) $(GOTMPDIR_DIR) results figures
 	env GOCACHE=$(GOCACHE_DIR) GOTMPDIR=$(GOTMPDIR_DIR) go run ./cmd/profile
 	env GOCACHE=$(GOCACHE_DIR) GOTMPDIR=$(GOTMPDIR_DIR) go tool pprof -top -nodecount=10 profiles/concurrent_cpu.prof > results/profile_cpu.txt
 	env GOCACHE=$(GOCACHE_DIR) GOTMPDIR=$(GOTMPDIR_DIR) go tool pprof -top -sample_index=alloc_space -nodecount=10 profiles/concurrent_mem.prof > results/profile_mem.txt
+	env GOCACHE=$(GOCACHE_DIR) GOTMPDIR=$(GOTMPDIR_DIR) TMPDIR=$(GOTMPDIR_DIR) PPROF_PORT=17354 bash ../lab1/scripts/export_pprof_flame_html.sh profiles/concurrent_cpu.prof figures/pprof_concurrent_flamegraph.html
 
 charts:
 	mkdir -p .mplconfig .cache

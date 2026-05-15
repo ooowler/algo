@@ -43,7 +43,7 @@ func prepare(n int) func() {
 		var wg sync.WaitGroup
 		workers := 4
 		mask := len(hot) - 1
-		opsPerWorker := len(hot) * 256
+		opsPerWorker := len(hot) * 2048
 		for worker := 0; worker < workers; worker++ {
 			wg.Add(1)
 			go func(id int) {

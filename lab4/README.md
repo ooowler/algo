@@ -27,6 +27,7 @@
 <p align="center"><img src="./figures/growth_put_latency.png" width="780"/></p>
 <p align="center"><img src="./figures/growth_merge_latency.png" width="780"/></p>
 <p align="center"><img src="./figures/parallel_throughput.png" width="780"/></p>
+<p align="center"><img src="./figures/pprof_concurrent_flamegraph.svg" width="920"/></p>
 
 ## Get
 
@@ -72,15 +73,16 @@
 
 | flat | flat% | cum | cum% | function |
 |---:|---:|---:|---:|---|
-| 110ms | 27.50% | 110ms | 27.50% | `runtime.memequal` |
-| 70ms | 17.50% | 70ms | 17.50% | `runtime.memclrNoHeapPointers` |
-| 40ms | 10.00% | 40ms | 10.00% | `runtime.madvise` |
-| 20ms | 5.00% | 20ms | 5.00% | `lab4/concurrentmap.HashString` |
-| 10ms | 2.50% | 130ms | 32.50% | `lab4/concurrentmap.(*Map).Get` |
+| 1040ms | 42.80% | 1040ms | 42.80% | `runtime.memequal` |
+| 320ms | 13.17% | 1410ms | 58.02% | `lab4/concurrentmap.(*Map).Get` |
+| 150ms | 6.17% | 150ms | 6.17% | `runtime.usleep` |
+| 110ms | 4.53% | 140ms | 5.76% | `runtime.greyobject` |
+| 80ms | 3.29% | 80ms | 3.29% | `runtime.pthread_cond_signal` |
+| 60ms | 2.47% | 60ms | 2.47% | `lab4/concurrentmap.HashString` |
 
 ## Профиль Memory
 
 | Метрика | Значение |
 |---|---:|
-| `store` cumulative | 225.05 MB |
-| `cloneEntries` flat | 111.02 MB |
+| `store` cumulative | 620.63 MB |
+| `cloneEntries` flat | 475.60 MB |
