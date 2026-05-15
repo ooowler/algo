@@ -1,21 +1,32 @@
-# Лабораторная 1
+# Лабораторная 1: hash-структуры
 
-Три реализации:
-- файловая хэш-таблица с бакетами и операциями `Set` / `Update` / `Delete` / `Get`;
-- статический perfect hash для фиксированного набора ключей;
-- LSH для поиска дублей среди 3D-точек с exact-проверкой кандидатов.
+## Состав
 
-Ниже сравнение этих структур по времени, памяти и профилям. Во всех growth-таблицах и на графиках показаны средние значения и `±3σ`, а flamegraph-ы помогают понять, где упор в I/O, аллокации или вычисления.
+| Блок | Структура | Операции/метрики |
+|---|---|---|
+| 1 | файловая hash-table | `Insert`, `Update`, `Delete`, `Get`, CPU/mem profile |
+| 2 | static perfect hash | `Build`, `Get`, load factor, bits/key, CPU/mem profile |
+| 3 | LSH для 3D-точек | `Build`, `Add`, `Find`, recall, precision, speedup, CPU/mem profile |
 
----
+## Sanity-check графиков
 
-## 1. Файловая хэш-таблица
+| График | Ожидание | Факт | Статус |
+|---|---|---|---|
+| Disk `Get` vs `N` | warm lookup `O(1)` | `17.4-18.4 ns/op`, `0 B/op` | OK |
+| Disk writes vs `N` | дороже из-за disk/flush/compaction | jump после `32k` | bottleneck |
+| Disk profile | после буфера остался batch write, не write per record | `Flush`, `flushAppendBuffer`, `syscall` | OK |
+| PHF `Get` vs `N` | почти `O(1)`, `0 B/op` | `20.9 -> 25.9 ns/op` | OK |
+| PHF build | около линейного роста | `0.17 -> 18.91 ms` | OK |
+| LSH find vs naive | LSH сильно быстрее naive | speedup `3.77x -> 31.89x` | OK |
+| LSH candidate ratio | меньше доля кандидатов при росте `N` | `0.819% -> 0.051%` | OK |
 
-Реализация хранит каждый бакет как append-only log: `Set` и `Delete` дописывают запись в per-bucket буфер и сбрасывают его батчами, `Get` читает из in-memory `map` после загрузки бакета, а compaction перепаковывает только тот бакет, где накопилось слишком много stale-записей. В write-бенчмарках в таймер входит явный batched `Flush`, но не `Close`, поэтому график показывает амортизированную запись батча на диск без артефакта закрытия файлов. Это важная оговорка: показанный ниже `Get` — именно steady-state тёплого бакета. Холодный первый доступ к незагруженному бакету здесь не `O(1)`, а replay его файла.
+## 1. Файловая hash-table
 
-<!-- TBL_DISK -->
+<p align="center"><img src="./figures/disk_growth_panel.png" width="920"/></p>
+<p align="center"><img src="./figures/profile_hashtable.png" width="920"/></p>
+<p align="center"><img src="./figures/pprof_hashtable_flamegraph.svg" width="920"/></p>
 
-**Insert**
+### Insert
 
 | N | ns/op (±3σ) | B/op (±3σ) | ~ op/s |
 |---|---|---|---|
@@ -28,7 +39,7 @@
 | 131072 | 51 406 ± 20 744 | 264 ± 13.1 | 19 453 |
 | 262144 | 57 115 ± 20 539 | 307 ± 6.0 | 17 509 |
 
-**Update**
+### Update
 
 | N | ns/op (±3σ) | B/op (±3σ) | ~ op/s |
 |---|---|---|---|
@@ -41,7 +52,7 @@
 | 131072 | 50 006 ± 26 424 | 229 ± 19.6 | 19 998 |
 | 262144 | 61 285 ± 33 771 | 268 ± 13.2 | 16 317 |
 
-**Delete**
+### Delete
 
 | N | ns/op (±3σ) | B/op (±3σ) | ~ op/s |
 |---|---|---|---|
@@ -54,7 +65,7 @@
 | 131072 | 61 178 ± 43 621 | 269 ± 9.5 | 16 346 |
 | 262144 | 59 785 ± 20 522 | 280 ± 9.8 | 16 727 |
 
-**Get**
+### Get
 
 | N | ns/op (±3σ) | B/op (±3σ) | ~ op/s |
 |---|---|---|---|
@@ -67,60 +78,32 @@
 | 131072 | 18.4 ± 2.6 | 0 ± 0.0 | 54 469 198 |
 | 262144 | 17.9 ± 1.8 | 0 ± 0.0 | 55 784 893 |
 
-<!-- /TBL_DISK -->
+### Profile
 
-<p align="center"><img src="./figures/disk_growth_panel.png" width="920"/></p>
-
-Что здесь хорошо:
-- `Get` плоский по всему диапазону: значения держатся примерно в коридоре `17.4-18.4 ns/op`, что хорошо согласуется с ожидаемым warm-lookup `O(1)`.
-- `Insert` / `Update` / `Delete` на малых `N` держатся почти на полке, а потом упираются не в поиск ключа, а в append/write-path и локальные compaction-ы.
-
-Что здесь неидеально:
-- это не extendible hashing и не линейное хеширование: число бакетов фиксируется при создании, split/merge бакетов нет;
-- write-path после `32k` заметно дорожает, то есть структура уже ограничена файловым I/O и рабочим множеством, а не только хешированием;
-- график честно описывает горячий read-path, но не cold-start latency бакета.
-
-<p align="center"><img src="./figures/profile_hashtable.png" width="920"/></p>
-
-<p align="center"><img src="./figures/pprof_hashtable_flamegraph.svg" width="920"/></p>
-
-Полный flamegraph для `hashtable` показывает весь путь программы от общего блока `program` до системных вызовов записи. На нём хорошо видно, что после оптимизации открытие файла перестало доминировать, а bottleneck сместился в сам append/write-path и compaction.
-
-<!-- TBL_PROF_HASH -->
-
-### CPU
-
-| function | cumulative |
-|---|---|
+| CPU function | cumulative |
+|---|---:|
 | `syscall.syscall` | 0.38 s |
 | `algo/hashtable.(*bucketMeta).flushAppendBuffer` | 0.33 s |
 | `algo/hashtable.(*DiskHashTable).Flush` | 0.32 s |
 | `os.OpenFile` | 0.21 s |
 | `os.ignoringEINTR (inline)` | 0.21 s |
 
-### Allocated bytes (alloc_space)
-
-| function | cumulative |
-|---|---|
+| Allocated bytes function | cumulative |
+|---|---:|
 | `algo/hashtable.(*DiskHashTable).Set` | 31.52 MiB |
 | `algo/hashtable.(*bucketMeta).appendRecord` | 12.51 MiB |
 | `algo/hashtable.writeRecord` | 12.51 MiB |
 | `os.OpenFile` | 4.50 MiB |
 | `os.openFileNolog` | 4.50 MiB |
 
-<!-- /TBL_PROF_HASH -->
-
-Профиль подтверждает ту же картину: CPU уходит в `flushAppendBuffer`, явный `Flush` и системные вызовы записи, а таблица `Allocated bytes (alloc_space)` показывает суммарное давление на аллокатор за весь прогон, а не удерживаемый heap. `syscall.syscall` всё ещё виден, потому что батч всё равно физически пишется на диск; важное отличие от исходной версии в том, что это уже не syscall на каждую отдельную запись и не артефакт `Close`.
-
----
-
 ## 2. Perfect hash
 
-Индекс строится как статический двухуровневый displacement-based perfect hash: ключи сначала раскладываются по бакетам, singleton-бакеты ставятся сразу, а для остальных подбирается displacement без коллизий. По смыслу это близко к классической линии `FKS -> practical minimal/perfect hashing`, но текущая реализация сознательно выбрала простоту, а не сверхкомпактность.
+<p align="center"><img src="./figures/phf_growth_panel.png" width="920"/></p>
+<p align="center"><img src="./figures/phf_metrics_panel.png" width="920"/></p>
+<p align="center"><img src="./figures/profile_perfecthash.png" width="920"/></p>
+<p align="center"><img src="./figures/pprof_perfecthash_flamegraph.svg" width="920"/></p>
 
-<!-- TBL_CHD_BENCH -->
-
-**Build**
+### Build
 
 | N | ms/op (±3σ) | KiB/op (±3σ) | ~ op/s |
 |---|---|---|---|
@@ -132,7 +115,7 @@
 | 131072 | 8.82 ± 2.64 | 14 856.6 ± 0.0 | 113 |
 | 262144 | 18.91 ± 3.15 | 29 704.6 ± 0.0 | 53 |
 
-**Get**
+### Get
 
 | N | ns/op (±3σ) | B/op (±3σ) | ~ op/s |
 |---|---|---|---|
@@ -144,9 +127,7 @@
 | 131072 | 23.3 ± 1.9 | 0 ± 0.0 | 42 934 118 |
 | 262144 | 25.9 ± 4.7 | 0 ± 0.0 | 38 579 503 |
 
-<!-- /TBL_CHD_BENCH -->
-
-<!-- TBL_CHD_METRICS -->
+### Metrics
 
 | N | load factor | disp. bits/key | build ns/key (±3σ) | get ns/op (±3σ) |
 |---|---|---|---|---|
@@ -159,60 +140,29 @@
 | 131072 | 1.000 | 32.00 | 68.3 ± 11.1 | 23.8 ± 2.3 |
 | 262144 | 1.000 | 32.00 | 79.1 ± 13.8 | 31.1 ± 9.2 |
 
-<!-- /TBL_CHD_METRICS -->
+### Profile
 
-<p align="center"><img src="./figures/phf_growth_panel.png" width="920"/></p>
-
-<p align="center"><img src="./figures/phf_metrics_panel.png" width="920"/></p>
-
-Главный плюс этого блока в том, что он ведёт себя именно так, как от static PHF и ждёшь:
-- `Get` почти плоский и без аллокаций;
-- `Build` растёт близко к линейно, а рост `ns/key` на больших `N` выглядит как увеличение константы из-за cache locality и дополнительных placement retries, а не как смена класса сложности;
-- после оптимизации сборка больше не перевычисляет строковый хэш на каждом displacement-trial и не раздувает тысячи маленьких bucket-slice-аллокаций, поэтому `Build` стал заметно быстрее и стабильнее;
-- CPU-профиль целиком вычислительный: хэширование, placement bucket-ов и чтение массивов.
-
-Главный минус тоже читается прямо из метрик:
-- `load factor = 1.0` выглядит красиво, но `32 bits/key` на displacement-массив означает, что эта версия далека от компактных MPHF из литературы, где ориентир — уже единицы бит на ключ, а не десятки;
-- поэтому по времени lookup структура хороша, а по памяти — учебная, не production-grade.
-
-<p align="center"><img src="./figures/profile_perfecthash.png" width="920"/></p>
-
-<p align="center"><img src="./figures/pprof_perfecthash_flamegraph.svg" width="920"/></p>
-
-Во flamegraph для `perfecthash` основание почти целиком уходит в `Build` и `Get`, без системных вызовов записи и без I/O-шума. Это как раз ожидаемая картина для чисто вычислительной структуры: основные узкие места здесь — placement bucket-ов и повторное хэширование ключа.
-
-<!-- TBL_PROF_CHD -->
-
-### CPU
-
-| function | cumulative |
-|---|---|
+| CPU function | cumulative |
+|---|---:|
 | `algo/perfecthash.(*Index).Get` | 1.05 s |
 | `algo/perfecthash.hashKey (inline)` | 0.31 s |
 | `algo/perfecthash.Build` | 0.21 s |
 | `algo/perfecthash.tryBuild` | 0.20 s |
 | `algo/perfecthash.placeBucket` | 0.09 s |
 
-### Allocated bytes (alloc_space)
-
-| function | cumulative |
-|---|---|
+| Allocated bytes function | cumulative |
+|---|---:|
 | `algo/perfecthash.Build` | 700.75 MiB |
 | `algo/perfecthash.tryBuild` | 651.36 MiB |
 
-<!-- /TBL_PROF_CHD -->
-
-`Allocated bytes (alloc_space)` здесь тоже нужно читать аккуратно: профилирующий workload строит индекс много раз подряд, поэтому сотни MiB в таблице — это cumulative allocation pressure, а не размер одного готового индекса в памяти. Для интерпретации качества алгоритма важнее то, что профиль почти полностью состоит из `Build`, `tryBuild`, `hashKey` и `placeBucket`.
-
----
-
 ## 3. LSH для 3D-точек
 
-LSH использует несколько случайных grid/hash таблиц и потом делает exact-проверку расстояния только для собранных кандидатов. Поэтому здесь очень важно не перепутать обещание структуры: LSH должен резко резать candidate set и ускорять поиск, но не обещает лучшего worst-case для exact duplicate detection. Если все точки свалятся в крупные бакеты, exact-verify снова может стать квадратичным.
+<p align="center"><img src="./figures/lsh_growth_panel.png" width="920"/></p>
+<p align="center"><img src="./figures/lsh_metrics_panel.png" width="920"/></p>
+<p align="center"><img src="./figures/profile_lsh.png" width="920"/></p>
+<p align="center"><img src="./figures/pprof_lsh_flamegraph.svg" width="920"/></p>
 
-<!-- TBL_LSH_BENCH -->
-
-**Build**
+### Build
 
 | N | ms/op (±3σ) | KiB/op (±3σ) | ~ op/s |
 |---|---|---|---|
@@ -225,7 +175,7 @@ LSH использует несколько случайных grid/hash таб�
 | 24000 | 24.56 ± 17.52 | 21 752.5 ± 618.2 | 41 |
 | 32000 | 32.84 ± 8.83 | 22 858.6 ± 518.6 | 30 |
 
-**Add**
+### Add
 
 | N | ns/op (±3σ) | B/op (±3σ) | ~ op/s |
 |---|---|---|---|
@@ -238,7 +188,7 @@ LSH использует несколько случайных grid/hash таб�
 | 24000 | 1 916 ± 441.0 | 1 195 ± 348.2 | 521 812 |
 | 32000 | 1 799 ± 196.3 | 1 084 ± 171.5 | 555 973 |
 
-**Find**
+### Find
 
 | N | ms/op (±3σ) | KiB/op (±3σ) | ~ op/s |
 |---|---|---|---|
@@ -251,7 +201,7 @@ LSH использует несколько случайных grid/hash таб�
 | 24000 | 4.43 ± 0.85 | 376.0 ± 0.0 | 226 |
 | 32000 | 7.11 ± 0.88 | 504.0 ± 0.0 | 141 |
 
-**Naive**
+### Naive
 
 | N | ms/op (±3σ) | KiB/op (±3σ) | ~ op/s |
 |---|---|---|---|
@@ -264,9 +214,7 @@ LSH использует несколько случайных grid/hash таб�
 | 24000 | 262.33 ± 6.51 | 173.2 ± 0.0 | 4 |
 | 32000 | 480.62 ± 90.93 | 253.2 ± 0.0 | 2 |
 
-<!-- /TBL_LSH_BENCH -->
-
-<!-- TBL_LSH_METRICS -->
+### Metrics
 
 | N | recall (±3σ) | precision (±3σ) | cand/all (±3σ) | build ms (±3σ) | add ns/op (±3σ) | find ms (±3σ) | naive ms (±3σ) | speedup (±3σ) |
 |---|---|---|---|---|---|---|---|---|
@@ -279,42 +227,20 @@ LSH использует несколько случайных grid/hash таб�
 | 24000 | 1.000 ± 0.000 | 1.000 ± 0.000 | 0.065% ± 0.092% | 26.35 ± 9.97 | 1033.2 ± 875.4 | 10.40 ± 3.32 | 284.69 ± 73.37 | 27.73 ± 14.58 |
 | 32000 | 1.000 ± 0.000 | 1.000 ± 0.000 | 0.051% ± 0.074% | 30.06 ± 5.08 | 901.9 ± 357.3 | 14.75 ± 4.13 | 467.12 ± 6.04 | 31.89 ± 8.87 |
 
-<!-- /TBL_LSH_METRICS -->
+### Profile
 
-<p align="center"><img src="./figures/lsh_growth_panel.png" width="920"/></p>
-
-<p align="center"><img src="./figures/lsh_metrics_panel.png" width="920"/></p>
-
-
-
-<p align="center"><img src="./figures/profile_lsh.png" width="920"/></p>
-
-<p align="center"><img src="./figures/pprof_lsh_flamegraph.svg" width="920"/></p>
-
-Статический flamegraph ниже — это полный CPU-профиль программы в flame-style формате: нижний блок `program` занимает 100% времени профиля, а выше остаются все ветви `runtime`, пользовательских функций и системных вызовов. Чем шире прямоугольник, тем больше cumulative time у соответствующего пути.
-
-<!-- TBL_PROF_LSH -->
-
-### CPU
-
-| function | cumulative |
-|---|---|
+| CPU function | cumulative |
+|---|---:|
 | `algo/lsh.(*LSH).FindDuplicates (inline)` | 0.32 s |
 | `algo/lsh.(*LSH).FindDuplicatesWithStats` | 0.32 s |
 | `algo/lsh.BuildIndex` | 0.15 s |
 | `algo/lsh.(*LSH).Add` | 0.11 s |
 | `algo/lsh.(*LSH).acquireDenseSeen (inline)` | 0.02 s |
 
-### Allocated bytes (alloc_space)
-
-| function | cumulative |
-|---|---|
+| Allocated bytes function | cumulative |
+|---|---:|
 | `algo/lsh.(*LSH).FindDuplicates (inline)` | 1015.38 MiB |
 | `algo/lsh.(*LSH).FindDuplicatesWithStats` | 1015.38 MiB |
 | `algo/lsh.(*LSH).acquireDenseSeen (inline)` | 996.94 MiB |
 | `algo/lsh.BuildIndex` | 296.42 MiB |
 | `algo/lsh.New` | 230.94 MiB |
-
-<!-- /TBL_PROF_LSH -->
-
-Профиль это подтверждает: время сидит в `FindDuplicatesWithStats`, `Add` и map-операциях для bucket-ов и `seen`. Таблица allocation pressure опять же не про resident memory, а про цену постоянного создания candidate set и сопутствующих map/slice-структур во время прогона.
