@@ -1,0 +1,6 @@
+.gocache/
+.tmp/
+.DS_Store
+
+data/*.lab5
+profiles/
