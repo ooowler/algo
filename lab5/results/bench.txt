@@ -1,0 +1,21 @@
+goos: darwin
+goarch: arm64
+pkg: lab5/search
+cpu: Apple M2 Pro
+BenchmarkQueriesMemory/AND_balanced-12         	      91	   1297390 ns/op	  827328 B/op	   16726 allocs/op
+BenchmarkQueriesMemory/OR_balanced-12          	      32	   3652464 ns/op	 1868672 B/op	   16774 allocs/op
+BenchmarkQueriesMemory/NOT_nested-12           	     325	    364176 ns/op	  356336 B/op	    5825 allocs/op
+BenchmarkQueriesMemory/ADJ_phrase-12           	     255	    465608 ns/op	  208888 B/op	    2323 allocs/op
+BenchmarkQueriesMemory/NEAR_window-12          	     291	    401395 ns/op	  191312 B/op	    1994 allocs/op
+BenchmarkQueriesMemory/Ranking_many-12         	      28	   3945534 ns/op	 2533273 B/op	   41759 allocs/op
+BenchmarkQueriesDiskMmap/AND_balanced-12       	      51	   2367116 ns/op	 3257812 B/op	   58408 allocs/op
+BenchmarkQueriesDiskMmap/OR_balanced-12        	      26	   4669173 ns/op	 4299158 B/op	   58456 allocs/op
+BenchmarkQueriesDiskMmap/NOT_nested-12         	     205	    580805 ns/op	  875058 B/op	   16251 allocs/op
+BenchmarkQueriesDiskMmap/ADJ_phrase-12         	     184	    649491 ns/op	  653849 B/op	   11431 allocs/op
+BenchmarkQueriesDiskMmap/NEAR_window-12        	     212	    560070 ns/op	  582545 B/op	    9706 allocs/op
+BenchmarkQueriesDiskMmap/Ranking_many-12       	      25	   4925228 ns/op	 5212660 B/op	   87617 allocs/op
+BenchmarkCompressionBaseline/Docs1000-12       	      26	   4451319 ns/op	     35675 compressed_B	         0.2350 ratio	    151796 raw_B	 4714215 B/op	   60875 allocs/op
+BenchmarkCompressionBaseline/Docs5000-12       	       4	  25290771 ns/op	    178488 compressed_B	         0.2352 ratio	    758916 raw_B	22304228 B/op	  301338 allocs/op
+BenchmarkCompressionBaseline/Docs25000-12      	       1	 136167500 ns/op	    907554 compressed_B	         0.2392 ratio	   3794196 raw_B	107343416 B/op	 1502760 allocs/op
+PASS
+ok  	lab5/search	2.983s

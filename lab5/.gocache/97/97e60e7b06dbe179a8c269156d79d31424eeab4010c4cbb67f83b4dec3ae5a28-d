@@ -1,0 +1,12 @@
+./codec.go
+./disk.go
+./document.go
+./execute.go
+./index.go
+./query.go
+./ranking.go
+./synthetic.go
+./tokenizer.go
+./bench_test.go
+./codec_test.go
+./search_test.go
