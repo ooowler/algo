@@ -1,23 +1,23 @@
-File: profile
+File: stress
 Type: cpu
-Time: 2026-06-10 03:11:35 MSK
-Duration: 3.03s, Total samples = 3400ms (112.35%)
-Showing nodes accounting for 2130ms, 62.65% of 3400ms total
-Dropped 45 nodes (cum <= 17ms)
-Showing top 15 nodes out of 132
+Time: 2026-06-14 13:52:25 MSK
+Duration: 4.94s, Total samples = 5210ms (105.37%)
+Showing nodes accounting for 3060ms, 58.73% of 5210ms total
+Dropped 90 nodes (cum <= 26.05ms)
+Showing top 15 nodes out of 137
       flat  flat%   sum%        cum   cum%
-     300ms  8.82%  8.82%      300ms  8.82%  lab5/search.Search.func1
-     210ms  6.18% 15.00%      210ms  6.18%  runtime.pthread_cond_wait
-     170ms  5.00% 20.00%      170ms  5.00%  runtime.madvise
-     160ms  4.71% 24.71%      340ms 10.00%  runtime.mallocgcSmallScanNoHeader
-     160ms  4.71% 29.41%      160ms  4.71%  runtime.pthread_kill
-     150ms  4.41% 33.82%      150ms  4.41%  runtime.memmove
-     150ms  4.41% 38.24%      620ms 18.24%  sort.partition_func
-     130ms  3.82% 42.06%      130ms  3.82%  runtime.pthread_cond_signal
-     120ms  3.53% 45.59%      230ms  6.76%  runtime.typedmemmove
-     110ms  3.24% 48.82%      170ms  5.00%  lab5/search.(*Index).Doc
-     100ms  2.94% 51.76%      180ms  5.29%  runtime.greyobject
-     100ms  2.94% 54.71%      150ms  4.41%  runtime.mapaccess1_fast32
-     100ms  2.94% 57.65%      110ms  3.24%  runtime.mapassign_fast32
-      90ms  2.65% 60.29%       90ms  2.65%  runtime.memclrNoHeapPointers
-      80ms  2.35% 62.65%      480ms 14.12%  lab5/search.bm25Scores
+     620ms 11.90% 11.90%      620ms 11.90%  runtime.decoderune
+     440ms  8.45% 20.35%      440ms  8.45%  unicode.lookupCaseRange (inline)
+     360ms  6.91% 27.26%      950ms 18.23%  runtime.stringtoslicerune
+     220ms  4.22% 31.48%      220ms  4.22%  runtime.memclrNoHeapPointers
+     190ms  3.65% 35.12%      280ms  5.37%  sort.partition_func
+     150ms  2.88% 38.00%      150ms  2.88%  runtime.encoderune
+     140ms  2.69% 40.69%      650ms 12.48%  lab5/search.decodePostings
+     140ms  2.69% 43.38%      140ms  2.69%  runtime.pthread_kill
+     130ms  2.50% 45.87%     1090ms 20.92%  strings.Map
+     120ms  2.30% 48.18%      320ms  6.14%  runtime.greyobject
+     120ms  2.30% 50.48%      120ms  2.30%  runtime.memmove
+     120ms  2.30% 52.78%      120ms  2.30%  runtime.pthread_cond_wait
+     110ms  2.11% 54.89%      110ms  2.11%  lab5/search.SearchDetailed.func1
+     100ms  1.92% 56.81%      100ms  1.92%  runtime.(*gcBits).bytep (inline)
+     100ms  1.92% 58.73%      520ms  9.98%  runtime.scanobject

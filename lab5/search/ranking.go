@@ -13,19 +13,33 @@ type Result struct {
 	Snippet string  `json:"snippet"`
 }
 
+type SearchStats struct {
+	Results      []Result `json:"results"`
+	TotalMatches int      `json:"total_matches"`
+	Limit        int      `json:"limit"`
+}
+
 type rankedDoc struct {
 	DocID uint32
 	Score float64
 }
 
 func Search(searcher Searcher, query string, limit int) ([]Result, error) {
-	node, err := ParseQuery(query)
+	stats, err := SearchDetailed(searcher, query, limit)
 	if err != nil {
 		return nil, err
 	}
+	return stats.Results, nil
+}
+
+func SearchDetailed(searcher Searcher, query string, limit int) (SearchStats, error) {
+	node, err := ParseQuery(query)
+	if err != nil {
+		return SearchStats{}, err
+	}
 	matches, err := evalNode(searcher, node)
 	if err != nil {
-		return nil, err
+		return SearchStats{}, err
 	}
 	terms := positiveTerms(node)
 	scores := bm25Scores(searcher, matches, terms)
@@ -55,7 +69,11 @@ func Search(searcher Searcher, query string, limit int) ([]Result, error) {
 			Snippet: makeSnippet(doc, terms),
 		})
 	}
-	return results, nil
+	return SearchStats{
+		Results:      results,
+		TotalMatches: len(matches.Items),
+		Limit:        limit,
+	}, nil
 }
 
 func positiveTerms(node Node) []string {
@@ -118,10 +136,11 @@ func makeSnippet(doc DocInfo, terms []string) string {
 	if text == "" {
 		return ""
 	}
-	lower := strings.ToLower(text)
+	runes := []rune(text)
+	lower := []rune(strings.ToLower(text))
 	start := 0
 	for _, term := range terms {
-		if pos := strings.Index(lower, term); pos >= 0 {
+		if pos := indexRunes(lower, []rune(term)); pos >= 0 {
 			start = pos - 60
 			if start < 0 {
 				start = 0
@@ -130,15 +149,36 @@ func makeSnippet(doc DocInfo, terms []string) string {
 		}
 	}
 	end := start + 220
-	if end > len(text) {
-		end = len(text)
+	if end > len(runes) {
+		end = len(runes)
 	}
-	snippet := strings.TrimSpace(text[start:end])
+	snippet := strings.TrimSpace(string(runes[start:end]))
 	if start > 0 {
 		snippet = "..." + snippet
 	}
-	if end < len(text) {
+	if end < len(runes) {
 		snippet += "..."
 	}
 	return snippet
+}
+
+func indexRunes(text []rune, term []rune) int {
+	if len(term) == 0 || len(term) > len(text) {
+		return -1
+	}
+	for i := 0; i <= len(text)-len(term); i++ {
+		if hasRunePrefix(text[i:], term) {
+			return i
+		}
+	}
+	return -1
+}
+
+func hasRunePrefix(text []rune, term []rune) bool {
+	for i := range term {
+		if text[i] != term[i] {
+			return false
+		}
+	}
+	return true
 }

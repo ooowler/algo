@@ -160,3 +160,7 @@ func (idx *Index) AverageDocLength() float64 {
 func (idx *Index) Search(query string, limit int) ([]Result, error) {
 	return Search(idx, query, limit)
 }
+
+func (idx *Index) SearchDetailed(query string, limit int) (SearchStats, error) {
+	return SearchDetailed(idx, query, limit)
+}

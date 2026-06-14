@@ -1,30 +1,35 @@
-.PHONY: test bench profile demo server clean
+.PHONY: corpus build stress profile flamegraph report server clean
 
 GOCACHE_DIR := $(PWD)/.gocache
 GOTMPDIR_DIR := $(PWD)/.tmp
-BENCHTIME ?= 200ms
-BENCH_COUNT ?= 3
+GO_ENV := GOCACHE=$(GOCACHE_DIR) GOTMPDIR=$(GOTMPDIR_DIR) TMPDIR=$(GOTMPDIR_DIR)
+SRC_UTF8 := $(wildcard data/src_utf8/*.html)
 
-test:
-	mkdir -p $(GOCACHE_DIR) $(GOTMPDIR_DIR)
-	env GOCACHE=$(GOCACHE_DIR) GOTMPDIR=$(GOTMPDIR_DIR) TMPDIR=$(GOTMPDIR_DIR) go test ./... -timeout 180s -count=1
+corpus:
+	mkdir -p $(GOCACHE_DIR) $(GOTMPDIR_DIR) data
+	env $(GO_ENV) go run ./cmd/lab5 import-libru -out data/russian_classics.jsonl $(SRC_UTF8)
 
-bench:
-	mkdir -p $(GOCACHE_DIR) $(GOTMPDIR_DIR) results
-	env GOCACHE=$(GOCACHE_DIR) GOTMPDIR=$(GOTMPDIR_DIR) TMPDIR=$(GOTMPDIR_DIR) go test ./search -run=^$$ -bench='Queries|Compression' -benchmem -benchtime=$(BENCHTIME) -count=$(BENCH_COUNT) -timeout=1800s > results/bench.txt
+build:
+	mkdir -p $(GOCACHE_DIR) $(GOTMPDIR_DIR) data
+	env $(GO_ENV) go run ./cmd/lab5 build -docs data/russian_classics.jsonl -index data/russian_classics.lab5
+
+stress:
+	mkdir -p $(GOCACHE_DIR) $(GOTMPDIR_DIR) results profiles
+	env $(GO_ENV) go run ./cmd/stress -index data/russian_classics.lab5 -corpus data/russian_classics.jsonl -sources data/src_utf8 -out results/stress.md -rounds 1000 -limit 10 -cpuprofile profiles/search_cpu.prof
 
 profile:
-	mkdir -p $(GOCACHE_DIR) $(GOTMPDIR_DIR) results profiles
-	env GOCACHE=$(GOCACHE_DIR) GOTMPDIR=$(GOTMPDIR_DIR) TMPDIR=$(GOTMPDIR_DIR) go run ./cmd/profile
-	env GOCACHE=$(GOCACHE_DIR) GOTMPDIR=$(GOTMPDIR_DIR) go tool pprof -top -nodecount=15 profiles/search_cpu.prof > results/profile_cpu.txt
-	env GOCACHE=$(GOCACHE_DIR) GOTMPDIR=$(GOTMPDIR_DIR) go tool pprof -top -sample_index=alloc_space -nodecount=15 profiles/search_mem.prof > results/profile_mem.txt
+	mkdir -p $(GOTMPDIR_DIR) results
+	env TMPDIR=$(GOTMPDIR_DIR) go tool pprof -top -nodecount=15 profiles/search_cpu.prof > results/profile_cpu.txt
 
-demo:
-	mkdir -p $(GOCACHE_DIR) $(GOTMPDIR_DIR) data
-	env GOCACHE=$(GOCACHE_DIR) GOTMPDIR=$(GOTMPDIR_DIR) TMPDIR=$(GOTMPDIR_DIR) go run ./cmd/lab5 demo -index data/demo.lab5
+flamegraph:
+	mkdir -p $(GOTMPDIR_DIR) figures
+	env TMPDIR=$(GOTMPDIR_DIR) bash ../lab1/scripts/export_pprof_flame_html.sh profiles/search_cpu.prof figures/pprof_search_flamegraph.html
 
-server: demo
-	env GOCACHE=$(GOCACHE_DIR) GOTMPDIR=$(GOTMPDIR_DIR) TMPDIR=$(GOTMPDIR_DIR) go run ./cmd/server -index data/demo.lab5
+report: corpus build stress profile flamegraph
+
+server:
+	mkdir -p $(GOCACHE_DIR) $(GOTMPDIR_DIR)
+	env $(GO_ENV) go run ./cmd/server -index data/russian_classics.lab5
 
 clean:
-	rm -rf .gocache .tmp data/*.lab5 results profiles
+	rm -rf .gocache .tmp

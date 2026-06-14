@@ -122,16 +122,3 @@ func assignIDs(docs []Document) {
 		used[next] = struct{}{}
 	}
 }
-
-func SampleDocuments() []Document {
-	return []Document{
-		{ID: 1, Title: "History of trade routes", Text: "History records trade routes, maps, caravans, sea ports and archives about medieval cities."},
-		{ID: 2, Title: "Russia and China history", Text: "History of Russia and China includes diplomacy, border treaties, culture and economic exchange."},
-		{ID: 3, Title: "Ant colonies", Text: "Ant colonies build tunnels. Worker ants search near food trails and communicate with pheromones."},
-		{ID: 4, Title: "Search engines", Text: "A search engine builds an inverted index, ranks documents with tf idf and answers boolean queries."},
-		{ID: 5, Title: "China geography", Text: "China has rivers, mountains, cities and long history, but this document does not mention the other country."},
-		{ID: 6, Title: "Russia geography", Text: "Russia has forests, rivers, cities and long history, but this page is separate from the neighboring country."},
-		{ID: 7, Title: "Quick brown fox", Text: "The quick brown fox jumps near the old tree. A quick red fox walks nearby."},
-		{ID: 8, Title: "Information retrieval", Text: "Coordinate indexes store positions. ADJ and NEAR use positions, AND OR NOT use posting lists and skip lists."},
-	}
-}

@@ -1,6 +1,5 @@
 .gocache/
 .tmp/
 .DS_Store
-
-data/*.lab5
-profiles/
+data/src_raw/
+data/src_utf8/

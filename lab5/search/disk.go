@@ -34,6 +34,14 @@ type DiskIndex struct {
 	docPos map[uint32]int
 }
 
+type IndexInfo struct {
+	Docs             int
+	Terms            int
+	RawPostingsBytes uint64
+	PostingsBytes    uint64
+	AvgDocLength     float64
+}
+
 func WriteIndex(path string, idx *Index) error {
 	f, err := os.Create(path)
 	if err != nil {
@@ -212,10 +220,24 @@ func (idx *DiskIndex) Search(query string, limit int) ([]Result, error) {
 	return Search(idx, query, limit)
 }
 
+func (idx *DiskIndex) SearchDetailed(query string, limit int) (SearchStats, error) {
+	return SearchDetailed(idx, query, limit)
+}
+
 func (idx *DiskIndex) CompressionStats() string {
 	if idx.meta.RawPostingsBytes == 0 {
 		return "raw=0 compressed=0"
 	}
 	ratio := float64(idx.meta.PostingsBytes) / float64(idx.meta.RawPostingsBytes)
 	return fmt.Sprintf("raw=%d compressed=%d ratio=%.3f", idx.meta.RawPostingsBytes, idx.meta.PostingsBytes, ratio)
+}
+
+func (idx *DiskIndex) Info() IndexInfo {
+	return IndexInfo{
+		Docs:             len(idx.meta.Docs),
+		Terms:            len(idx.meta.Terms),
+		RawPostingsBytes: idx.meta.RawPostingsBytes,
+		PostingsBytes:    idx.meta.PostingsBytes,
+		AvgDocLength:     idx.meta.AvgDocLength,
+	}
 }
