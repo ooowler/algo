@@ -1,23 +1,23 @@
 File: stress
 Type: cpu
-Time: 2026-06-14 13:52:25 MSK
-Duration: 4.94s, Total samples = 5210ms (105.37%)
-Showing nodes accounting for 3060ms, 58.73% of 5210ms total
-Dropped 90 nodes (cum <= 26.05ms)
-Showing top 15 nodes out of 137
+Time: 2026-06-14 14:16:18 MSK
+Duration: 4.84s, Total samples = 5210ms (107.65%)
+Showing nodes accounting for 3400ms, 65.26% of 5210ms total
+Dropped 89 nodes (cum <= 26.05ms)
+Showing top 15 nodes out of 124
       flat  flat%   sum%        cum   cum%
-     620ms 11.90% 11.90%      620ms 11.90%  runtime.decoderune
-     440ms  8.45% 20.35%      440ms  8.45%  unicode.lookupCaseRange (inline)
-     360ms  6.91% 27.26%      950ms 18.23%  runtime.stringtoslicerune
-     220ms  4.22% 31.48%      220ms  4.22%  runtime.memclrNoHeapPointers
-     190ms  3.65% 35.12%      280ms  5.37%  sort.partition_func
-     150ms  2.88% 38.00%      150ms  2.88%  runtime.encoderune
-     140ms  2.69% 40.69%      650ms 12.48%  lab5/search.decodePostings
-     140ms  2.69% 43.38%      140ms  2.69%  runtime.pthread_kill
-     130ms  2.50% 45.87%     1090ms 20.92%  strings.Map
-     120ms  2.30% 48.18%      320ms  6.14%  runtime.greyobject
-     120ms  2.30% 50.48%      120ms  2.30%  runtime.memmove
-     120ms  2.30% 52.78%      120ms  2.30%  runtime.pthread_cond_wait
-     110ms  2.11% 54.89%      110ms  2.11%  lab5/search.SearchDetailed.func1
-     100ms  1.92% 56.81%      100ms  1.92%  runtime.(*gcBits).bytep (inline)
-     100ms  1.92% 58.73%      520ms  9.98%  runtime.scanobject
+     690ms 13.24% 13.24%      690ms 13.24%  runtime.decoderune
+     550ms 10.56% 23.80%      550ms 10.56%  unicode.lookupCaseRange (inline)
+     440ms  8.45% 32.25%     1100ms 21.11%  runtime.stringtoslicerune
+     210ms  4.03% 36.28%      210ms  4.03%  runtime.memclrNoHeapPointers
+     160ms  3.07% 39.35%      310ms  5.95%  runtime.greyobject
+     160ms  3.07% 42.42%      160ms  3.07%  runtime.pthread_cond_signal
+     150ms  2.88% 45.30%      150ms  2.88%  lab5/search.SearchDetailed.func1
+     150ms  2.88% 48.18%      250ms  4.80%  lab5/search.unpackBlock
+     150ms  2.88% 51.06%     1280ms 24.57%  strings.Map
+     150ms  2.88% 53.93%      150ms  2.88%  unicode/utf8.appendRuneNonASCII
+     130ms  2.50% 56.43%      130ms  2.50%  runtime.pthread_cond_wait
+     120ms  2.30% 58.73%      670ms 12.86%  lab5/search.decodePostings
+     120ms  2.30% 61.04%      560ms 10.75%  runtime.scanobject
+     120ms  2.30% 63.34%      260ms  4.99%  sort.partition_func
+     100ms  1.92% 65.26%      100ms  1.92%  runtime.markBits.setMarked (inline)

@@ -1,5 +1,7 @@
 .gocache/
 .tmp/
+.cache/
+.mplconfig/
 .DS_Store
 data/src_raw/
 data/src_utf8/

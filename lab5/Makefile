@@ -1,4 +1,4 @@
-.PHONY: corpus build stress profile flamegraph report server clean
+.PHONY: corpus build stress profile charts flamegraph report server clean
 
 GOCACHE_DIR := $(PWD)/.gocache
 GOTMPDIR_DIR := $(PWD)/.tmp
@@ -21,11 +21,15 @@ profile:
 	mkdir -p $(GOTMPDIR_DIR) results
 	env TMPDIR=$(GOTMPDIR_DIR) go tool pprof -top -nodecount=15 profiles/search_cpu.prof > results/profile_cpu.txt
 
+charts:
+	mkdir -p .mplconfig .cache figures
+	env MPLBACKEND=Agg MPLCONFIGDIR=$(PWD)/.mplconfig XDG_CACHE_HOME=$(PWD)/.cache python3 scripts/build_charts_matplotlib.py
+
 flamegraph:
 	mkdir -p $(GOTMPDIR_DIR) figures
 	env TMPDIR=$(GOTMPDIR_DIR) bash ../lab1/scripts/export_pprof_flame_html.sh profiles/search_cpu.prof figures/pprof_search_flamegraph.html
 
-report: corpus build stress profile flamegraph
+report: corpus build stress profile charts flamegraph
 
 server:
 	mkdir -p $(GOCACHE_DIR) $(GOTMPDIR_DIR)
