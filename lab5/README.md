@@ -5,10 +5,24 @@
 Stress: `1000` запусков каждого запроса по mmap-индексу. Корпус: `11092` фрагментов, `143693` термов, индекс `43.87 MiB`.
 
 <p align="center"><img src="./figures/stress_latency_percentiles.png" width="780"/></p>
+
+Latency: сравнение `avg` и `p95`; все рабочие сценарии остаются меньше `0.8 ms` по p95.
+
 <p align="center"><img src="./figures/stress_tail_range.png" width="780"/></p>
+
+Tail: показывает разброс `min..max`; редкие пики есть, но среднее и p95 остаются плотными.
+
 <p align="center"><img src="./figures/stress_throughput_qps.png" width="780"/></p>
+
+Throughput: быстрые точные запросы дают тысячи QPS, пустой term почти бесплатный.
+
 <p align="center"><img src="./figures/stress_selectivity_latency.png" width="780"/></p>
+
+Selectivity: чем больше L0 matches, тем выше p95, но даже `negative_only` с `10635` matches не проседает сильно.
+
 <p align="center"><img src="./figures/index_footprint.png" width="780"/></p>
+
+Footprint: mmap-индекс больше JSONL из-за metadata, но postings сжаты до `35.5%` от raw.
 
 Итог: рабочие запросы в среднем `0.12-0.67 ms`; даже `NOT` по `10635` L0 matches дает `0.548 ms avg / 0.766 ms p95`.
 
@@ -42,6 +56,9 @@ Stress: `1000` запусков каждого запроса по mmap-инде
 | 150ms | 2.88% | 1280ms | 24.57% | `strings.Map` |
 
 <p align="center"><img src="./figures/profile_cpu_top.png" width="780"/></p>
+
+CPU top: основное время уходит в Unicode decode/lowercase и подготовку snippets/ranking.
+
 <p align="center"><img src="./figures/pprof_search_flamegraph.svg" width="920"/></p>
 
 Узкое место: Unicode normalization/snippet path; mmap/decode postings не доминируют.
